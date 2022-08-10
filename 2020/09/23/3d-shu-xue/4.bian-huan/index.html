@@ -1,0 +1,1457 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="4.变换, Game, Unity, Graphics, Tools, Scripts, C#, Python, Lua, C/C++">
+    <meta name="description" content="游戏编程的一些文章">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>4.变换 | 游戏编程</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.0.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">游戏编程</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">游戏编程</div>
+        <div class="logo-desc">
+            
+            游戏编程的一些文章
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">4.变换</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E5%BC%95%E6%93%8E/">
+                                <span class="chip bg-color">引擎</span>
+                            </a>
+                        
+                            <a href="/tags/3d%E6%95%B0%E5%AD%A6/">
+                                <span class="chip bg-color">3d数学</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/3d%E6%95%B0%E5%AD%A6/" class="post-category">
+                                3d数学
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2020-09-23
+                </div>
+                
+
+                
+
+                
+
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <ol type="1">
+<li><p>旋转</p>
+<ol type="1">
+<li><p>2D旋转</p>
+<p><img src="/imgs/rotate2d.png" style="zoom:80%;"> <span class="math display">\[
+2d构造矩阵：  R(\theta) = \begin{bmatrix} p^` \\q^` \end{bmatrix} =
+\begin{bmatrix} \cos\theta &amp; \sin\theta\\-\sin\theta &amp;\cos\theta
+\end{bmatrix}, p 为x轴旋转， q为y轴旋转。
+\]</span></p></li>
+<li><p>3D旋转，<code>绕轴旋转</code></p>
+<ol type="1">
+<li><p>区分旋转方向，
+<code>左手法则，手握旋转轴，拇指朝向正方向，四指绕向为正</code></p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;"></th>
+<th style="text-align: center;">左手坐标系</th>
+<th style="text-align: center;">右手坐标系</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">从哪边看</td>
+<td style="text-align: center;">正方向|负方向</td>
+<td style="text-align: center;">正方向| 负方向</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">从负端向正端看</td>
+<td style="text-align: center;">逆时针|顺时针</td>
+<td style="text-align: center;">顺时针|逆时针</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">从正端向负端看</td>
+<td style="text-align: center;">顺时针|逆时针</td>
+<td style="text-align: center;">逆时针|顺时针</td>
+</tr>
+</tbody>
+</table></li>
+<li><p>绕着x轴旋转，(此时等于旋转 yz
+组成的2d笛卡尔坐标系，而x轴不变，因此构造矩阵如下：）</p>
+<p><img src="/imgs\rotate3d.png" style="zoom:80%;"> <span class="math display">\[
+绕x旋转的构造矩阵：  R(\theta) = \begin{bmatrix} p^`\\q^` \\r^`
+\end{bmatrix} = \begin{bmatrix} 1&amp;0&amp;0\\0&amp;\cos\theta &amp;
+\sin\theta\\0&amp;-\sin\theta &amp;\cos\theta \end{bmatrix}, p
+为x轴旋转， q为y轴旋转,r为z轴旋转。
+\]</span><br>
+</p></li>
+<li><p>绕y旋转类似，(此时等于旋转 xz
+组成的2d笛卡尔坐标系，而y轴不变，因此构造矩阵如下：） <span class="math display">\[
+绕y旋转的构造矩阵：  R(\theta) = \begin{bmatrix} p^`\\q^` \\r^`
+\end{bmatrix} = \begin{bmatrix}
+\cos\theta&amp;0&amp;-\sin\theta\\
+0&amp; 1&amp;0 \\
+\sin\theta &amp;0&amp;\cos\theta \end{bmatrix}, p 为x轴旋转，
+q为y轴旋转,r为z轴旋转。
+\]</span></p></li>
+<li><p>绕z旋转类似，(此时等于旋转 xy
+组成的2d笛卡尔坐标系，而z轴不变，因此构造矩阵如下：） <span class="math display">\[
+绕y旋转的构造矩阵：  R(\theta) = \begin{bmatrix} p^`\\q^` \\r^`
+\end{bmatrix} = \begin{bmatrix}
+\cos\theta&amp;\sin\theta&amp;0\\
+-\sin\theta &amp;\cos\theta &amp;0 \\
+0&amp; 0&amp; 1
+\end{bmatrix}, p 为x轴旋转， q为y轴旋转,r为z轴旋转。
+\]</span><br>
+</p></li>
+<li><p>绕<strong>任意方向，不依赖旋转轴</strong>旋转，原理类似，忽略推到，公式如下：
+<span class="math display">\[
+R(n, \theta),代表 绕n方向旋转 \theta.
+\]</span><br>
+<span class="math display">\[
+R(n,\theta) = \begin{bmatrix} p^`\\q^` \\r^` \end{bmatrix} =
+\begin{bmatrix}
+n_x^2(1-\cos\theta)+   \cos\theta&amp;
+n_xn_y(1-\cos\theta)+n_z\sin\theta&amp;n_xn_z(1-\cos\theta)-n_y\sin\theta\\
+n_xn_y(1-\cos\theta)-n_x\sin\theta&amp; n_y^2
+(1-\cos\theta)+   \cos\theta&amp;n_yn_z(1-\cos\theta)-n_x\sin\theta\\
+n_xn_z(1-\cos\theta)+n_y\sin\theta&amp;
+n_yn_z(1-\cos\theta)-n_x\sin\theta&amp;n_z^2
+(1-\cos\theta)+    \cos\theta\\
+\end{bmatrix}
+\]</span></p></li>
+</ol></li>
+</ol></li>
+<li><p>缩放</p>
+<ol type="1">
+<li><p>沿坐标轴缩放 <span class="math display">\[
+S(k_x, k_y, k_z) = \begin{bmatrix}
+k_x &amp; 0 &amp;0\\
+0&amp;k_y&amp;0\\
+0&amp;0&amp;k_z
+\end{bmatrix}
+\]</span></p></li>
+<li><p>沿<strong>任意方向，不依赖旋转轴</strong>缩放 <span class="math display">\[
+R(n, k),代表 绕n方向缩放 k.
+\]</span></p>
+<p><span class="math display">\[
+S(n,k) = \begin{bmatrix} p^`\\q^` \\r^` \end{bmatrix} = \begin{bmatrix}
+1+(k-1)n_x^2&amp; (k-1)n_xn_y&amp; (k-1)n_xn_z\\
+(k-1)n_xn_y&amp; 1+(k-1)n_y^2&amp; (k-1)n_yn_z\\
+(k-1)n_xn_z&amp; (k-1)n_zn_y&amp; 1+(k-1)n_z^2
+\end{bmatrix}
+\]</span></p></li>
+</ol></li>
+<li><p>正交投影 &gt;
+一般来说投影意味着降维操作，例如3d赋值给2d，抛弃z。（正交、平行、透视投影）</p>
+<ol type="1">
+<li>向x轴投影，保留x为1， 舍弃部分置0 <span class="math display">\[
+P_x = S(\begin{bmatrix}0&amp;1\end{bmatrix} ,0) = \begin{bmatrix}
+1&amp;0\\0&amp;0 \end{bmatrix}
+\]</span></li>
+<li>同理y轴投影 <span class="math display">\[
+P_y = S(\begin{bmatrix}1&amp;0\end{bmatrix} ,0) = \begin{bmatrix}
+0&amp;0\\0&amp;1 \end{bmatrix}
+\]</span></li>
+<li>向xy投影 <span class="math display">\[
+P_{xy} = S(\begin{bmatrix}0&amp;0&amp;1\end{bmatrix} ,0) =
+\begin{bmatrix} 1&amp;0&amp;0\\0&amp;1&amp;0\\0&amp;0&amp;0
+\end{bmatrix}
+\]</span></li>
+<li>向xz投影 <span class="math display">\[
+P_{xz} = S(\begin{bmatrix}0&amp;1&amp;0\end{bmatrix} ,0) =
+\begin{bmatrix} 1&amp;0&amp;0\\0&amp;0&amp;0\\0&amp;0&amp;1\end{bmatrix}
+\]</span><br>
+</li>
+<li>向yz投影 <span class="math display">\[
+P_{yz} = S(\begin{bmatrix}1&amp;0&amp;0\end{bmatrix} ,0) =
+\begin{bmatrix} 0&amp;0&amp;0\\0&amp;1&amp;0\\0&amp;0&amp;1\end{bmatrix}
+\]</span></li>
+<li>向任意平面投影 <span class="math display">\[
+P(n) = S(n, 0), n代表任意直线/平面
+\]</span><br>
+<span class="math display">\[
+P(n) = S(n,0) = \begin{bmatrix}
+1+(0-1)n_x^2&amp; (0-1)n_xn_y&amp; (0-1)n_xn_z\\
+(0-1)n_xn_y&amp; 1+(0-1)n_y^2&amp; (0-1)n_yn_z\\
+(0-1)n_xn_z&amp; (0-1)n_zn_y&amp; 1+(0-1)n_z^2
+\end{bmatrix}
+\]</span></li>
+</ol></li>
+<li><p>镜像 <code>翻折</code></p>
+<ol type="1">
+<li>2D <span class="math display">\[
+P(n) = S(n,-1) = \begin{bmatrix}
+1+(-1-1)n_x^2&amp; (-1-1)n_xn_y\\
+(-1-1)n_xn_y&amp; 1+(-1-1)n_y^2\\
+(-1-1)n_xn_z&amp; (-1-1)n_zn_y
+\end{bmatrix}
+\]</span><br>
+</li>
+<li>3D <span class="math display">\[
+P(n) = S(n,-1) = \begin{bmatrix}
+1+(-1-1)n_x^2&amp; (-1-1)n_xn_y&amp; (-1-1)n_xn_z\\
+(-1-1)n_xn_y&amp; 1+(-1-1)n_y^2&amp; (-1-1)n_yn_z\\
+(-1-1)n_xn_z&amp; (-1-1)n_zn_y&amp; 1+(-1-1)n_z^2
+\end{bmatrix}
+= \begin{bmatrix}
+1-2n_x^2&amp; -2n_xn_y&amp;-2n_xn_z\\
+-2n_xn_y&amp; -2n_y^2&amp;-2n_yn_z\\
+-2n_xn_z&amp; -2n_zn_y&amp;-2n_z^2\\
+\end{bmatrix}
+\]</span></li>
+</ol></li>
+<li><p>切变，<code>（非均匀地拉伸它，角度发生变化，面积和体积不变）</code>
+<img src="/imgs\tbian.png" style="zoom:80%;"><br>
+<span class="math display">\[
+x^` = x + sy,  s为变化因子。 H_x(s)
+=\begin{bmatrix}1&amp;0\\s&amp;1\end{bmatrix}, x
+随着y被切变，s控制方向和量
+\]</span></p>
+<p><span class="math display">\[
+另一种变换 H_y。 H_y(s) =\begin{bmatrix}1&amp;s\\0&amp;1\end{bmatrix}, x
+随着y被切变，s控制方向和量
+\]</span></p></li>
+<li><p>3D切变</p>
+<blockquote>
+<p>3d中的切变是取出一个坐标乘以不同的因子，再加到其他坐标上，H_{xy}
+意义是 xy坐标被z改变，</p>
+</blockquote>
+<p><span class="math display">\[
+H_{xy}(s)
+=\begin{bmatrix}1&amp;0&amp;0\\0&amp;1&amp;0\\s&amp;t&amp;1\end{bmatrix}
+\]</span></p>
+<p><span class="math display">\[
+H_{xz}(s)
+=\begin{bmatrix}1&amp;0&amp;0\\s&amp;1&amp;t\\0&amp;0&amp;1\end{bmatrix}
+\]</span></p>
+<p><span class="math display">\[
+H_{yz}(s)
+=\begin{bmatrix}1&amp;s&amp;t\\0&amp;1&amp;0\\0&amp;0&amp;1\end{bmatrix}
+\]</span></p></li>
+<li><p>组合变换</p>
+<ol type="1">
+<li><p>坐标系组合变换 <span class="math display">\[
+P_{世界} = P_{物体}M_{物体\rightarrow世界}
+\]</span></p>
+<p><span class="math display">\[
+P_{相机} = P_{世界}M_{世界\rightarrow相机} =
+(P_{物体}M_{物体\rightarrow世界})M_{世界\rightarrow相机} =
+P_{物体}(M_{物体\rightarrow世界}M_{世界\rightarrow相机})
+\]</span></p>
+<p><span class="math display">\[
+M_{物体\rightarrow相机} = M_{物体\rightarrow世界}M_{世界\rightarrow相机}
+\]</span></p>
+<p><span class="math display">\[
+P_{相机} =P_{物体}M_{物体\rightarrow相机}
+\]</span></p></li>
+</ol></li>
+<li><p>变换分类</p>
+<ol type="1">
+<li>线性变换</li>
+<li>仿射变换（线性变换超集）</li>
+<li>可逆变换 （奇异矩阵不可逆，行列式不为0）</li>
+<li>等角变换 (夹角大小方向不变,所有等角变换都是可逆，仿射变换)</li>
+<li>正交变换 (垂直变换，切不缩放)</li>
+<li>刚体变换</li>
+</ol></li>
+<li><p>4x4齐次矩阵</p></li>
+<li><p>矩阵形式的优缺点</p>
+<ol type="1">
+<li>优点
+<ol type="1">
+<li>可立即变换</li>
+<li>被图形api使用</li>
+<li>多个角位移连接</li>
+<li>矩阵的逆</li>
+</ol></li>
+<li>缺点
+<ol type="1">
+<li>占用更多内存</li>
+<li>使用难度</li>
+<li>可能多余数据的累赘</li>
+</ol></li>
+</ol></li>
+</ol>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">lyg</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://one2world.github.io/2020/09/23/3d-shu-xue/4.bian-huan/">https://one2world.github.io/2020/09/23/3d-shu-xue/4.bian-huan/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">lyg</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/%E5%BC%95%E6%93%8E/">
+                                    <span class="chip bg-color">引擎</span>
+                                </a>
+                            
+                                <a href="/tags/3d%E6%95%B0%E5%AD%A6/">
+                                    <span class="chip bg-color">3d数学</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/null" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/null" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+        <div class="disqus-card card" data-aos="fade-up">
+    <div id="disqus_thread" class="card-content">
+        <noscript>Please enable JavaScript to view the
+            <a target="_blank" rel="noopener" href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+    </div>
+</div>
+
+<script type="text/javascript">
+    disqus_config = function () {
+        this.page.url = 'https://one2world.github.io/2020/09/23/3d-shu-xue/4.bian-huan/';
+        this.page.identifier = '/2020/09/23/3d-shu-xue/4.bian-huan/';
+        this.page.title = '4.变换';
+    };
+    let disqus_shortname = '';
+
+    (function () { // DON'T EDIT BELOW THIS LINE
+        let d = document, s = d.createElement('script');
+        // 如：s.src = 'https://blinkfox.disqus.com/embed.js';
+        s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2020/09/23/3d-shu-xue/3.ju-zhen/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="3.矩阵">
+                        
+                        <span class="card-title">3.矩阵</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-09-23
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/3d%E6%95%B0%E5%AD%A6/" class="post-category">
+                                    3d数学
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E5%BC%95%E6%93%8E/">
+                        <span class="chip bg-color">引擎</span>
+                    </a>
+                    
+                    <a href="/tags/3d%E6%95%B0%E5%AD%A6/">
+                        <span class="chip bg-color">3d数学</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2020/09/23/3d-shu-xue/5.ou-la-jiao/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="5.欧拉角和四元数">
+                        
+                        <span class="card-title">5.欧拉角和四元数</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-09-23
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/3d%E6%95%B0%E5%AD%A6/" class="post-category">
+                                    3d数学
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E5%BC%95%E6%93%8E/">
+                        <span class="chip bg-color">引擎</span>
+                    </a>
+                    
+                    <a href="/tags/3d%E6%95%B0%E5%AD%A6/">
+                        <span class="chip bg-color">3d数学</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
+    });
+</script>
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="503838841"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2019-2022</span>
+            
+            <span id="year">2019</span>
+            <a href="/about" target="_blank">Yonggang Long</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/one2world" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:longyonggang2@gmail.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=873415756" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 873415756" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+    <a href="https://www.zhihu.com/people/cheng-xu-jie-kang-ba-zi" class="tooltipped" target="_blank" data-tooltip="关注我的知乎: https://www.zhihu.com/people/cheng-xu-jie-kang-ba-zi" data-position="top" data-delay="50">
+        <i class="fab fa-zhihu1">知</i>
+    </a>
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+	
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>

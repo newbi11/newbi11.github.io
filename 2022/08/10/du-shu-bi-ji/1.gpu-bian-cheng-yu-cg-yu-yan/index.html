@@ -1,0 +1,1581 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="Game, Unity, Graphics, Tools, Scripts, C#, Python, Lua, C/C++">
+    <meta name="description" content="游戏编程的一些文章">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>游戏编程</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.0.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">游戏编程</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">游戏编程</div>
+        <div class="logo-desc">
+            
+            游戏编程的一些文章
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title"></h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2022-08-10
+                </div>
+                
+
+                
+
+                
+
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h2 id="gpu编程与cg语言"># GPU编程与CG语言</h2>
+<p>title: 1.GPU编程与CG语言 date: 2020-09-25 19:20:05 author: lyg cover:
+true mathjax: true categories: 图形 tags: - 图形 - Graphics ---</p>
+<h2 id="绪论">绪论</h2>
+<h3 id="gpu-vs-cpu">GPU Vs CPU</h3>
+<p><img src="imgs/CPU_GPU"></p>
+<ul>
+<li>GPU 并行结构。速度快于
+CPU。但是，数据之间没有依赖，所以需要极强的依赖性算法 代替
+数据依赖。</li>
+<li>CPU 控制器更多。控制流方面 GPU 弱于CPU</li>
+</ul>
+<h2 id="gpu-图形绘制管线">GPU 图形绘制管线</h2>
+<h3 id="解释1">解释1</h3>
+<p>三个主要阶段： 应用程序阶段、几何阶段、光栅化阶段。</p>
+<ul>
+<li><p>应用程序阶段。 使用高级语言进行开发，主要和内存、CPU打交道。例如
+碰撞检测，场景图建立、空间八叉树更新、<strong>视椎体裁剪</strong>等。在该阶段末端，几何体数据（顶点坐标、法向量、纹理坐标、纹理等）通过<code>数据总线</code>传输给图形硬件。</p></li>
+<li><p>几何阶段。
+主要负责顶点坐标变换、光照、裁剪、投影以及屏幕映射，该阶段基于 GPU
+进行运算，在该阶段末端得到了经过变换和投影之后的顶点坐标、颜色、以及纹理坐标。</p></li>
+<li><p>光栅化阶段。
+基于几何极端的输出数据，为像素（Pixel）正确配色，以便于绘制完整图像，该阶段进行的都是单像素的操作，每个像素的信息树村在颜色缓冲器（color
+buffer 或者 framebuffer）中。</p></li>
+</ul>
+<p>拓展： *
+数据总线：可以共享的通道，用于多个设备之间传输数据；端口是两个设备之间传输的通道；带宽用来描述端口或总线上的吞吐量，可以用每秒字节数（b/s）来度量。数据总线和端口将不同的功能模块<code>粘粘</code>在一起。由于端口和数据总线均具有传输能力，因此通常也将端口认为是数据总线。</p>
+<ul>
+<li><p>光照计算属于结合极端，因为光照计算涉及视点、光源和物体的世界坐标，所以通常放在<strong>世界坐标系</strong>中进行计算。</p></li>
+<li><p>雾化以及涉及物体透明度的计算属于光栅化阶段,
+因为两种计算都需要深度值信息（Z
+值），而深度值是在几何极端计算并传递给光栅换阶段,
+<strong>提前深度则可以提前得知?</strong>。</p></li>
+</ul>
+<h4 id="几何阶段">几何阶段</h4>
+<h5 id="坐标系">坐标系</h5>
+<p><img src="imgs/坐标系.png"> <img src="imgs/坐标系0.png"></p>
+<p>根据顶点坐标变换的先后顺序，主要有几个坐标空间，或者说坐标类型：
+模型坐标空间(Object space)、 世界坐标空间(World space)、
+观察坐标空间(Eye space/ View space)、 屏幕坐标空间/裁剪坐标空间(Clip And
+Project space)。</p>
+<p><img src="imgs/渲染管线.png"></p>
+<p>模型空间（Object space）,需要明白的两个重要的含义： * object space
+coordinate 是模型空间的顶点值，模型文件导出的数据是 object space
+coordinate。 * object space coordinate
+与其他物体没有参照关系，因此不同模型置于同一个世界坐标系才相互位置有关联。</p>
+<ul>
+<li>模型空间转换到世界坐标空间<br>
+模型空间转换到世界坐标空间，通过 <code>Model Matrix</code> 完成 ？</li>
+</ul>
+<p>光照计算通常在世界坐标系中完成， 也可以在观察空间中完成，
+因为在同一观察空间中物体之间的相对关系是不变的。</p>
+<p>顶点法向量在模型文件中属于 模型坐标，在GPU 顶点程序中必须将法向量
+转换到
+世界坐标才能用。<strong>与顶点转换到世界坐标不同的，法向量的转换矩阵是<code>Model matrix 的转置矩阵的逆矩阵</code></strong>
+<a href="">潘李亮的 3D 变换中法向量变换矩阵的推导一文</a></p>
+<ul>
+<li>世界坐标空间转换到观察空间 所谓的 eye space/ view space,
+即以camera(视点或者相机)为原点， 由实现方向、视角和远近平面，
+共同组成的一个梯形的三维空间， 称之为视锥（viewing frustum）。
+金平面是梯形较小的矩形面，作为投影平面，在这个梯形体重的所有顶点数据是可见的，而超出这个梯形体之外的场景数据，会被视点去除（frustum
+Culling, 也称之为视椎裁剪）。所用的算法称之为裁剪算法。</li>
+</ul>
+<p><img src="imgs/视椎体.png"></p>
+<ul>
+<li>观察空间转换到裁剪空间(project and clip space)</li>
+</ul>
+<p>不少人觉得是“先裁减再投影”，不过事实并非如此。因为在 不规则的体（
+viewing frustum）中进行裁剪并非易事，所以经过图形学前辈们的
+精心分析，裁剪被安排到一个单位立方体中进行，该立方体的对角顶点分别是
+(-1,-1,-1)和(1,1,1)，通常称这个单位立方体为规范立方体（ Canonical view
+volume, CVV）。 CVV 的近平面（梯形体较小的矩形面）的 X、 Y
+坐标对应屏幕像素坐标（左下角是 0、 0）， Z
+坐标则是代表画面像素深度。</p>
+<h4 id="光栅化阶段">光栅化阶段</h4>
+<p>光栅化：决定哪些像素被集合图元覆盖的过程（ Rasterization is the
+process of determining the set of pixels covered by a geometric
+primitive）经过上面诸多坐标 转换之后，现在我们得到了每个点的屏幕坐标值（
+Screen coordinate），也知道我
+们需要绘制的图元（点、线、面）。但此时还存在两个问题：</p>
+<p>问题一：点的屏幕坐标值是浮点数，但像素都是由整数点来表示的，如果确定屏幕坐标值所对应的像素？
+问题二：在屏幕上需要绘制的有点、线、面，如何根据两个已经确定位置的 2
+个像素点绘制一条线段，如果根据已经确定了位置的 3 个像素点绘制一个三角
+形面片？</p>
+<p>问题一，
+“绘制的位置只能接近两指定端点间的实际线段位置，例如，一条线段的位置是（
+10.48， 20.51），转换为像素位置则是（ 10， 21） ”</p>
+<p>问题二涉及到具体的画线算法，以及区域图元填充算法。通常的画线算法有
+DDA 算法、 Bresenham 画线算法；区域图元填充算法有，扫描线多边形填
+充算法、边界填充算法等</p>
+<p>Pixel operation 又称为 Raster Operation（
+RasterOperation），是在更新帧缓存之前，执行最后一系列针对每个片段的操作，其目的是：计算出每个像素的颜色值。</p>
+<p><img src="imgs/Raster.png"></p>
+<p>Shader 编成是基于计算机图形硬件的，这其中就包括 GPU 上的寄存器类型，
+glsl 和 hlsl 的着色虚拟机版本就是基于 GPU 的寄存器和指令集而区分的。</p>
+<p><img src="imgs/GPU储存架构.png"></p>
+<ul>
+<li>深度缓冲(depth buffer/z buffer)</li>
+</ul>
+<p>Z buffer 应该是大家最为熟悉的缓冲区类型，又称为 depth
+buffer，即深度缓冲区，其中存放的是视点到每个像素所对应的空间点的距离衡量，称之为
+Z 值或者深度值。可见物体的 Z 值范围位于【 0，
+1】区间，默认情况下，最接近眼睛的顶点（近裁减面上）其 Z 值为
+0.0，离眼睛最远的顶点（远裁减面上）其 Z值为 1.0。 使用 z buffer
+可以用来判断空间点的遮挡关系，著名的深度缓冲区算法（ depth-buffer
+method，又称 Z 缓冲区算法）就是对投影平面上每个像素所对应的 Z
+值进行比较的。</p>
+<p>Z 值并非真正的笛卡儿空间坐标系中的欧几里德距离（ Euclidean
+distance），而是一种“顶点到视点距离”的相对度量。所谓相对度量，即这个值保留了与其他同类型值的相对大小关系。</p>
+<p><img src="imgs/zbuffer0.png"> <img src="imgs/zbuffer1.png"></p>
+<p>其中 f 表示视点到远裁减面的空间距离， n
+表示视点到近裁减面的空间距离， z 表示视点到顶点的空间距离， N 表示 Z
+值精度。大多数人所忽略的是， z buffer 中存放的 z
+值不一定是线性变化的。在正投影中同一图元相邻像素的 Z
+值是线性关系的，但在透视投影中却不是的。在透视投影中这种关系是非线性的，
+而且非线性的程度随着空间点到视点的距离增加而越发明显。</p>
+<p>FrameBuffer</p>
+<p>Frame buffer，称为帧缓冲器，用于存放显示输出的数据，这个 buffer
+中的数据一般是像素颜色值。 Frame buffer 有时也被认为是 color
+buffer（颜色缓冲器）和 z buffer 的组合（《实时计算机图形学（第二版）》
+12 页）。那么 frame buffer 位于什么地方呢？在 webMediaBrands
+网站上摘录了一段英文说明，即 frame
+buffer通常都在显卡上，<strong>但是有时显卡会集成到主板上，所以这种情况下
+frame buffer被放在内存区域（ general main memory）</strong>。</p>
+<h2 id="光照模型">光照模型</h2>
+<h3 id="漫反射与lambert">漫反射与Lambert</h3>
+<p>粗糙的物体表面向各个方向等强度地反射光，这种等同地向各个方向散射的
+现象称为光的漫反射（diffuse
+reflection）。产生光的漫反射现象的物体表面称为
+理想漫反射体，也称为朗伯（Lambert）反射体。</p>
+<p>漫反射体与环境光交互反射的光强. <span class="math display">\[
+    I_{ambdiff} = k_{d}I_{a}, I_{a} 表示光强，k_{d}
+表示材质对环境光的反射系数，  I_{ambdiff}
+是漫反射体与环境光交互反射的光强
+\]</span></p>
+<p>当方向光照射到朗伯反射体上时，漫反射光的光强与入射光的方向和入射点表面法向夹角的余弦成正比，这称之为
+Lambert 定律，并由此构造出 Lambert 漫反射模型：</p>
+<p><span class="math display">\[
+    I_{ldiff} = k_{d}I_{l}\cos\theta  I_{l}
+是方向光源强度，\theta是入射光方向与顶点法线的夹角，称为入射 (0≤θ≤90°)，
+I_{ldiff}是漫反射体与方向光交互反射的光强。入射角为零时，说
+明光线垂直于物体表面，漫反射光强最大；90°时光线与物体表面平行，物体接收不到任何光线。
+\]</span></p>
+<p>综合考虑环境光和方向光，公式为：</p>
+<p>若N为顶点单位法向量，L表示从顶点指向光源的单位向量（注意，是由顶
+点指向光源，不要弄反了），则cosθ等价于N与L的点积。 <span class="math display">\[
+    I_{diff} = I_{ambdiff} + I_{ldiff} = k_{d}I_{a} +
+k_{d}I_{l}\cos\theta = k_{d}I_{a} + k_{d}I_{l}(N.L),
+\]</span></p>
+<h3 id="镜面反射与phong">镜面反射与Phong</h3>
+<p>Lambert 模型较好地表现了粗糙表面上的光照现象，如石灰粉刷的墙壁、纸
+张等，但在用于诸如金属材质制成的物体时，则会显得呆板，表现不出光泽，主
+要原因是该模型没有考虑这些表面的镜面反射效果。一个光滑物体被光照射时，
+可以在某个方向上看到很强的反射光，这是因为在接近镜面反射角的一个区域
+内，反射了入射光的全部或绝大部分光强，该现象称为镜面反射。 Phong Bui
+Tuong 提出一个计算镜面反射光强的经验模型，称为 phong
+模型，认为镜面反射的光强与<strong>反射光线和视线的夹角</strong>相关，其数学表达如公式
+(9-5)所示：</p>
+<p><span class="math display">\[
+    I_{spec} = K_{s} + I_{l}(V.R)^{n_{s}},  K_{s}为材质的镜面反射系数，
+n_{s}是高光指数，V 表示从顶点到观察点的方向，R代表反射光方向
+\]</span></p>
+<p>高光指数反映了物体表面的光泽程度。 s n 越大，反射光越集中，当偏离反射
+方向时，光线衰减的越厉害，只有当视线方向与反射光线方向非常接近时才能看
+到镜面反射的高光现象，此时，镜面反射光将会在反射方向附近形成亮且小的光
+斑； s n
+越小，表示物体越粗糙，反射光分散，观察到的光斑区域小，强度弱。</p>
+<p>反射光的方向R可以通过入射光方向L（从顶点指向光源）和物体法向量N
+求出： <span class="math display">\[
+    R + L = (2N.L).N, 所以 R =  (2N.L).N - L
+\]</span></p>
+<h3 id="blinn-phong">Blinn-Phong</h3>
+<p>Blinn-Phong 光照模型，又称为 Blinn-phong 反射模型（Blinn–Phong
+reflection model）或者 phong 修正模型（modified Phong reflection
+model）,和传统 phong 光照模型相比， Blinn-phong 光照模型混合了 Lambert
+的漫射部分和标准的高光，渲染效果有时 比 Phong
+高光更柔和、更平滑，此外它在速度上相当快，因此成为许多CG软
+件中的默认光照渲染方法。</p>
+<p>phong 光照模型中，必须计算VR• 的值，其中R为反射光线方向单位向量，
+V为视线方向单位向量，但是在 Blinn-phong 光照模型中，用NH• 的值取代了 VR•
+。Blinn-phong 光照模型公式为：</p>
+<p><span class="math display">\[
+    I_{spec} = K_{s} + I_{l}(N.H)^{n_{s}},
+其中N是入射点的单位法向量，H是“光入射方向L和视点方向V的中间
+向量”，通常也称之为半角向量。
+\]</span></p>
+<p>注意：半角向量被广泛用于各类光照模型，原
+因不但在于半角向量蕴含的信息价值，也在于计算半角向量是一件简单、耗时不
+多的工作</p>
+<p><span class="math display">\[
+    H = \frac{L + V}{L.V},
+\]</span></p>
+<h3 id="全局光照模型与-rendering-equation">全局光照模型与 Rendering
+Equation</h3>
+<p>Kajia 在 1986 年提出 rendering equation：</p>
+<p><span class="math display">\[
+    L_{0}(x, w_{0}) = L_{e}(x, w_{0})  + \int_{}^{omega}f_{r}(x, w_{i},
+w_{0})L_{i}(x, w_{i})(n.w_{i})dw_{i}, 其中x表示入射点；
+    L_{0}(x, w_{0}) 即从物体表面x点，沿方向 w_{0} 反射的光强；
+    L_{e}(x, w_{0})  表示从物体表面x以方向 w_{0}
+发射出去光强，该值仅对自发光体有效；
+    f_{r}(x, w_{i}, w_{0}) 为，入射光线方向为 w_{i}照射到点x上，然后从
+w_{0} 方向反射出去的 BRDF 值。是一种函数类型。
+    L_{i}(x, w_{i}) 为入射方向为 w_{i}, 照射到 x 上的 入射光强；
+    n 表示 x 出的法向量。
+    然后对入射方向进行积分(对不同方向入射进行计算，在相加)，
+计算的结果就是从观察方向上看到的辐射绿。
+    为入射方向为 i w 方向反射出去的 w
+，照射到点x上入射光强；n表示点x处的法
+向量。然后对入射方向进行积分（因为光线入射的方向是四面八方的，积分的意
+义是对每个方向进行一遍计算后进行相加），计算的结果就是“从观察方向上看
+到的辐射率”。
+\]</span></p>
+<h3 id="cook-torrance">Cook-Torrance</h3>
+<p>Cook-Torrance 光照模型将物体粗糙表面（rough surface）看作由很多微小平
+面（微平面）组成，每一个微平面都被看作一个理想的镜面反射体，物体表面的
+粗糙度由微平面斜率的变化来衡量。一个粗糙表面由一系列斜率变化很大的微平
+面组成，而在相对平滑的表面上微平面斜率变化较小。</p>
+<p>Cook-Torrance
+模型将光分为两个方面考虑：漫反射光强和镜面反射光强。</p>
+<p><span class="math display">\[
+I_{c-t} = I_{diff} + I_{spec} = I_{diff} + k_{s}I_{l}R_{s}, 其中
+I_{diff} 是漫反射光强， 该部分你的计算方法和前面的所讲的相同，
+k_{s}I_{l}R_{s} 是镜面反射光强的计算方法。
+\]</span></p>
+<p>从公式上可以看出: cook_Torrance 模型与phong、blinn-phong
+三中高光照模型本质的区别在于<strong>使用不同的数学表达式计算<span class="math display">\[R_{s}\]</span></strong></p>
+<p><span class="math display">\[
+R_{s} = \frac{F*D*G}{(N.V)*(N.L)}
+\]</span></p>
+<p>, 其中F 是Fresnel 反射系数， 表示反射光想上的光强占原始光前的比率； D
+表示位平面分布函数， 返回的是给定方向上的位平面的分数值；
+G是集合衰减系数， 衡量位平面自身的遮蔽光强的影响。 N、V、L
+分别表示法向量、视线方向（从顶点到视点） 和入射方向（从顶点向外）。</p>
+<p>schlich 给出了 Fresnel 反射系数的一个近似，精度在1% 范围内的公式：
+<span class="math display">\[
+    F = f_{0} + (1-f_{0})(1- V.H)^5,  f_{0}
+为入社角度近似0(入社方向靠近法向量)时的 Fresnel 反射系数， V
+时指向视点的向量， H为半角向量。
+\]</span></p>
+<p>位平面分布函数： 根据给定的半角向量 H，
+微平面分布函数返回微平面的分数值。最常使用的微平面分布函数时 Backmann
+分布函数：</p>
+<p><span class="math display">\[
+    D = \frac{1}{m^2\cos^2\alpha}e^{-\frac{\tan^2\alpha}{m^2}}
+\]</span></p>
+<p>m 值用于度量表面的粗糙程度， 较大的m 值对应粗糙平面， 较小的m
+值对应光滑平面，a 时顶点法向量 N 和半角向量 H 的夹角。 其中</p>
+<p><span class="math display">\[
+    -\frac{\tan^2\alpha}{m^2} =
+-\frac{\frac{1-\cos^2\alpha}{\cos^2\alpha}}{m^2} = \frac{\cos^2\alpha
+-1}{m^2*\cos^2\alpha} = \frac{(N.H)^2 - 1}{m^2*(N*H)^2}
+\]</span></p>
+<p>所以Backmann 微平面分布函数的最终函数表达为公式：</p>
+<p><span class="math display">\[
+    D = \frac{1}{m^2\cos^2\alpha}e^{\frac{(N.H)^2 -1}{m^2*(N.H)^2}} =
+\frac{1}{m^2(N.H)^4}e^{\frac{(N.H)^2 -1}{m^2*(N.H)^2}}
+\]</span></p>
+<p>微平面上反射的光可能出现三种情况：入射光未被遮挡，此时到达观察者
+的光强为 1；入射光部分被遮挡；反射光部分被遮挡。几何衰减系数被定义为：
+到达观察者的光的最小强度。所以</p>
+<p><span class="math display">\[
+    G = min(1, G_{1}, G_{2}) \\
+    G_{1} = \frac{2(N.H)(N.L)}{V.H} \\
+    G_{2} = \frac{2(N.H)(N.V)}{V.H} \\
+\]</span></p>
+<p>所以最终的 Cook-Torrance 光照模型的 specular term
+的最终数学表达为：</p>
+<p><span class="math display">\[
+    I_{c-t} = I_{diff} + I_{spec} = k_{d}I_{l}(N.L) + k_{s}I_{l}R_{s} =
+k_{d}I_{l}(N.L) + k_{s}I_{l}\frac{(f_{0} + (1-
+f_{0})(1-V.H)^5)\frac{1}{m^2\cos^4\alpha}e^{\frac{(N.H)^2 -
+1}{m^2*(N.H)^2}}min(1, \frac{2(N.H)(N.L)}{V.H},
+\frac{2(N.H)(N.V)}{V.H})}{V.N}
+\]</span></p>
+<p>Cook-Torrance 提出之前，微平面分布函数使用的是高斯
+分布（即正态分布）函数。</p>
+<h3 id="brdf">BRDF</h3>
+<p>双向反射分布函数(Bindirectional Reflectance Distribution Function).
+该函数面熟了入射光纤在非透明物体表面如何进行反射。
+BRDF的结果是一个没有单位的数值，表示在给定入射条件下，某个出射方
+向上反射光的相对能量，也可以理解为“入射光以特定方向离开的概率”</p>
+<p>BRDF值表示：光线以 Wi 方向入射 ，然后以 W0 方向出射的概率，或者光强。
+依据光学原理， BRDF 的计算公式为：</p>
+<p><span class="math display">\[
+    f_{r}(w_{i}, w_{0}) = \frac{dL_{r}(w_{0})}{dE_{i}(w_{i})} =
+\frac{dL_{r}(w_{0})}{L_{i}(w_{i})\cos\theta_{i}dw_{i}}, 其中
+L_{r}(w_{0}) 表示从 w_{0}  方向发射的光线的辐射亮度，E_{i}(w_{i}) 表示从
+w_{i} 方向入射的光照的辐射照度。
+\]</span></p>
+<p>辐射亮度：
+没单位立体角在垂直于给定方向的平面上的单位正投影面积上的功率。
+辐射照度则是整个入射表面的功率，
+等于投射在包括该点的一个面元的辐射通量<span class="math display">\[
+d\varphi\]</span> 除以该面元的面积 <span class="math display">\[
+dA\]</span>, 从物理光学上我们可以将 公式理解为：BRDF
+函数计算的是“特定反射方向的光强与入射光强的比例”。</p>
+<p>各向异性(anisotropy)与均向性相反，是指在不同方向具有不同行为的性质，
+也就是其行为与方向有关。如在物理学上，沿着材料做不同方向的量测，若会出
+现不同行为，通常称该材料具有某种“各向异性”，这样的材料表面称为各向异性
+表面（anisotropic surface）；</p>
+<p>由于材质有组织的细微凹凸结构的不同，各向异性也分为基本的三种类型: 1.
+线性各向异性； 2. 径向各向异性； 3.
+圆柱形各向异性，实际上线性各向异性，单被映像为圆柱形。</p>
+<h3 id="bank-brdf-经验模型">Bank BRDF 经验模型</h3>
+<p>Bank BRDF 属于经验模型，由于其计算简单，且效果良好，所以该模型在
+各向异性光照效果的模拟方面非常有用。Bank BRDF
+的镜面反射部分可以表达为公式的形式：</p>
+<p><span class="math display">\[
+    f= k_{s}(\sqrt{1 - (L.T)^2} \sqrt{1 - (V.T)^2} - (L.T)(V.T))^{n_{s}}
+\]</span></p>
+<p><span class="math display">\[ k_{s}、 n_{s}\]</span>
+分别表示镜面反射系数和高光系数； L表示入射光纤的方向、 V
+表示视线观察方向、T
+表示该店的切向量。尤其要注意切向量的计算方法，因为一个三
+维空间点可能存在无数个切向量，通常我采用“顶点的法向量和视线方向做叉积，
+其结果作为 T。</p>
+<h2 id="透明光照模型与环境贴图">透明光照模型与环境贴图</h2>
+<p>材质和光的交互除了反射现象，对于透明物体还存在透射现象。模拟光的透射现象通常是一个比较头痛的问题，因为需要至少计算光的两次透射方向，首先计算光从介质一进入介质二的透射方向，然后计算光从介质二进入介质一的透射方象。此外，光在透明物体内穿越的距离以及被穿越的材质，直接关系到光的衰减程度；加上，还有很复杂的透明材质的次表面散射现象，即光线渗透到透明材质中，在内部发生散射，最后射出物体并进入视野中产生的现象。总而言之，不
+论在CPU上还是在GPU上，想要精确完善的模拟光透现象是一件相当复杂的事情。</p>
+<h3 id="snell-与-fresbel">Snell 与 Fresbel</h3>
+<p>折射率<span class="math display">\[ n
+\]</span>,等于光在真空中的速度<span class="math display">\[ c
+\]</span>与在透明介质中的速度 <span class="math display">\[v\]</span>
+之比。 <span class="math display">\[
+n = \frac{c}{v}
+\]</span></p>
+<p>常见折射率:</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">材质</th>
+<th style="text-align: left;">折射率</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">真空/空气</td>
+<td style="text-align: left;">1.0/1.0003</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">水</td>
+<td style="text-align: left;">1.333</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">玻璃</td>
+<td style="text-align: left;">1.5-1.7</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">钻石</td>
+<td style="text-align: left;">2.417</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">冰</td>
+<td style="text-align: left;">1.309</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Snell定律
+Snell定律描述光纤从一个介质传播到另一个介质时，入射角、折射角和介质折射率的关系(等式方程)。</li>
+</ul>
+<p><span class="math display">\[
+    \sin\theta_{i}*n_{i} = \sin\theta_{t}*n_{t}, 入射角 \theta_{i}, i
+对t 的折射率为 n_{i}， 折射率角度为\theta_{t}, t
+    对 i的折射率为n_{i}。
+\]</span></p>
+<ul>
+<li>色散</li>
+</ul>
+<p>正常色散的经验公式，柯西公式。</p>
+<ul>
+<li>Fresbel定律</li>
+</ul>
+<p>光线照射到透明物体上时，一部分发生反射，一部分进入物体内部并在介质
+交界处发生折射，被反射和折射的光通量存在一定的比率关系，这个比率关系可
+以通过 Fresnel 定律进行计算。</p>
+<p>一个完整的 fresnel 公式依赖于折射率、消光率和入射角度等因素，该公式
+的推导本质上是属于物理光学的部分。 Fresnel 系数的简易推导方式，近似度在
+1%。</p>
+<p><span class="math display">\[
+    F = f_{0} + (1 - f_{0})(1 - V.H)^5
+\]</span> <span class="math display">\[f_{0} \]</span>为入射角度接近
+0（入射方向靠近法向量）时的 Fresnel 反射系数，V是
+指向视点的观察方向，H为半角向量。观察公式，可以得出一个结论：
+随着入射角趋近 90，反射系数趋近
+1，即擦地入射时，所有入射光都被反射。</p>
+<p>fresnel 反射系数计算公式:</p>
+<p><span class="math display">\[
+    F \approx  \frac{(n_{i} - n_{t})^2}{(n_{i} + n_{t})^2} +
+\frac{4n_{1}n_{2}}{(n_{i} + n_{t})^2} *(1 - V.H)^5
+\]</span></p>
+<p>程序中为了提高性能，通常使用入射角接近 0 时的fresnel系数。
+精度不高，但是计算速度快，便于硬件实现：</p>
+<p><span class="math display">\[
+    F \approx  (1 - V.H)^4
+\]</span></p>
+<h3 id="简单透明光照模型">简单透明光照模型</h3>
+<p>简单透明光照模型不考虑透明物体对光的第二次折射、次表面散射，以及光
+在穿越透明物体时的强度衰减，只是简单的使用颜色调和的方法，即我们最终所
+看到的颜色，是物体表面的颜色和背景颜色的叠加。</p>
+<h2 id="投影纹理映射">投影纹理映射</h2>
+<p>投影纹理映射不需要在应用程序中指定顶点纹理坐标，
+实际上，投影纹理映射中使用的纹理坐标是在顶点着色程序中通过视点矩阵和投影矩阵计算得到的，通常也被称作投影纹理坐标(coordinates
+in projective space)。</p>
+<p>齐次纹理坐标通常表示为（s,t,r,q）,以区别于物体位置齐次坐标(x, y, z,
+w)。一维纹理常用 s 坐标表示，二维纹理常用(s, t)坐标表示，目前忽略 r
+坐标， q 坐标的作用与齐次坐标点中的 w 坐标非常类似。值一般为1。</p>
+<p>和顶点着色流程基本一样，唯一的区别在于求取
+顶点投影坐标后的归一化不一样：计算投影纹理坐标需要将投影顶点坐标归一化
+到【0，1】空间中，实现这一步，可以在需要左乘矩阵normalMatrix, 也可以在
+着色程序中对顶点投影坐标的每个分量先乘以1/2然后再加上1/2。</p>
+<p>tex2DProj函数与tex2D函数的区别就在于：前者会对齐次纹理坐标除以最后
+一个分量q，然后再进行纹理检索！</p>
+<h2 id="shadow-map">Shadow Map</h2>
+<p>Shadow Map 是一种基于深度图（depth
+map）的阴影生成方法，该方法的主要思想是：在第一遍渲染场景时，将场景的深度信息存放在纹理图片上，这个纹理图片称为深度图；然后在第二次渲染场景时，将深度图中的信息<span class="math display">\[l enth_{1} \]</span>取出，和当前顶点与光源的距离
+<span class="math display">\[lenth_{2} \]</span>做比较，如果 <span class="math display">\[lenth_{1} \]</span> 小于 <span class="math display">\[lenth_{2} \]</span>
+，则说明当前顶点被遮挡处于阴影区，然后在片段着色程序中，将该顶点设置为阴影颜色。</p>
+<h3 id="depth-map">depth map</h3>
+<p>深度图是一张 2D 图片，每个像素都记录了从光源到遮挡物（遮挡物就是阴
+影生成物体）的距离，并且这些像素对应的顶点对于光源而言是“可见的”。</p>
+<h2 id="光线投射算法">光线投射算法</h2>
+<h2 id="other">Other</h2>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">Yonggang Long</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://one2world.github.io/2022/08/10/du-shu-bi-ji/1.gpu-bian-cheng-yu-cg-yu-yan/">https://one2world.github.io/2022/08/10/du-shu-bi-ji/1.gpu-bian-cheng-yu-cg-yu-yan/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">Yonggang Long</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/null" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/null" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+        <div class="disqus-card card" data-aos="fade-up">
+    <div id="disqus_thread" class="card-content">
+        <noscript>Please enable JavaScript to view the
+            <a target="_blank" rel="noopener" href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+    </div>
+</div>
+
+<script type="text/javascript">
+    disqus_config = function () {
+        this.page.url = 'https://one2world.github.io/2022/08/10/du-shu-bi-ji/1.gpu-bian-cheng-yu-cg-yu-yan/';
+        this.page.identifier = '/2022/08/10/du-shu-bi-ji/1.gpu-bian-cheng-yu-cg-yu-yan/';
+        this.page.title = '';
+    };
+    let disqus_shortname = '';
+
+    (function () { // DON'T EDIT BELOW THIS LINE
+        let d = document, s = d.createElement('script');
+        // 如：s.src = 'https://blinkfox.disqus.com/embed.js';
+        s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2022/08/10/du-shu-bi-ji/2.tu-jie-http/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
+                        
+                        <span class="card-title"></span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-08-10
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            Yonggang Long
+                            
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2022/08/10/windows/1.windows/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
+                        
+                        <span class="card-title"></span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-08-10
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            Yonggang Long
+                            
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="503838841"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2019-2022</span>
+            
+            <span id="year">2019</span>
+            <a href="/about" target="_blank">Yonggang Long</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/one2world" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:longyonggang2@gmail.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=873415756" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 873415756" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+    <a href="https://www.zhihu.com/people/cheng-xu-jie-kang-ba-zi" class="tooltipped" target="_blank" data-tooltip="关注我的知乎: https://www.zhihu.com/people/cheng-xu-jie-kang-ba-zi" data-position="top" data-delay="50">
+        <i class="fab fa-zhihu1">知</i>
+    </a>
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+	
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>

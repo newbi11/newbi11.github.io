@@ -1,0 +1,1840 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="Game, Unity, Graphics, Tools, Scripts, C#, Python, Lua, C/C++">
+    <meta name="description" content="游戏编程的一些文章">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>游戏编程</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.0.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">游戏编程</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">游戏编程</div>
+        <div class="logo-desc">
+            
+            游戏编程的一些文章
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title"></h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2022-08-10
+                </div>
+                
+
+                
+
+                
+
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h2 id="ugui之eventsystem">uGUI之EventSystem</h2>
+<blockquote>
+<p>UI的事件系统</p>
+</blockquote>
+<ol type="1">
+<li><p>EventSystem</p>
+<blockquote>
+<p>uGUI系统的事件监测派发系统</p>
+<p>在update中监测执行, List<baseinputmodule>
+进行事件收集、监测、分发。</baseinputmodule></p>
+</blockquote>
+<ol type="1">
+<li><p>实现细节</p>
+<blockquote>
+<p>输入、监测+派发、处理</p>
+<p>输入 InputModules, 基类 BaseInputModule，分别实现
+PointerInputModule、StandaloneInputModule、TouchInputModule
+事件的监测在InputModule的Process处理，使用
+Raycaster监测和输入事件数据生成, 并调用统一EventSystem的
+RaycastAll监测和分发。</p>
+</blockquote>
+<ol type="1">
+<li>处理系统</li>
+</ol>
+<div class="sourceCode" id="cb1"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">protected</span> <span class="kw">virtual</span> <span class="dt">void</span> <span class="fu">Update</span><span class="op">()</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>        <span class="op">{</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>           <span class="co">//虽然是列表，还是作为单例使用</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>            <span class="kw">if</span> <span class="op">(</span>current <span class="op">!=</span> <span class="kw">this</span><span class="op">)</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>                <span class="kw">return</span><span class="op">;</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>           <span class="co">//更新 InputModules 列表</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>           <span class="co">//虽然是列表，还是作为单例使用</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>            <span class="fu">TickModules</span><span class="op">();</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>            <span class="dt">bool</span> changedModule <span class="op">=</span> <span class="kw">false</span><span class="op">;</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>            <span class="kw">for</span> <span class="op">(</span><span class="dt">var</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> m_SystemInputModules<span class="op">.</span><span class="fu">Count</span><span class="op">;</span> i<span class="op">++)</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>            <span class="op">{</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>                <span class="dt">var</span> module <span class="op">=</span> m_SystemInputModules<span class="op">[</span>i<span class="op">];</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>                <span class="kw">if</span> <span class="op">(</span>module<span class="op">.</span><span class="fu">IsModuleSupported</span><span class="op">()</span> <span class="op">&amp;&amp;</span> module<span class="op">.</span><span class="fu">ShouldActivateModule</span><span class="op">())</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>                <span class="op">{</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>                    <span class="kw">if</span> <span class="op">(</span>m_CurrentInputModule <span class="op">!=</span> module<span class="op">)</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>                    <span class="op">{</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>                        <span class="fu">ChangeEventModule</span><span class="op">(</span>module<span class="op">);</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>                        changedModule <span class="op">=</span> <span class="kw">true</span><span class="op">;</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>                    <span class="op">}</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>                    <span class="kw">break</span><span class="op">;</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>                <span class="op">}</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>            <span class="op">}</span></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>            <span class="co">// no event module set... set the first valid one...</span></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>            <span class="kw">if</span> <span class="op">(</span>m_CurrentInputModule <span class="op">==</span> <span class="kw">null</span><span class="op">)</span></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>            <span class="op">{</span></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>                <span class="kw">for</span> <span class="op">(</span><span class="dt">var</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> m_SystemInputModules<span class="op">.</span><span class="fu">Count</span><span class="op">;</span> i<span class="op">++)</span></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>                <span class="op">{</span></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>                    <span class="dt">var</span> module <span class="op">=</span> m_SystemInputModules<span class="op">[</span>i<span class="op">];</span></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>                    <span class="kw">if</span> <span class="op">(</span>module<span class="op">.</span><span class="fu">IsModuleSupported</span><span class="op">())</span></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>                    <span class="op">{</span></span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>                        <span class="co">//调用pre 取消激活， model激活</span></span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>                        <span class="fu">ChangeEventModule</span><span class="op">(</span>module<span class="op">);</span></span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>                        changedModule <span class="op">=</span> <span class="kw">true</span><span class="op">;</span></span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>                        <span class="kw">break</span><span class="op">;</span></span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>                    <span class="op">}</span></span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>                <span class="op">}</span></span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>            <span class="op">}</span></span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>           <span class="co">// 切换的需要等一帧，否则立即执行 Process</span></span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>            <span class="kw">if</span> <span class="op">(!</span>changedModule <span class="op">&amp;&amp;</span> m_CurrentInputModule <span class="op">!=</span> <span class="kw">null</span><span class="op">)</span></span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>                m_CurrentInputModule<span class="op">.</span><span class="fu">Process</span><span class="op">();</span></span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>        <span class="op">}</span></span></code></pre></div>
+<ol start="2" type="1">
+<li><p>输入</p>
+<ol type="1">
+<li><p>BaseInputModule，继承自UIBehaviour</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>       <span class="kw">protected</span> <span class="kw">override</span> <span class="dt">void</span> <span class="fu">OnEnable</span><span class="op">()</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>        <span class="op">{</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>            <span class="kw">base</span><span class="op">.</span><span class="fu">OnEnable</span><span class="op">();</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>            m_EventSystem <span class="op">=</span> GetComponent<span class="op">&lt;</span>EventSystem<span class="op">&gt;();</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>            <span class="co">//更新EventSystem的BaseInputModule组件列表</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>            m_EventSystem<span class="op">.</span><span class="fu">UpdateModules</span><span class="op">();</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>        <span class="op">}</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>        <span class="kw">protected</span> <span class="kw">override</span> <span class="dt">void</span> <span class="fu">OnDisable</span><span class="op">()</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>        <span class="op">{</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>            <span class="co">//更新EventSystem的BaseInputModule组件列表</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>            m_EventSystem<span class="op">.</span><span class="fu">UpdateModules</span><span class="op">();</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>            <span class="kw">base</span><span class="op">.</span><span class="fu">OnDisable</span><span class="op">();</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>        <span class="op">}</span></span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a> <span class="co">// 主要的公开功能 ：</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">abstract</span> <span class="dt">void</span> <span class="fu">Process</span><span class="op">();</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">virtual</span> <span class="dt">bool</span> <span class="fu">ShouldActivateModule</span><span class="op">()</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">return</span> enabled <span class="op">&amp;&amp;</span> gameObject<span class="op">.</span><span class="fu">activeInHierarchy</span><span class="op">;</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">virtual</span> <span class="dt">void</span> <span class="fu">DeactivateModule</span><span class="op">()</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="op">{}</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="co">/// </span><span class="kw">&lt;summary&gt;</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="co">/// Called when the module is activated. Override this if you want custom code to execute when you activate your module.</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="co">/// </span><span class="kw">&lt;/summary&gt;</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">virtual</span> <span class="dt">void</span> <span class="fu">ActivateModule</span><span class="op">()</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="op">{}</span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a><span class="co">/// </span><span class="kw">&lt;summary&gt;</span></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a><span class="co">/// Update the internal state of the Module.</span></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a><span class="co">/// </span><span class="kw">&lt;/summary&gt;</span></span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">virtual</span> <span class="dt">void</span> <span class="fu">UpdateModule</span><span class="op">()</span></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a><span class="op">{}</span></span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a><span class="co">/// </span><span class="kw">&lt;summary&gt;</span></span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a><span class="co">/// Check to see if the module is supported. Override this if you have a platform specific module (eg. TouchInputModule that you do not want to activate on standalone.)</span></span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a><span class="co">/// </span><span class="kw">&lt;/summary&gt;</span></span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a><span class="co">/// </span><span class="kw">&lt;returns&gt;</span><span class="co">Is the module supported.</span><span class="kw">&lt;/returns&gt;</span></span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">virtual</span> <span class="dt">bool</span> <span class="fu">IsModuleSupported</span><span class="op">()</span></span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>    <span class="kw">return</span> <span class="kw">true</span><span class="op">;</span></span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div></li>
+<li><p>PointerInputModule 继承自 BaseInputModule</p>
+<blockquote>
+<p>鼠标输入：<code>左键</code>、<code>右键</code>、<code>中间键</code>、<code>模拟触摸键</code></p>
+</blockquote>
+<div class="sourceCode" id="cb4"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">//todo</span></span></code></pre></div></li>
+<li><p>StandaloneInputModule</p>
+<blockquote>
+<p>鼠标键盘</p>
+</blockquote>
+<ol type="1">
+<li><p>ShouldActivateModule实现</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">// 监测是否有输入</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">override</span> <span class="dt">bool</span> <span class="fu">ShouldActivateModule</span><span class="op">()</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    <span class="co">// enabled &amp;&amp; gameObject.activeInHierarchy;</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a> <span class="kw">if</span> <span class="op">(!</span><span class="kw">base</span><span class="op">.</span><span class="fu">ShouldActivateModule</span><span class="op">())</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>     <span class="kw">return</span> <span class="kw">false</span><span class="op">;</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a> <span class="dt">var</span> shouldActivate <span class="op">=</span> m_ForceModuleActive<span class="op">;</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>    shouldActivate <span class="op">|=</span> input<span class="op">.</span><span class="fu">GetButtonDown</span><span class="op">(</span>m_SubmitButton<span class="op">);</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>    shouldActivate <span class="op">|=</span> input<span class="op">.</span><span class="fu">GetButtonDown</span><span class="op">(</span>m_CancelButton<span class="op">);</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>    shouldActivate <span class="op">|=</span> <span class="op">!</span>Mathf<span class="op">.</span><span class="fu">Approximately</span><span class="op">(</span>input<span class="op">.</span><span class="fu">GetAxisRaw</span><span class="op">(</span>m_HorizontalAxis<span class="op">),</span> <span class="fl">0.0f</span><span class="op">);</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>    shouldActivate <span class="op">|=</span> <span class="op">!</span>Mathf<span class="op">.</span><span class="fu">Approximately</span><span class="op">(</span>input<span class="op">.</span><span class="fu">GetAxisRaw</span><span class="op">(</span>m_VerticalAxis<span class="op">),</span> <span class="fl">0.0f</span><span class="op">);</span></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>    shouldActivate <span class="op">|=</span> <span class="op">(</span>m_MousePosition <span class="op">-</span> m_LastMousePosition<span class="op">).</span><span class="fu">sqrMagnitude</span> <span class="op">&gt;</span> <span class="fl">0.0f</span><span class="op">;</span></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>    shouldActivate <span class="op">|=</span> input<span class="op">.</span><span class="fu">GetMouseButtonDown</span><span class="op">(</span><span class="dv">0</span><span class="op">);</span></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>    <span class="kw">if</span> <span class="op">(</span>input<span class="op">.</span><span class="fu">touchCount</span> <span class="op">&gt;</span> <span class="dv">0</span><span class="op">)</span></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>     shouldActivate <span class="op">=</span> <span class="kw">true</span><span class="op">;</span></span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>    <span class="kw">return</span> shouldActivate<span class="op">;</span></span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div></li>
+<li><p>DeactivateModule 非激活状态清除当前储存的输入</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">override</span> <span class="dt">void</span> <span class="fu">DeactivateModule</span><span class="op">()</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a> <span class="kw">base</span><span class="op">.</span><span class="fu">DeactivateModule</span><span class="op">();</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ClearSelection</span><span class="op">();</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a> <span class="kw">protected</span> <span class="dt">void</span> <span class="fu">ClearSelection</span><span class="op">()</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>        <span class="op">{</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>            <span class="dt">var</span> baseEventData <span class="op">=</span> <span class="fu">GetBaseEventData</span><span class="op">();</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>            <span class="kw">foreach</span> <span class="op">(</span><span class="dt">var</span> pointer <span class="kw">in</span> m_PointerData<span class="op">.</span><span class="fu">Values</span><span class="op">)</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>            <span class="op">{</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>                <span class="co">// clear all selection</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>                <span class="fu">HandlePointerExitAndEnter</span><span class="op">(</span>pointer<span class="op">,</span> <span class="kw">null</span><span class="op">);</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>            <span class="op">}</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>            m_PointerData<span class="op">.</span><span class="fu">Clear</span><span class="op">();</span></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>            eventSystem<span class="op">.</span><span class="fu">SetSelectedGameObject</span><span class="op">(</span><span class="kw">null</span><span class="op">,</span> baseEventData<span class="op">);</span></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>        <span class="op">}</span></span></code></pre></div></li>
+<li><p>ActivateModule</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">//更新位置和选择物体</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">override</span> <span class="dt">void</span> <span class="fu">ActivateModule</span><span class="op">()</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>        <span class="op">{</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>            <span class="kw">if</span> <span class="op">(!</span>eventSystem<span class="op">.</span><span class="fu">isFocused</span> <span class="op">&amp;&amp;</span> <span class="fu">ShouldIgnoreEventsOnNoFocus</span><span class="op">())</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>                <span class="kw">return</span><span class="op">;</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>            <span class="kw">base</span><span class="op">.</span><span class="fu">ActivateModule</span><span class="op">();</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>            m_MousePosition <span class="op">=</span> input<span class="op">.</span><span class="fu">mousePosition</span><span class="op">;</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>            m_LastMousePosition <span class="op">=</span> input<span class="op">.</span><span class="fu">mousePosition</span><span class="op">;</span></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>            <span class="dt">var</span> toSelect <span class="op">=</span> eventSystem<span class="op">.</span><span class="fu">currentSelectedGameObject</span><span class="op">;</span></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>            <span class="kw">if</span> <span class="op">(</span>toSelect <span class="op">==</span> <span class="kw">null</span><span class="op">)</span></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>                toSelect <span class="op">=</span> eventSystem<span class="op">.</span><span class="fu">firstSelectedGameObject</span><span class="op">;</span></span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>            eventSystem<span class="op">.</span><span class="fu">SetSelectedGameObject</span><span class="op">(</span>toSelect<span class="op">,</span> <span class="fu">GetBaseEventData</span><span class="op">());</span></span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>        <span class="op">}</span></span></code></pre></div></li>
+<li><p>UpdateModule</p></li>
+</ol>
+<div class="sourceCode" id="cb9"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="kw">override</span> <span class="dt">void</span> <span class="fu">UpdateModule</span><span class="op">()</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>        <span class="op">{</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>            <span class="kw">if</span> <span class="op">(!</span>eventSystem<span class="op">.</span><span class="fu">isFocused</span> <span class="op">&amp;&amp;</span> <span class="fu">ShouldIgnoreEventsOnNoFocus</span><span class="op">())</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>            <span class="op">{</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>                <span class="co">// 拖拽中</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>                <span class="kw">if</span> <span class="op">(</span>m_InputPointerEvent <span class="op">!=</span> <span class="kw">null</span> <span class="op">&amp;&amp;</span> m_InputPointerEvent<span class="op">.</span><span class="fu">pointerDrag</span> <span class="op">!=</span> <span class="kw">null</span> <span class="op">&amp;&amp;</span> m_InputPointerEvent<span class="op">.</span><span class="fu">dragging</span><span class="op">)</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>                <span class="op">{</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">ReleaseMouse</span><span class="op">(</span>m_InputPointerEvent<span class="op">,</span> m_InputPointerEvent<span class="op">.</span><span class="fu">pointerCurrentRaycast</span><span class="op">.</span><span class="fu">gameObject</span><span class="op">);</span></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>                <span class="op">}</span></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>                m_InputPointerEvent <span class="op">=</span> <span class="kw">null</span><span class="op">;</span></span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>                <span class="kw">return</span><span class="op">;</span></span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>            <span class="op">}</span></span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>            m_LastMousePosition <span class="op">=</span> m_MousePosition<span class="op">;</span></span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a>            m_MousePosition <span class="op">=</span> input<span class="op">.</span><span class="fu">mousePosition</span><span class="op">;</span></span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a>        <span class="op">}</span></span></code></pre></div>
+<ol start="5" type="1">
+<li><p>IsModuleSupported</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>   <span class="kw">public</span> <span class="kw">override</span> <span class="dt">bool</span> <span class="fu">IsModuleSupported</span><span class="op">()</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>        <span class="op">{</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>             <span class="co">//强制激活 or 鼠标设备 or 触摸设备</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>            <span class="kw">return</span> m_ForceModuleActive <span class="op">||</span> input<span class="op">.</span><span class="fu">mousePresent</span> <span class="op">||</span> input<span class="op">.</span><span class="fu">touchSupported</span><span class="op">;</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>        <span class="op">}</span></span></code></pre></div></li>
+<li><p>Process</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co">//Navigation 和鼠标事件</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">override</span> <span class="dt">void</span> <span class="fu">Process</span><span class="op">()</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>        <span class="op">{</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>            <span class="kw">if</span> <span class="op">(!</span>eventSystem<span class="op">.</span><span class="fu">isFocused</span> <span class="op">&amp;&amp;</span> <span class="fu">ShouldIgnoreEventsOnNoFocus</span><span class="op">())</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>                <span class="kw">return</span><span class="op">;</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>            <span class="dt">bool</span> usedEvent <span class="op">=</span> <span class="fu">SendUpdateEventToSelectedObject</span><span class="op">();</span></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>            <span class="co">// case 1004066 - touch / mouse events should be processed before navigation events in case</span></span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>            <span class="co">// they change the current selected gameobject and the submit button is a touch / mouse button.</span></span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>            <span class="co">// touch needs to take precedence because of the mouse emulation layer</span></span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>            <span class="co">//通过BaseRaycaster进行事件监测</span></span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a>         <span class="kw">if</span> <span class="op">(!</span><span class="fu">ProcessTouchEvents</span><span class="op">()</span> <span class="op">&amp;&amp;</span> input<span class="op">.</span><span class="fu">mousePresent</span><span class="op">)</span></span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a>                <span class="co">//ExcuteEvent 回调触发</span></span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a>                <span class="fu">ProcessMouseEvent</span><span class="op">();</span></span>
+<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a>            <span class="kw">if</span> <span class="op">(</span>eventSystem<span class="op">.</span><span class="fu">sendNavigationEvents</span><span class="op">)</span></span>
+<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a>            <span class="op">{</span></span>
+<span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a>                <span class="kw">if</span> <span class="op">(!</span>usedEvent<span class="op">)</span></span>
+<span id="cb11-21"><a href="#cb11-21" aria-hidden="true" tabindex="-1"></a>                    usedEvent <span class="op">|=</span> <span class="fu">SendMoveEventToSelectedObject</span><span class="op">();</span></span>
+<span id="cb11-22"><a href="#cb11-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-23"><a href="#cb11-23" aria-hidden="true" tabindex="-1"></a>                <span class="kw">if</span> <span class="op">(!</span>usedEvent<span class="op">)</span></span>
+<span id="cb11-24"><a href="#cb11-24" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">SendSubmitEventToSelectedObject</span><span class="op">();</span></span>
+<span id="cb11-25"><a href="#cb11-25" aria-hidden="true" tabindex="-1"></a>            <span class="op">}</span></span>
+<span id="cb11-26"><a href="#cb11-26" aria-hidden="true" tabindex="-1"></a>        <span class="op">}</span></span></code></pre></div></li>
+</ol></li>
+<li><p>TouchInputModule</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co">// todo 类似 StandaloneInputModule</span></span></code></pre></div></li>
+<li><p>对组件进行事件回调</p>
+<blockquote>
+<p>通过在EventSystem.ExcuteEvents中进行获取组件的
+<code>IEventSystemHandler</code>接口， 进行分类派发不同事件</p>
+</blockquote>
+<ol type="1">
+<li>IPointerEnterHandler,</li>
+<li>IPointerExitHandler,</li>
+<li>IPointerDownHandler,</li>
+<li>IPointerUpHandler,</li>
+<li>IPointerClickHandler,</li>
+<li>IInitializePotentialDragHandler,</li>
+<li>IBeginDragHandler,</li>
+<li>IDragHandler,</li>
+<li>IEndDragHandler,</li>
+<li>IDropHandler,</li>
+<li>IScrollHandler,</li>
+<li>IUpdateSelectedHandler,</li>
+<li>ISelectHandler,</li>
+<li>IDeselectHandler,</li>
+<li>IMoveHandler,</li>
+<li>ISubmitHandler,</li>
+<li>ICancelHandler</li>
+</ol></li>
+</ol></li>
+<li><p>Raycaster</p>
+<blockquote>
+<p>辅助监测 BaseRaycaster基类</p>
+<p>Physics2DRaycaster、PhysicsRaycaster，GraphicRaycaster,
+主要实现不同的Raycast函数，区别在于 index， sortlayer， sortOrder,
+distance 注册到 RaycasterManager 统一调用</p>
+</blockquote>
+<ol type="1">
+<li><p>BaseRaycaster</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="kw">protected</span> <span class="kw">override</span> <span class="dt">void</span> <span class="fu">OnEnable</span><span class="op">()</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>        <span class="op">{</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>            <span class="kw">base</span><span class="op">.</span><span class="fu">OnEnable</span><span class="op">();</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>            RaycasterManager<span class="op">.</span><span class="fu">AddRaycaster</span><span class="op">(</span><span class="kw">this</span><span class="op">);</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>        <span class="op">}</span></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>        <span class="kw">protected</span> <span class="kw">override</span> <span class="dt">void</span> <span class="fu">OnDisable</span><span class="op">()</span></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>        <span class="op">{</span></span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>            RaycasterManager<span class="op">.</span><span class="fu">RemoveRaycasters</span><span class="op">(</span><span class="kw">this</span><span class="op">);</span></span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>            <span class="kw">base</span><span class="op">.</span><span class="fu">OnDisable</span><span class="op">();</span></span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>        <span class="op">}</span></span></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co">//父节点 Raycaster</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="kw">private</span> BaseRaycaster m_RootRaycaster<span class="op">;</span></span></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co">//主要的监测接口</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">abstract</span> <span class="dt">void</span> <span class="fu">Raycast</span><span class="op">(</span>PointerEventData eventData<span class="op">,</span> List<span class="op">&lt;</span>RaycastResult<span class="op">&gt;</span> resultAppendList<span class="op">);</span></span></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co">//触发射线监测的相机</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">abstract</span> Camera eventCamera <span class="op">{</span> <span class="kw">get</span><span class="op">;</span> <span class="op">}</span></span></code></pre></div></li>
+<li><p>PhysicsRaycaster</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">override</span> <span class="dt">void</span> <span class="fu">Raycast</span><span class="op">(</span>PointerEventData eventData<span class="op">,</span> List<span class="op">&lt;</span>RaycastResult<span class="op">&gt;</span> resultAppendList<span class="op">)</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>        <span class="op">{</span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>            Ray ray <span class="op">=</span> <span class="kw">new</span> <span class="fu">Ray</span><span class="op">();</span></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>            <span class="dt">float</span> distanceToClipPlane <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>            <span class="co">// eventPosition = Display.RelativeMouseAt(eventData.position);</span></span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>            <span class="co">//1. 检查相机和显示器的匹配</span></span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>            <span class="co">//2. 检查坐标在相机的渲染区域内</span></span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>            <span class="co">//3. 满足条件的情况下：</span></span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>            <span class="co">// ray = eventCamera.ScreenPointToRay(eventPosition)</span></span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>            <span class="co">// float projectionDirection = ray.direction.z;</span></span>
+<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a>            <span class="co">// 相对相机距离的倒数， 距离相机越近 值越大</span></span>
+<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a>            <span class="co">// Mathf.Abs((eventCamera.farClipPlane - eventCamera.nearClipPlane) / projectionDirection)</span></span>
+<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a>            <span class="kw">if</span> <span class="op">(!</span><span class="fu">ComputeRayAndDistance</span><span class="op">(</span>eventData<span class="op">,</span> <span class="kw">ref</span> ray<span class="op">,</span> <span class="kw">ref</span> distanceToClipPlane<span class="op">))</span></span>
+<span id="cb17-14"><a href="#cb17-14" aria-hidden="true" tabindex="-1"></a>                <span class="kw">return</span><span class="op">;</span></span>
+<span id="cb17-15"><a href="#cb17-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-16"><a href="#cb17-16" aria-hidden="true" tabindex="-1"></a>            <span class="dt">int</span> hitCount <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb17-17"><a href="#cb17-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-18"><a href="#cb17-18" aria-hidden="true" tabindex="-1"></a>            <span class="co">// 距离 mask进行raycast引擎调用，获取射线碰撞</span></span>
+<span id="cb17-19"><a href="#cb17-19" aria-hidden="true" tabindex="-1"></a>            <span class="kw">if</span> <span class="op">(</span>m_MaxRayIntersections <span class="op">==</span> <span class="dv">0</span><span class="op">)</span></span>
+<span id="cb17-20"><a href="#cb17-20" aria-hidden="true" tabindex="-1"></a>            <span class="op">{</span></span>
+<span id="cb17-21"><a href="#cb17-21" aria-hidden="true" tabindex="-1"></a>                <span class="kw">if</span> <span class="op">(</span>ReflectionMethodsCache<span class="op">.</span><span class="fu">Singleton</span><span class="op">.</span><span class="fu">raycast3DAll</span> <span class="op">==</span> <span class="kw">null</span><span class="op">)</span></span>
+<span id="cb17-22"><a href="#cb17-22" aria-hidden="true" tabindex="-1"></a>                    <span class="kw">return</span><span class="op">;</span></span>
+<span id="cb17-23"><a href="#cb17-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-24"><a href="#cb17-24" aria-hidden="true" tabindex="-1"></a>                m_Hits <span class="op">=</span> ReflectionMethodsCache<span class="op">.</span><span class="fu">Singleton</span><span class="op">.</span><span class="fu">raycast3DAll</span><span class="op">(</span>ray<span class="op">,</span> distanceToClipPlane<span class="op">,</span> finalEventMask<span class="op">);</span></span>
+<span id="cb17-25"><a href="#cb17-25" aria-hidden="true" tabindex="-1"></a>                hitCount <span class="op">=</span> m_Hits<span class="op">.</span><span class="fu">Length</span><span class="op">;</span></span>
+<span id="cb17-26"><a href="#cb17-26" aria-hidden="true" tabindex="-1"></a>            <span class="op">}</span></span>
+<span id="cb17-27"><a href="#cb17-27" aria-hidden="true" tabindex="-1"></a>            <span class="kw">else</span></span>
+<span id="cb17-28"><a href="#cb17-28" aria-hidden="true" tabindex="-1"></a>            <span class="op">{</span></span>
+<span id="cb17-29"><a href="#cb17-29" aria-hidden="true" tabindex="-1"></a>                <span class="kw">if</span> <span class="op">(</span>ReflectionMethodsCache<span class="op">.</span><span class="fu">Singleton</span><span class="op">.</span><span class="fu">getRaycastNonAlloc</span> <span class="op">==</span> <span class="kw">null</span><span class="op">)</span></span>
+<span id="cb17-30"><a href="#cb17-30" aria-hidden="true" tabindex="-1"></a>                    <span class="kw">return</span><span class="op">;</span></span>
+<span id="cb17-31"><a href="#cb17-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-32"><a href="#cb17-32" aria-hidden="true" tabindex="-1"></a>                <span class="kw">if</span> <span class="op">(</span>m_LastMaxRayIntersections <span class="op">!=</span> m_MaxRayIntersections<span class="op">)</span></span>
+<span id="cb17-33"><a href="#cb17-33" aria-hidden="true" tabindex="-1"></a>                <span class="op">{</span></span>
+<span id="cb17-34"><a href="#cb17-34" aria-hidden="true" tabindex="-1"></a>                    m_Hits <span class="op">=</span> <span class="kw">new</span> RaycastHit<span class="op">[</span>m_MaxRayIntersections<span class="op">];</span></span>
+<span id="cb17-35"><a href="#cb17-35" aria-hidden="true" tabindex="-1"></a>                    m_LastMaxRayIntersections <span class="op">=</span> m_MaxRayIntersections<span class="op">;</span></span>
+<span id="cb17-36"><a href="#cb17-36" aria-hidden="true" tabindex="-1"></a>                <span class="op">}</span></span>
+<span id="cb17-37"><a href="#cb17-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-38"><a href="#cb17-38" aria-hidden="true" tabindex="-1"></a>                hitCount <span class="op">=</span> ReflectionMethodsCache<span class="op">.</span><span class="fu">Singleton</span><span class="op">.</span><span class="fu">getRaycastNonAlloc</span><span class="op">(</span>ray<span class="op">,</span> m_Hits<span class="op">,</span> distanceToClipPlane<span class="op">,</span> finalEventMask<span class="op">);</span></span>
+<span id="cb17-39"><a href="#cb17-39" aria-hidden="true" tabindex="-1"></a>            <span class="op">}</span></span>
+<span id="cb17-40"><a href="#cb17-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-41"><a href="#cb17-41" aria-hidden="true" tabindex="-1"></a>            <span class="co">//距离排序</span></span>
+<span id="cb17-42"><a href="#cb17-42" aria-hidden="true" tabindex="-1"></a>            <span class="kw">if</span> <span class="op">(</span>hitCount <span class="op">&gt;</span> <span class="dv">1</span><span class="op">)</span></span>
+<span id="cb17-43"><a href="#cb17-43" aria-hidden="true" tabindex="-1"></a>                System<span class="op">.</span><span class="fu">Array</span><span class="op">.</span><span class="fu">Sort</span><span class="op">(</span>m_Hits<span class="op">,</span> <span class="op">(</span>r1<span class="op">,</span> r2<span class="op">)</span> <span class="op">=&gt;</span> r1<span class="op">.</span><span class="fu">distance</span><span class="op">.</span><span class="fu">CompareTo</span><span class="op">(</span>r2<span class="op">.</span><span class="fu">distance</span><span class="op">));</span></span>
+<span id="cb17-44"><a href="#cb17-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-45"><a href="#cb17-45" aria-hidden="true" tabindex="-1"></a>            <span class="co">// RaycastHit 转换成RaycastResult 添加到列表</span></span>
+<span id="cb17-46"><a href="#cb17-46" aria-hidden="true" tabindex="-1"></a>            <span class="kw">if</span> <span class="op">(</span>hitCount <span class="op">!=</span> <span class="dv">0</span><span class="op">)</span></span>
+<span id="cb17-47"><a href="#cb17-47" aria-hidden="true" tabindex="-1"></a>            <span class="op">{</span></span>
+<span id="cb17-48"><a href="#cb17-48" aria-hidden="true" tabindex="-1"></a>                <span class="kw">for</span> <span class="op">(</span><span class="dt">int</span> b <span class="op">=</span> <span class="dv">0</span><span class="op">,</span> bmax <span class="op">=</span> hitCount<span class="op">;</span> b <span class="op">&lt;</span> bmax<span class="op">;</span> <span class="op">++</span>b<span class="op">)</span></span>
+<span id="cb17-49"><a href="#cb17-49" aria-hidden="true" tabindex="-1"></a>                <span class="op">{</span></span>
+<span id="cb17-50"><a href="#cb17-50" aria-hidden="true" tabindex="-1"></a>                    <span class="dt">var</span> result <span class="op">=</span> <span class="kw">new</span> RaycastResult</span>
+<span id="cb17-51"><a href="#cb17-51" aria-hidden="true" tabindex="-1"></a>                    <span class="op">{</span></span>
+<span id="cb17-52"><a href="#cb17-52" aria-hidden="true" tabindex="-1"></a>                        gameObject <span class="op">=</span> m_Hits<span class="op">[</span>b<span class="op">].</span><span class="fu">collider</span><span class="op">.</span><span class="fu">gameObject</span><span class="op">,</span></span>
+<span id="cb17-53"><a href="#cb17-53" aria-hidden="true" tabindex="-1"></a>                        module <span class="op">=</span> <span class="kw">this</span><span class="op">,</span></span>
+<span id="cb17-54"><a href="#cb17-54" aria-hidden="true" tabindex="-1"></a>                        distance <span class="op">=</span> m_Hits<span class="op">[</span>b<span class="op">].</span><span class="fu">distance</span><span class="op">,</span></span>
+<span id="cb17-55"><a href="#cb17-55" aria-hidden="true" tabindex="-1"></a>                        worldPosition <span class="op">=</span> m_Hits<span class="op">[</span>b<span class="op">].</span><span class="fu">point</span><span class="op">,</span></span>
+<span id="cb17-56"><a href="#cb17-56" aria-hidden="true" tabindex="-1"></a>                        worldNormal <span class="op">=</span> m_Hits<span class="op">[</span>b<span class="op">].</span><span class="fu">normal</span><span class="op">,</span></span>
+<span id="cb17-57"><a href="#cb17-57" aria-hidden="true" tabindex="-1"></a>                        screenPosition <span class="op">=</span> eventData<span class="op">.</span><span class="fu">position</span><span class="op">,</span></span>
+<span id="cb17-58"><a href="#cb17-58" aria-hidden="true" tabindex="-1"></a>                        index <span class="op">=</span> resultAppendList<span class="op">.</span><span class="fu">Count</span><span class="op">,</span></span>
+<span id="cb17-59"><a href="#cb17-59" aria-hidden="true" tabindex="-1"></a>                        sortingLayer <span class="op">=</span> <span class="dv">0</span><span class="op">,</span></span>
+<span id="cb17-60"><a href="#cb17-60" aria-hidden="true" tabindex="-1"></a>                        sortingOrder <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb17-61"><a href="#cb17-61" aria-hidden="true" tabindex="-1"></a>                    <span class="op">};</span></span>
+<span id="cb17-62"><a href="#cb17-62" aria-hidden="true" tabindex="-1"></a>                    resultAppendList<span class="op">.</span><span class="fu">Add</span><span class="op">(</span>result<span class="op">);</span></span>
+<span id="cb17-63"><a href="#cb17-63" aria-hidden="true" tabindex="-1"></a>                <span class="op">}</span></span>
+<span id="cb17-64"><a href="#cb17-64" aria-hidden="true" tabindex="-1"></a>            <span class="op">}</span></span>
+<span id="cb17-65"><a href="#cb17-65" aria-hidden="true" tabindex="-1"></a>        <span class="op">}</span></span></code></pre></div></li>
+<li><p>GraphicRaycaster 继承自 BaseRaycaster</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">override</span> <span class="dt">void</span> <span class="fu">Raycast</span><span class="op">(</span>PointerEventData eventData<span class="op">,</span> List<span class="op">&lt;</span>RaycastResult<span class="op">&gt;</span> resultAppendList<span class="op">)</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>        <span class="op">{</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>            <span class="co">//ui需要在Canvas下</span></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>            <span class="kw">if</span> <span class="op">(</span>canvas <span class="op">==</span> <span class="kw">null</span><span class="op">)</span></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>                <span class="kw">return</span><span class="op">;</span></span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>            <span class="co">//可渲染组件</span></span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>            <span class="dt">var</span> canvasGraphics <span class="op">=</span> GraphicRegistry<span class="op">.</span><span class="fu">GetGraphicsForCanvas</span><span class="op">(</span>canvas<span class="op">);</span></span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>            <span class="kw">if</span> <span class="op">(</span>canvasGraphics <span class="op">==</span> <span class="kw">null</span> <span class="op">||</span> canvasGraphics<span class="op">.</span><span class="fu">Count</span> <span class="op">==</span> <span class="dv">0</span><span class="op">)</span></span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>                <span class="kw">return</span><span class="op">;</span></span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a>            <span class="co">//条件监测：1. 同相机同显示目标，2. 需要坐标在显示的范围内</span></span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a>            <span class="dt">int</span> displayIndex<span class="op">;</span></span>
+<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a>            <span class="dt">var</span> currentEventCamera <span class="op">=</span> eventCamera<span class="op">;</span> <span class="co">// Property can call Camera.main, so cache the reference</span></span>
+<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a>            <span class="kw">if</span> <span class="op">(</span>canvas<span class="op">.</span><span class="fu">renderMode</span> <span class="op">==</span> RenderMode<span class="op">.</span><span class="fu">ScreenSpaceOverlay</span> <span class="op">||</span> currentEventCamera <span class="op">==</span> <span class="kw">null</span><span class="op">)</span></span>
+<span id="cb18-15"><a href="#cb18-15" aria-hidden="true" tabindex="-1"></a>                displayIndex <span class="op">=</span> canvas<span class="op">.</span><span class="fu">targetDisplay</span><span class="op">;</span></span>
+<span id="cb18-16"><a href="#cb18-16" aria-hidden="true" tabindex="-1"></a>            <span class="kw">else</span></span>
+<span id="cb18-17"><a href="#cb18-17" aria-hidden="true" tabindex="-1"></a>                displayIndex <span class="op">=</span> currentEventCamera<span class="op">.</span><span class="fu">targetDisplay</span><span class="op">;</span></span>
+<span id="cb18-18"><a href="#cb18-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-19"><a href="#cb18-19" aria-hidden="true" tabindex="-1"></a>            <span class="dt">var</span> eventPosition <span class="op">=</span> Display<span class="op">.</span><span class="fu">RelativeMouseAt</span><span class="op">(</span>eventData<span class="op">.</span><span class="fu">position</span><span class="op">);</span></span>
+<span id="cb18-20"><a href="#cb18-20" aria-hidden="true" tabindex="-1"></a>            <span class="kw">if</span> <span class="op">(</span>eventPosition <span class="op">!=</span> Vector3<span class="op">.</span><span class="fu">zero</span><span class="op">)</span></span>
+<span id="cb18-21"><a href="#cb18-21" aria-hidden="true" tabindex="-1"></a>            <span class="op">{</span></span>
+<span id="cb18-22"><a href="#cb18-22" aria-hidden="true" tabindex="-1"></a>                <span class="co">// We support multiple display and display identification based on event position.</span></span>
+<span id="cb18-23"><a href="#cb18-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-24"><a href="#cb18-24" aria-hidden="true" tabindex="-1"></a>                <span class="dt">int</span> eventDisplayIndex <span class="op">=</span> <span class="op">(</span><span class="dt">int</span><span class="op">)</span>eventPosition<span class="op">.</span><span class="fu">z</span><span class="op">;</span></span>
+<span id="cb18-25"><a href="#cb18-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-26"><a href="#cb18-26" aria-hidden="true" tabindex="-1"></a>                <span class="co">// Discard events that are not part of this display so the user does not interact with multiple displays at once.</span></span>
+<span id="cb18-27"><a href="#cb18-27" aria-hidden="true" tabindex="-1"></a>                <span class="kw">if</span> <span class="op">(</span>eventDisplayIndex <span class="op">!=</span> displayIndex<span class="op">)</span></span>
+<span id="cb18-28"><a href="#cb18-28" aria-hidden="true" tabindex="-1"></a>                    <span class="kw">return</span><span class="op">;</span></span>
+<span id="cb18-29"><a href="#cb18-29" aria-hidden="true" tabindex="-1"></a>            <span class="op">}</span></span>
+<span id="cb18-30"><a href="#cb18-30" aria-hidden="true" tabindex="-1"></a>            <span class="kw">else</span></span>
+<span id="cb18-31"><a href="#cb18-31" aria-hidden="true" tabindex="-1"></a>            <span class="op">{</span></span>
+<span id="cb18-32"><a href="#cb18-32" aria-hidden="true" tabindex="-1"></a>                <span class="co">// The multiple display system is not supported on all platforms, when it is not supported the returned position</span></span>
+<span id="cb18-33"><a href="#cb18-33" aria-hidden="true" tabindex="-1"></a>                <span class="co">// will be all zeros so when the returned index is 0 we will default to the event data to be safe.</span></span>
+<span id="cb18-34"><a href="#cb18-34" aria-hidden="true" tabindex="-1"></a>                eventPosition <span class="op">=</span> eventData<span class="op">.</span><span class="fu">position</span><span class="op">;</span></span>
+<span id="cb18-35"><a href="#cb18-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-36"><a href="#cb18-36" aria-hidden="true" tabindex="-1"></a>                <span class="co">// We dont really know in which display the event occured. We will process the event assuming it occured in our display.</span></span>
+<span id="cb18-37"><a href="#cb18-37" aria-hidden="true" tabindex="-1"></a>            <span class="op">}</span></span>
+<span id="cb18-38"><a href="#cb18-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-39"><a href="#cb18-39" aria-hidden="true" tabindex="-1"></a>            <span class="co">// Convert to view space</span></span>
+<span id="cb18-40"><a href="#cb18-40" aria-hidden="true" tabindex="-1"></a>            Vector2 pos<span class="op">;</span></span>
+<span id="cb18-41"><a href="#cb18-41" aria-hidden="true" tabindex="-1"></a>            <span class="kw">if</span> <span class="op">(</span>currentEventCamera <span class="op">==</span> <span class="kw">null</span><span class="op">)</span></span>
+<span id="cb18-42"><a href="#cb18-42" aria-hidden="true" tabindex="-1"></a>            <span class="op">{</span></span>
+<span id="cb18-43"><a href="#cb18-43" aria-hidden="true" tabindex="-1"></a>                <span class="co">// Multiple display support only when not the main display. For display 0 the reported</span></span>
+<span id="cb18-44"><a href="#cb18-44" aria-hidden="true" tabindex="-1"></a>                <span class="co">// resolution is always the desktops resolution since its part of the display API,</span></span>
+<span id="cb18-45"><a href="#cb18-45" aria-hidden="true" tabindex="-1"></a>                <span class="co">// so we use the standard none multiple display method. (case 741751)</span></span>
+<span id="cb18-46"><a href="#cb18-46" aria-hidden="true" tabindex="-1"></a>                <span class="dt">float</span> w <span class="op">=</span> Screen<span class="op">.</span><span class="fu">width</span><span class="op">;</span></span>
+<span id="cb18-47"><a href="#cb18-47" aria-hidden="true" tabindex="-1"></a>                <span class="dt">float</span> h <span class="op">=</span> Screen<span class="op">.</span><span class="fu">height</span><span class="op">;</span></span>
+<span id="cb18-48"><a href="#cb18-48" aria-hidden="true" tabindex="-1"></a>                <span class="kw">if</span> <span class="op">(</span>displayIndex <span class="op">&gt;</span> <span class="dv">0</span> <span class="op">&amp;&amp;</span> displayIndex <span class="op">&lt;</span> Display<span class="op">.</span><span class="fu">displays</span><span class="op">.</span><span class="fu">Length</span><span class="op">)</span></span>
+<span id="cb18-49"><a href="#cb18-49" aria-hidden="true" tabindex="-1"></a>                <span class="op">{</span></span>
+<span id="cb18-50"><a href="#cb18-50" aria-hidden="true" tabindex="-1"></a>                    w <span class="op">=</span> Display<span class="op">.</span><span class="fu">displays</span><span class="op">[</span>displayIndex<span class="op">].</span><span class="fu">systemWidth</span><span class="op">;</span></span>
+<span id="cb18-51"><a href="#cb18-51" aria-hidden="true" tabindex="-1"></a>                    h <span class="op">=</span> Display<span class="op">.</span><span class="fu">displays</span><span class="op">[</span>displayIndex<span class="op">].</span><span class="fu">systemHeight</span><span class="op">;</span></span>
+<span id="cb18-52"><a href="#cb18-52" aria-hidden="true" tabindex="-1"></a>                <span class="op">}</span></span>
+<span id="cb18-53"><a href="#cb18-53" aria-hidden="true" tabindex="-1"></a>                pos <span class="op">=</span> <span class="kw">new</span> <span class="fu">Vector2</span><span class="op">(</span>eventPosition<span class="op">.</span><span class="fu">x</span> <span class="op">/</span> w<span class="op">,</span> eventPosition<span class="op">.</span><span class="fu">y</span> <span class="op">/</span> h<span class="op">);</span></span>
+<span id="cb18-54"><a href="#cb18-54" aria-hidden="true" tabindex="-1"></a>            <span class="op">}</span></span>
+<span id="cb18-55"><a href="#cb18-55" aria-hidden="true" tabindex="-1"></a>            <span class="kw">else</span></span>
+<span id="cb18-56"><a href="#cb18-56" aria-hidden="true" tabindex="-1"></a>                pos <span class="op">=</span> currentEventCamera<span class="op">.</span><span class="fu">ScreenToViewportPoint</span><span class="op">(</span>eventPosition<span class="op">);</span></span>
+<span id="cb18-57"><a href="#cb18-57" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-58"><a href="#cb18-58" aria-hidden="true" tabindex="-1"></a>            <span class="co">// If it's outside the camera's viewport, do nothing</span></span>
+<span id="cb18-59"><a href="#cb18-59" aria-hidden="true" tabindex="-1"></a>            <span class="kw">if</span> <span class="op">(</span>pos<span class="op">.</span><span class="fu">x</span> <span class="op">&lt;</span> 0f <span class="op">||</span> pos<span class="op">.</span><span class="fu">x</span> <span class="op">&gt;</span> 1f <span class="op">||</span> pos<span class="op">.</span><span class="fu">y</span> <span class="op">&lt;</span> 0f <span class="op">||</span> pos<span class="op">.</span><span class="fu">y</span> <span class="op">&gt;</span> 1f<span class="op">)</span></span>
+<span id="cb18-60"><a href="#cb18-60" aria-hidden="true" tabindex="-1"></a>                <span class="kw">return</span><span class="op">;</span></span>
+<span id="cb18-61"><a href="#cb18-61" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-62"><a href="#cb18-62" aria-hidden="true" tabindex="-1"></a>            <span class="dt">float</span> hitDistance <span class="op">=</span> <span class="dt">float</span><span class="op">.</span><span class="fu">MaxValue</span><span class="op">;</span></span>
+<span id="cb18-63"><a href="#cb18-63" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-64"><a href="#cb18-64" aria-hidden="true" tabindex="-1"></a>            Ray ray <span class="op">=</span> <span class="kw">new</span> <span class="fu">Ray</span><span class="op">();</span></span>
+<span id="cb18-65"><a href="#cb18-65" aria-hidden="true" tabindex="-1"></a>            <span class="co">//射线监测，获取第一个碰撞的信息</span></span>
+<span id="cb18-66"><a href="#cb18-66" aria-hidden="true" tabindex="-1"></a>            <span class="kw">if</span> <span class="op">(</span>currentEventCamera <span class="op">!=</span> <span class="kw">null</span><span class="op">)</span></span>
+<span id="cb18-67"><a href="#cb18-67" aria-hidden="true" tabindex="-1"></a>                ray <span class="op">=</span> currentEventCamera<span class="op">.</span><span class="fu">ScreenPointToRay</span><span class="op">(</span>eventPosition<span class="op">);</span></span>
+<span id="cb18-68"><a href="#cb18-68" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-69"><a href="#cb18-69" aria-hidden="true" tabindex="-1"></a>            <span class="kw">if</span> <span class="op">(</span>canvas<span class="op">.</span><span class="fu">renderMode</span> <span class="op">!=</span> RenderMode<span class="op">.</span><span class="fu">ScreenSpaceOverlay</span> <span class="op">&amp;&amp;</span> blockingObjects <span class="op">!=</span> BlockingObjects<span class="op">.</span><span class="fu">None</span><span class="op">)</span></span>
+<span id="cb18-70"><a href="#cb18-70" aria-hidden="true" tabindex="-1"></a>            <span class="op">{</span></span>
+<span id="cb18-71"><a href="#cb18-71" aria-hidden="true" tabindex="-1"></a>                <span class="dt">float</span> distanceToClipPlane <span class="op">=</span> <span class="fl">100.0f</span><span class="op">;</span></span>
+<span id="cb18-72"><a href="#cb18-72" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-73"><a href="#cb18-73" aria-hidden="true" tabindex="-1"></a>                <span class="kw">if</span> <span class="op">(</span>currentEventCamera <span class="op">!=</span> <span class="kw">null</span><span class="op">)</span></span>
+<span id="cb18-74"><a href="#cb18-74" aria-hidden="true" tabindex="-1"></a>                <span class="op">{</span></span>
+<span id="cb18-75"><a href="#cb18-75" aria-hidden="true" tabindex="-1"></a>                    <span class="dt">float</span> projectionDirection <span class="op">=</span> ray<span class="op">.</span><span class="fu">direction</span><span class="op">.</span><span class="fu">z</span><span class="op">;</span></span>
+<span id="cb18-76"><a href="#cb18-76" aria-hidden="true" tabindex="-1"></a>                    distanceToClipPlane <span class="op">=</span> Mathf<span class="op">.</span><span class="fu">Approximately</span><span class="op">(</span><span class="fl">0.0f</span><span class="op">,</span> projectionDirection<span class="op">)</span></span>
+<span id="cb18-77"><a href="#cb18-77" aria-hidden="true" tabindex="-1"></a>                        <span class="op">?</span> Mathf<span class="op">.</span><span class="fu">Infinity</span></span>
+<span id="cb18-78"><a href="#cb18-78" aria-hidden="true" tabindex="-1"></a>                        <span class="op">:</span> Mathf<span class="op">.</span><span class="fu">Abs</span><span class="op">((</span>currentEventCamera<span class="op">.</span><span class="fu">farClipPlane</span> <span class="op">-</span> currentEventCamera<span class="op">.</span><span class="fu">nearClipPlane</span><span class="op">)</span> <span class="op">/</span> projectionDirection<span class="op">);</span></span>
+<span id="cb18-79"><a href="#cb18-79" aria-hidden="true" tabindex="-1"></a>                <span class="op">}</span></span>
+<span id="cb18-80"><a href="#cb18-80" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-81"><a href="#cb18-81" aria-hidden="true" tabindex="-1"></a>                <span class="kw">if</span> <span class="op">(</span>blockingObjects <span class="op">==</span> BlockingObjects<span class="op">.</span><span class="fu">ThreeD</span> <span class="op">||</span> blockingObjects <span class="op">==</span> BlockingObjects<span class="op">.</span><span class="fu">All</span><span class="op">)</span></span>
+<span id="cb18-82"><a href="#cb18-82" aria-hidden="true" tabindex="-1"></a>                <span class="op">{</span></span>
+<span id="cb18-83"><a href="#cb18-83" aria-hidden="true" tabindex="-1"></a>                    <span class="kw">if</span> <span class="op">(</span>ReflectionMethodsCache<span class="op">.</span><span class="fu">Singleton</span><span class="op">.</span><span class="fu">raycast3D</span> <span class="op">!=</span> <span class="kw">null</span><span class="op">)</span></span>
+<span id="cb18-84"><a href="#cb18-84" aria-hidden="true" tabindex="-1"></a>                    <span class="op">{</span></span>
+<span id="cb18-85"><a href="#cb18-85" aria-hidden="true" tabindex="-1"></a>                        <span class="dt">var</span> hits <span class="op">=</span> ReflectionMethodsCache<span class="op">.</span><span class="fu">Singleton</span><span class="op">.</span><span class="fu">raycast3DAll</span><span class="op">(</span>ray<span class="op">,</span> distanceToClipPlane<span class="op">,</span> <span class="op">(</span><span class="dt">int</span><span class="op">)</span>m_BlockingMask<span class="op">);</span></span>
+<span id="cb18-86"><a href="#cb18-86" aria-hidden="true" tabindex="-1"></a>                        <span class="kw">if</span> <span class="op">(</span>hits<span class="op">.</span><span class="fu">Length</span> <span class="op">&gt;</span> <span class="dv">0</span><span class="op">)</span></span>
+<span id="cb18-87"><a href="#cb18-87" aria-hidden="true" tabindex="-1"></a>                            hitDistance <span class="op">=</span> hits<span class="op">[</span><span class="dv">0</span><span class="op">].</span><span class="fu">distance</span><span class="op">;</span></span>
+<span id="cb18-88"><a href="#cb18-88" aria-hidden="true" tabindex="-1"></a>                    <span class="op">}</span></span>
+<span id="cb18-89"><a href="#cb18-89" aria-hidden="true" tabindex="-1"></a>                <span class="op">}</span></span>
+<span id="cb18-90"><a href="#cb18-90" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-91"><a href="#cb18-91" aria-hidden="true" tabindex="-1"></a>                <span class="kw">if</span> <span class="op">(</span>blockingObjects <span class="op">==</span> BlockingObjects<span class="op">.</span><span class="fu">TwoD</span> <span class="op">||</span> blockingObjects <span class="op">==</span> BlockingObjects<span class="op">.</span><span class="fu">All</span><span class="op">)</span></span>
+<span id="cb18-92"><a href="#cb18-92" aria-hidden="true" tabindex="-1"></a>                <span class="op">{</span></span>
+<span id="cb18-93"><a href="#cb18-93" aria-hidden="true" tabindex="-1"></a>                    <span class="kw">if</span> <span class="op">(</span>ReflectionMethodsCache<span class="op">.</span><span class="fu">Singleton</span><span class="op">.</span><span class="fu">raycast2D</span> <span class="op">!=</span> <span class="kw">null</span><span class="op">)</span></span>
+<span id="cb18-94"><a href="#cb18-94" aria-hidden="true" tabindex="-1"></a>                    <span class="op">{</span></span>
+<span id="cb18-95"><a href="#cb18-95" aria-hidden="true" tabindex="-1"></a>                        <span class="dt">var</span> hits <span class="op">=</span> ReflectionMethodsCache<span class="op">.</span><span class="fu">Singleton</span><span class="op">.</span><span class="fu">getRayIntersectionAll</span><span class="op">(</span>ray<span class="op">,</span> distanceToClipPlane<span class="op">,</span> <span class="op">(</span><span class="dt">int</span><span class="op">)</span>m_BlockingMask<span class="op">);</span></span>
+<span id="cb18-96"><a href="#cb18-96" aria-hidden="true" tabindex="-1"></a>                        <span class="kw">if</span> <span class="op">(</span>hits<span class="op">.</span><span class="fu">Length</span> <span class="op">&gt;</span> <span class="dv">0</span><span class="op">)</span></span>
+<span id="cb18-97"><a href="#cb18-97" aria-hidden="true" tabindex="-1"></a>                            hitDistance <span class="op">=</span> hits<span class="op">[</span><span class="dv">0</span><span class="op">].</span><span class="fu">distance</span><span class="op">;</span></span>
+<span id="cb18-98"><a href="#cb18-98" aria-hidden="true" tabindex="-1"></a>                    <span class="op">}</span></span>
+<span id="cb18-99"><a href="#cb18-99" aria-hidden="true" tabindex="-1"></a>                <span class="op">}</span></span>
+<span id="cb18-100"><a href="#cb18-100" aria-hidden="true" tabindex="-1"></a>            <span class="op">}</span></span>
+<span id="cb18-101"><a href="#cb18-101" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-102"><a href="#cb18-102" aria-hidden="true" tabindex="-1"></a>            m_RaycastResults<span class="op">.</span><span class="fu">Clear</span><span class="op">();</span></span>
+<span id="cb18-103"><a href="#cb18-103" aria-hidden="true" tabindex="-1"></a>            <span class="co">//从符合条件的可渲染组件进行位置监测</span></span>
+<span id="cb18-104"><a href="#cb18-104" aria-hidden="true" tabindex="-1"></a>            <span class="fu">Raycast</span><span class="op">(</span>canvas<span class="op">,</span> currentEventCamera<span class="op">,</span> eventPosition<span class="op">,</span> canvasGraphics<span class="op">,</span> m_RaycastResults<span class="op">);</span></span>
+<span id="cb18-105"><a href="#cb18-105" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-106"><a href="#cb18-106" aria-hidden="true" tabindex="-1"></a>            <span class="dt">int</span> totalCount <span class="op">=</span> m_RaycastResults<span class="op">.</span><span class="fu">Count</span><span class="op">;</span></span>
+<span id="cb18-107"><a href="#cb18-107" aria-hidden="true" tabindex="-1"></a>            <span class="kw">for</span> <span class="op">(</span><span class="dt">var</span> index <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> index <span class="op">&lt;</span> totalCount<span class="op">;</span> index<span class="op">++)</span></span>
+<span id="cb18-108"><a href="#cb18-108" aria-hidden="true" tabindex="-1"></a>            <span class="op">{</span></span>
+<span id="cb18-109"><a href="#cb18-109" aria-hidden="true" tabindex="-1"></a>                <span class="dt">var</span> go <span class="op">=</span> m_RaycastResults<span class="op">[</span>index<span class="op">].</span><span class="fu">gameObject</span><span class="op">;</span></span>
+<span id="cb18-110"><a href="#cb18-110" aria-hidden="true" tabindex="-1"></a>                <span class="dt">bool</span> appendGraphic <span class="op">=</span> <span class="kw">true</span><span class="op">;</span></span>
+<span id="cb18-111"><a href="#cb18-111" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-112"><a href="#cb18-112" aria-hidden="true" tabindex="-1"></a>                <span class="kw">if</span> <span class="op">(</span>ignoreReversedGraphics<span class="op">)</span></span>
+<span id="cb18-113"><a href="#cb18-113" aria-hidden="true" tabindex="-1"></a>                <span class="op">{</span></span>
+<span id="cb18-114"><a href="#cb18-114" aria-hidden="true" tabindex="-1"></a>                    <span class="co">//监测UI是否垂直于相机</span></span>
+<span id="cb18-115"><a href="#cb18-115" aria-hidden="true" tabindex="-1"></a>                    <span class="kw">if</span> <span class="op">(</span>currentEventCamera <span class="op">==</span> <span class="kw">null</span><span class="op">)</span></span>
+<span id="cb18-116"><a href="#cb18-116" aria-hidden="true" tabindex="-1"></a>                    <span class="op">{</span></span>
+<span id="cb18-117"><a href="#cb18-117" aria-hidden="true" tabindex="-1"></a>                        <span class="co">// If we dont have a camera we know that we should always be facing forward</span></span>
+<span id="cb18-118"><a href="#cb18-118" aria-hidden="true" tabindex="-1"></a>                        <span class="dt">var</span> dir <span class="op">=</span> go<span class="op">.</span><span class="fu">transform</span><span class="op">.</span><span class="fu">rotation</span> <span class="op">*</span> Vector3<span class="op">.</span><span class="fu">forward</span><span class="op">;</span></span>
+<span id="cb18-119"><a href="#cb18-119" aria-hidden="true" tabindex="-1"></a>                        appendGraphic <span class="op">=</span> Vector3<span class="op">.</span><span class="fu">Dot</span><span class="op">(</span>Vector3<span class="op">.</span><span class="fu">forward</span><span class="op">,</span> dir<span class="op">)</span> <span class="op">&gt;</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb18-120"><a href="#cb18-120" aria-hidden="true" tabindex="-1"></a>                    <span class="op">}</span></span>
+<span id="cb18-121"><a href="#cb18-121" aria-hidden="true" tabindex="-1"></a>                    <span class="kw">else</span></span>
+<span id="cb18-122"><a href="#cb18-122" aria-hidden="true" tabindex="-1"></a>                    <span class="op">{</span></span>
+<span id="cb18-123"><a href="#cb18-123" aria-hidden="true" tabindex="-1"></a>                        <span class="co">// If we have a camera compare the direction against the cameras forward.</span></span>
+<span id="cb18-124"><a href="#cb18-124" aria-hidden="true" tabindex="-1"></a>                        <span class="dt">var</span> cameraFoward <span class="op">=</span> currentEventCamera<span class="op">.</span><span class="fu">transform</span><span class="op">.</span><span class="fu">rotation</span> <span class="op">*</span> Vector3<span class="op">.</span><span class="fu">forward</span><span class="op">;</span></span>
+<span id="cb18-125"><a href="#cb18-125" aria-hidden="true" tabindex="-1"></a>                        <span class="dt">var</span> dir <span class="op">=</span> go<span class="op">.</span><span class="fu">transform</span><span class="op">.</span><span class="fu">rotation</span> <span class="op">*</span> Vector3<span class="op">.</span><span class="fu">forward</span><span class="op">;</span></span>
+<span id="cb18-126"><a href="#cb18-126" aria-hidden="true" tabindex="-1"></a>                        appendGraphic <span class="op">=</span> Vector3<span class="op">.</span><span class="fu">Dot</span><span class="op">(</span>cameraFoward<span class="op">,</span> dir<span class="op">)</span> <span class="op">&gt;</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb18-127"><a href="#cb18-127" aria-hidden="true" tabindex="-1"></a>                    <span class="op">}</span></span>
+<span id="cb18-128"><a href="#cb18-128" aria-hidden="true" tabindex="-1"></a>                <span class="op">}</span></span>
+<span id="cb18-129"><a href="#cb18-129" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-130"><a href="#cb18-130" aria-hidden="true" tabindex="-1"></a>                <span class="kw">if</span> <span class="op">(</span>appendGraphic<span class="op">)</span></span>
+<span id="cb18-131"><a href="#cb18-131" aria-hidden="true" tabindex="-1"></a>                <span class="op">{</span></span>
+<span id="cb18-132"><a href="#cb18-132" aria-hidden="true" tabindex="-1"></a>                    <span class="dt">float</span> distance <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb18-133"><a href="#cb18-133" aria-hidden="true" tabindex="-1"></a>                    Transform trans <span class="op">=</span> go<span class="op">.</span><span class="fu">transform</span><span class="op">;</span></span>
+<span id="cb18-134"><a href="#cb18-134" aria-hidden="true" tabindex="-1"></a>                    Vector3 transForward <span class="op">=</span> trans<span class="op">.</span><span class="fu">forward</span><span class="op">;</span></span>
+<span id="cb18-135"><a href="#cb18-135" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-136"><a href="#cb18-136" aria-hidden="true" tabindex="-1"></a>                    <span class="kw">if</span> <span class="op">(</span>currentEventCamera <span class="op">==</span> <span class="kw">null</span> <span class="op">||</span> canvas<span class="op">.</span><span class="fu">renderMode</span> <span class="op">==</span> RenderMode<span class="op">.</span><span class="fu">ScreenSpaceOverlay</span><span class="op">)</span></span>
+<span id="cb18-137"><a href="#cb18-137" aria-hidden="true" tabindex="-1"></a>                        distance <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb18-138"><a href="#cb18-138" aria-hidden="true" tabindex="-1"></a>                    <span class="kw">else</span></span>
+<span id="cb18-139"><a href="#cb18-139" aria-hidden="true" tabindex="-1"></a>                    <span class="op">{</span></span>
+<span id="cb18-140"><a href="#cb18-140" aria-hidden="true" tabindex="-1"></a>                        <span class="co">// http://geomalgorithms.com/a06-_intersect-2.html</span></span>
+<span id="cb18-141"><a href="#cb18-141" aria-hidden="true" tabindex="-1"></a>                        distance <span class="op">=</span> <span class="op">(</span>Vector3<span class="op">.</span><span class="fu">Dot</span><span class="op">(</span>transForward<span class="op">,</span> trans<span class="op">.</span><span class="fu">position</span> <span class="op">-</span> ray<span class="op">.</span><span class="fu">origin</span><span class="op">)</span> <span class="op">/</span> Vector3<span class="op">.</span><span class="fu">Dot</span><span class="op">(</span>transForward<span class="op">,</span> ray<span class="op">.</span><span class="fu">direction</span><span class="op">));</span></span>
+<span id="cb18-142"><a href="#cb18-142" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-143"><a href="#cb18-143" aria-hidden="true" tabindex="-1"></a>                        <span class="co">// Check to see if the go is behind the camera.</span></span>
+<span id="cb18-144"><a href="#cb18-144" aria-hidden="true" tabindex="-1"></a>                        <span class="kw">if</span> <span class="op">(</span>distance <span class="op">&lt;</span> <span class="dv">0</span><span class="op">)</span></span>
+<span id="cb18-145"><a href="#cb18-145" aria-hidden="true" tabindex="-1"></a>                            <span class="kw">continue</span><span class="op">;</span></span>
+<span id="cb18-146"><a href="#cb18-146" aria-hidden="true" tabindex="-1"></a>                    <span class="op">}</span></span>
+<span id="cb18-147"><a href="#cb18-147" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-148"><a href="#cb18-148" aria-hidden="true" tabindex="-1"></a>                    <span class="kw">if</span> <span class="op">(</span>distance <span class="op">&gt;=</span> hitDistance<span class="op">)</span></span>
+<span id="cb18-149"><a href="#cb18-149" aria-hidden="true" tabindex="-1"></a>                        <span class="kw">continue</span><span class="op">;</span></span>
+<span id="cb18-150"><a href="#cb18-150" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-151"><a href="#cb18-151" aria-hidden="true" tabindex="-1"></a>                    <span class="dt">var</span> castResult <span class="op">=</span> <span class="kw">new</span> RaycastResult</span>
+<span id="cb18-152"><a href="#cb18-152" aria-hidden="true" tabindex="-1"></a>                    <span class="op">{</span></span>
+<span id="cb18-153"><a href="#cb18-153" aria-hidden="true" tabindex="-1"></a>                        gameObject <span class="op">=</span> go<span class="op">,</span></span>
+<span id="cb18-154"><a href="#cb18-154" aria-hidden="true" tabindex="-1"></a>                        module <span class="op">=</span> <span class="kw">this</span><span class="op">,</span></span>
+<span id="cb18-155"><a href="#cb18-155" aria-hidden="true" tabindex="-1"></a>                        distance <span class="op">=</span> distance<span class="op">,</span></span>
+<span id="cb18-156"><a href="#cb18-156" aria-hidden="true" tabindex="-1"></a>                        screenPosition <span class="op">=</span> eventPosition<span class="op">,</span></span>
+<span id="cb18-157"><a href="#cb18-157" aria-hidden="true" tabindex="-1"></a>                        index <span class="op">=</span> resultAppendList<span class="op">.</span><span class="fu">Count</span><span class="op">,</span></span>
+<span id="cb18-158"><a href="#cb18-158" aria-hidden="true" tabindex="-1"></a>                        depth <span class="op">=</span> m_RaycastResults<span class="op">[</span>index<span class="op">].</span><span class="fu">depth</span><span class="op">,</span></span>
+<span id="cb18-159"><a href="#cb18-159" aria-hidden="true" tabindex="-1"></a>                        sortingLayer <span class="op">=</span> canvas<span class="op">.</span><span class="fu">sortingLayerID</span><span class="op">,</span></span>
+<span id="cb18-160"><a href="#cb18-160" aria-hidden="true" tabindex="-1"></a>                        sortingOrder <span class="op">=</span> canvas<span class="op">.</span><span class="fu">sortingOrder</span><span class="op">,</span></span>
+<span id="cb18-161"><a href="#cb18-161" aria-hidden="true" tabindex="-1"></a>                        worldPosition <span class="op">=</span> ray<span class="op">.</span><span class="fu">origin</span> <span class="op">+</span> ray<span class="op">.</span><span class="fu">direction</span> <span class="op">*</span> distance<span class="op">,</span></span>
+<span id="cb18-162"><a href="#cb18-162" aria-hidden="true" tabindex="-1"></a>                        worldNormal <span class="op">=</span> <span class="op">-</span>transForward</span>
+<span id="cb18-163"><a href="#cb18-163" aria-hidden="true" tabindex="-1"></a>                    <span class="op">};</span></span>
+<span id="cb18-164"><a href="#cb18-164" aria-hidden="true" tabindex="-1"></a>                    resultAppendList<span class="op">.</span><span class="fu">Add</span><span class="op">(</span>castResult<span class="op">);</span></span>
+<span id="cb18-165"><a href="#cb18-165" aria-hidden="true" tabindex="-1"></a>                <span class="op">}</span></span>
+<span id="cb18-166"><a href="#cb18-166" aria-hidden="true" tabindex="-1"></a>            <span class="op">}</span></span>
+<span id="cb18-167"><a href="#cb18-167" aria-hidden="true" tabindex="-1"></a>        <span class="op">}</span></span></code></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co">//RectTransform的Raycast监测方式</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="kw">private</span> <span class="kw">static</span> <span class="dt">void</span> <span class="fu">Raycast</span><span class="op">(</span>Canvas canvas<span class="op">,</span> Camera eventCamera<span class="op">,</span> Vector2 pointerPosition<span class="op">,</span> IList<span class="op">&lt;</span>Graphic<span class="op">&gt;</span> foundGraphics<span class="op">,</span> List<span class="op">&lt;</span>Graphic<span class="op">&gt;</span> results<span class="op">)</span></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>        <span class="op">{</span></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>            <span class="co">// Necessary for the event system</span></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>            <span class="dt">int</span> totalCount <span class="op">=</span> foundGraphics<span class="op">.</span><span class="fu">Count</span><span class="op">;</span></span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>            <span class="kw">for</span> <span class="op">(</span><span class="dt">int</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> totalCount<span class="op">;</span> <span class="op">++</span>i<span class="op">)</span></span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>            <span class="op">{</span></span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>                Graphic graphic <span class="op">=</span> foundGraphics<span class="op">[</span>i<span class="op">];</span></span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a>                <span class="co">// -1 means it hasn't been processed by the canvas, which means it isn't actually drawn</span></span>
+<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a>                <span class="kw">if</span> <span class="op">(</span>graphic<span class="op">.</span><span class="fu">depth</span> <span class="op">==</span> <span class="op">-</span><span class="dv">1</span> <span class="op">||</span> <span class="op">!</span>graphic<span class="op">.</span><span class="fu">raycastTarget</span> <span class="op">||</span> graphic<span class="op">.</span><span class="fu">canvasRenderer</span><span class="op">.</span><span class="fu">cull</span><span class="op">)</span></span>
+<span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a>                    <span class="kw">continue</span><span class="op">;</span></span>
+<span id="cb19-13"><a href="#cb19-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-14"><a href="#cb19-14" aria-hidden="true" tabindex="-1"></a>                <span class="kw">if</span> <span class="op">(!</span>RectTransformUtility<span class="op">.</span><span class="fu">RectangleContainsScreenPoint</span><span class="op">(</span>graphic<span class="op">.</span><span class="fu">rectTransform</span><span class="op">,</span> pointerPosition<span class="op">,</span> eventCamera<span class="op">))</span></span>
+<span id="cb19-15"><a href="#cb19-15" aria-hidden="true" tabindex="-1"></a>                    <span class="kw">continue</span><span class="op">;</span></span>
+<span id="cb19-16"><a href="#cb19-16" aria-hidden="true" tabindex="-1"></a>                <span class="co">// z 不能超过远裁剪面</span></span>
+<span id="cb19-17"><a href="#cb19-17" aria-hidden="true" tabindex="-1"></a>                <span class="kw">if</span> <span class="op">(</span>eventCamera <span class="op">!=</span> <span class="kw">null</span> <span class="op">&amp;&amp;</span> eventCamera<span class="op">.</span><span class="fu">WorldToScreenPoint</span><span class="op">(</span>graphic<span class="op">.</span><span class="fu">rectTransform</span><span class="op">.</span><span class="fu">position</span><span class="op">).</span><span class="fu">z</span> <span class="op">&gt;</span> eventCamera<span class="op">.</span><span class="fu">farClipPlane</span><span class="op">)</span></span>
+<span id="cb19-18"><a href="#cb19-18" aria-hidden="true" tabindex="-1"></a>                    <span class="kw">continue</span><span class="op">;</span></span>
+<span id="cb19-19"><a href="#cb19-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-20"><a href="#cb19-20" aria-hidden="true" tabindex="-1"></a>                <span class="kw">if</span> <span class="op">(</span>graphic<span class="op">.</span><span class="fu">Raycast</span><span class="op">(</span>pointerPosition<span class="op">,</span> eventCamera<span class="op">))</span></span>
+<span id="cb19-21"><a href="#cb19-21" aria-hidden="true" tabindex="-1"></a>                <span class="op">{</span></span>
+<span id="cb19-22"><a href="#cb19-22" aria-hidden="true" tabindex="-1"></a>                    s_SortedGraphics<span class="op">.</span><span class="fu">Add</span><span class="op">(</span>graphic<span class="op">);</span></span>
+<span id="cb19-23"><a href="#cb19-23" aria-hidden="true" tabindex="-1"></a>                <span class="op">}</span></span>
+<span id="cb19-24"><a href="#cb19-24" aria-hidden="true" tabindex="-1"></a>            <span class="op">}</span></span>
+<span id="cb19-25"><a href="#cb19-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-26"><a href="#cb19-26" aria-hidden="true" tabindex="-1"></a>            s_SortedGraphics<span class="op">.</span><span class="fu">Sort</span><span class="op">((</span>g1<span class="op">,</span> g2<span class="op">)</span> <span class="op">=&gt;</span> g2<span class="op">.</span><span class="fu">depth</span><span class="op">.</span><span class="fu">CompareTo</span><span class="op">(</span>g1<span class="op">.</span><span class="fu">depth</span><span class="op">));</span></span>
+<span id="cb19-27"><a href="#cb19-27" aria-hidden="true" tabindex="-1"></a>            totalCount <span class="op">=</span> s_SortedGraphics<span class="op">.</span><span class="fu">Count</span><span class="op">;</span></span>
+<span id="cb19-28"><a href="#cb19-28" aria-hidden="true" tabindex="-1"></a>            <span class="kw">for</span> <span class="op">(</span><span class="dt">int</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> totalCount<span class="op">;</span> <span class="op">++</span>i<span class="op">)</span></span>
+<span id="cb19-29"><a href="#cb19-29" aria-hidden="true" tabindex="-1"></a>                results<span class="op">.</span><span class="fu">Add</span><span class="op">(</span>s_SortedGraphics<span class="op">[</span>i<span class="op">]);</span></span>
+<span id="cb19-30"><a href="#cb19-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-31"><a href="#cb19-31" aria-hidden="true" tabindex="-1"></a>            s_SortedGraphics<span class="op">.</span><span class="fu">Clear</span><span class="op">();</span></span>
+<span id="cb19-32"><a href="#cb19-32" aria-hidden="true" tabindex="-1"></a>        <span class="op">}</span></span></code></pre></div></li>
+<li><p>Physics2DRaycaster 继承自 PhysicsRaycaster</p></li>
+</ol>
+<div class="sourceCode" id="cb20"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">override</span> <span class="dt">void</span> <span class="fu">Raycast</span><span class="op">(</span>PointerEventData eventData<span class="op">,</span> List<span class="op">&lt;</span>RaycastResult<span class="op">&gt;</span> resultAppendList<span class="op">)</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>        <span class="op">{</span></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>            Ray ray <span class="op">=</span> <span class="kw">new</span> <span class="fu">Ray</span><span class="op">();</span></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>            <span class="dt">float</span> distanceToClipPlane <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>            <span class="kw">if</span> <span class="op">(!</span><span class="fu">ComputeRayAndDistance</span><span class="op">(</span>eventData<span class="op">,</span> <span class="kw">ref</span> ray<span class="op">,</span> <span class="kw">ref</span> distanceToClipPlane<span class="op">))</span></span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>                <span class="kw">return</span><span class="op">;</span></span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>            <span class="dt">int</span> hitCount <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a>            <span class="kw">if</span> <span class="op">(</span>maxRayIntersections <span class="op">==</span> <span class="dv">0</span><span class="op">)</span></span>
+<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a>            <span class="op">{</span></span>
+<span id="cb20-12"><a href="#cb20-12" aria-hidden="true" tabindex="-1"></a>                <span class="kw">if</span> <span class="op">(</span>ReflectionMethodsCache<span class="op">.</span><span class="fu">Singleton</span><span class="op">.</span><span class="fu">getRayIntersectionAll</span> <span class="op">==</span> <span class="kw">null</span><span class="op">)</span></span>
+<span id="cb20-13"><a href="#cb20-13" aria-hidden="true" tabindex="-1"></a>                    <span class="kw">return</span><span class="op">;</span></span>
+<span id="cb20-14"><a href="#cb20-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-15"><a href="#cb20-15" aria-hidden="true" tabindex="-1"></a>                m_Hits <span class="op">=</span> ReflectionMethodsCache<span class="op">.</span><span class="fu">Singleton</span><span class="op">.</span><span class="fu">getRayIntersectionAll</span><span class="op">(</span>ray<span class="op">,</span> distanceToClipPlane<span class="op">,</span> finalEventMask<span class="op">);</span></span>
+<span id="cb20-16"><a href="#cb20-16" aria-hidden="true" tabindex="-1"></a>                hitCount <span class="op">=</span> m_Hits<span class="op">.</span><span class="fu">Length</span><span class="op">;</span></span>
+<span id="cb20-17"><a href="#cb20-17" aria-hidden="true" tabindex="-1"></a>            <span class="op">}</span></span>
+<span id="cb20-18"><a href="#cb20-18" aria-hidden="true" tabindex="-1"></a>            <span class="kw">else</span></span>
+<span id="cb20-19"><a href="#cb20-19" aria-hidden="true" tabindex="-1"></a>            <span class="op">{</span></span>
+<span id="cb20-20"><a href="#cb20-20" aria-hidden="true" tabindex="-1"></a>                <span class="kw">if</span> <span class="op">(</span>ReflectionMethodsCache<span class="op">.</span><span class="fu">Singleton</span><span class="op">.</span><span class="fu">getRayIntersectionAllNonAlloc</span> <span class="op">==</span> <span class="kw">null</span><span class="op">)</span></span>
+<span id="cb20-21"><a href="#cb20-21" aria-hidden="true" tabindex="-1"></a>                    <span class="kw">return</span><span class="op">;</span></span>
+<span id="cb20-22"><a href="#cb20-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-23"><a href="#cb20-23" aria-hidden="true" tabindex="-1"></a>                <span class="kw">if</span> <span class="op">(</span>m_LastMaxRayIntersections <span class="op">!=</span> m_MaxRayIntersections<span class="op">)</span></span>
+<span id="cb20-24"><a href="#cb20-24" aria-hidden="true" tabindex="-1"></a>                <span class="op">{</span></span>
+<span id="cb20-25"><a href="#cb20-25" aria-hidden="true" tabindex="-1"></a>                    m_Hits <span class="op">=</span> <span class="kw">new</span> RaycastHit2D<span class="op">[</span>maxRayIntersections<span class="op">];</span></span>
+<span id="cb20-26"><a href="#cb20-26" aria-hidden="true" tabindex="-1"></a>                    m_LastMaxRayIntersections <span class="op">=</span> m_MaxRayIntersections<span class="op">;</span></span>
+<span id="cb20-27"><a href="#cb20-27" aria-hidden="true" tabindex="-1"></a>                <span class="op">}</span></span>
+<span id="cb20-28"><a href="#cb20-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-29"><a href="#cb20-29" aria-hidden="true" tabindex="-1"></a>                hitCount <span class="op">=</span> ReflectionMethodsCache<span class="op">.</span><span class="fu">Singleton</span><span class="op">.</span><span class="fu">getRayIntersectionAllNonAlloc</span><span class="op">(</span>ray<span class="op">,</span> m_Hits<span class="op">,</span> distanceToClipPlane<span class="op">,</span> finalEventMask<span class="op">);</span></span>
+<span id="cb20-30"><a href="#cb20-30" aria-hidden="true" tabindex="-1"></a>            <span class="op">}</span></span>
+<span id="cb20-31"><a href="#cb20-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-32"><a href="#cb20-32" aria-hidden="true" tabindex="-1"></a>            <span class="kw">if</span> <span class="op">(</span>hitCount <span class="op">!=</span> <span class="dv">0</span><span class="op">)</span></span>
+<span id="cb20-33"><a href="#cb20-33" aria-hidden="true" tabindex="-1"></a>            <span class="op">{</span></span>
+<span id="cb20-34"><a href="#cb20-34" aria-hidden="true" tabindex="-1"></a>                <span class="kw">for</span> <span class="op">(</span><span class="dt">int</span> b <span class="op">=</span> <span class="dv">0</span><span class="op">,</span> bmax <span class="op">=</span> hitCount<span class="op">;</span> b <span class="op">&lt;</span> bmax<span class="op">;</span> <span class="op">++</span>b<span class="op">)</span></span>
+<span id="cb20-35"><a href="#cb20-35" aria-hidden="true" tabindex="-1"></a>                <span class="op">{</span></span>
+<span id="cb20-36"><a href="#cb20-36" aria-hidden="true" tabindex="-1"></a>                    <span class="dt">var</span> sr <span class="op">=</span> m_Hits<span class="op">[</span>b<span class="op">].</span><span class="fu">collider</span><span class="op">.</span><span class="fu">gameObject</span><span class="op">.</span><span class="fu">GetComponent</span><span class="op">&lt;</span>SpriteRenderer<span class="op">&gt;();</span></span>
+<span id="cb20-37"><a href="#cb20-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-38"><a href="#cb20-38" aria-hidden="true" tabindex="-1"></a>                    <span class="dt">var</span> result <span class="op">=</span> <span class="kw">new</span> RaycastResult</span>
+<span id="cb20-39"><a href="#cb20-39" aria-hidden="true" tabindex="-1"></a>                    <span class="op">{</span></span>
+<span id="cb20-40"><a href="#cb20-40" aria-hidden="true" tabindex="-1"></a>                        gameObject <span class="op">=</span> m_Hits<span class="op">[</span>b<span class="op">].</span><span class="fu">collider</span><span class="op">.</span><span class="fu">gameObject</span><span class="op">,</span></span>
+<span id="cb20-41"><a href="#cb20-41" aria-hidden="true" tabindex="-1"></a>                        module <span class="op">=</span> <span class="kw">this</span><span class="op">,</span></span>
+<span id="cb20-42"><a href="#cb20-42" aria-hidden="true" tabindex="-1"></a>                        distance <span class="op">=</span> Vector3<span class="op">.</span><span class="fu">Distance</span><span class="op">(</span>eventCamera<span class="op">.</span><span class="fu">transform</span><span class="op">.</span><span class="fu">position</span><span class="op">,</span> m_Hits<span class="op">[</span>b<span class="op">].</span><span class="fu">point</span><span class="op">),</span></span>
+<span id="cb20-43"><a href="#cb20-43" aria-hidden="true" tabindex="-1"></a>                        worldPosition <span class="op">=</span> m_Hits<span class="op">[</span>b<span class="op">].</span><span class="fu">point</span><span class="op">,</span></span>
+<span id="cb20-44"><a href="#cb20-44" aria-hidden="true" tabindex="-1"></a>                        worldNormal <span class="op">=</span> m_Hits<span class="op">[</span>b<span class="op">].</span><span class="fu">normal</span><span class="op">,</span></span>
+<span id="cb20-45"><a href="#cb20-45" aria-hidden="true" tabindex="-1"></a>                        screenPosition <span class="op">=</span> eventData<span class="op">.</span><span class="fu">position</span><span class="op">,</span></span>
+<span id="cb20-46"><a href="#cb20-46" aria-hidden="true" tabindex="-1"></a>                        index <span class="op">=</span> resultAppendList<span class="op">.</span><span class="fu">Count</span><span class="op">,</span></span>
+<span id="cb20-47"><a href="#cb20-47" aria-hidden="true" tabindex="-1"></a>                        sortingLayer <span class="op">=</span>  sr <span class="op">!=</span> <span class="kw">null</span> <span class="op">?</span> sr<span class="op">.</span><span class="fu">sortingLayerID</span> <span class="op">:</span> <span class="dv">0</span><span class="op">,</span></span>
+<span id="cb20-48"><a href="#cb20-48" aria-hidden="true" tabindex="-1"></a>                        sortingOrder <span class="op">=</span> sr <span class="op">!=</span> <span class="kw">null</span> <span class="op">?</span> sr<span class="op">.</span><span class="fu">sortingOrder</span> <span class="op">:</span> <span class="dv">0</span></span>
+<span id="cb20-49"><a href="#cb20-49" aria-hidden="true" tabindex="-1"></a>                    <span class="op">};</span></span>
+<span id="cb20-50"><a href="#cb20-50" aria-hidden="true" tabindex="-1"></a>                    resultAppendList<span class="op">.</span><span class="fu">Add</span><span class="op">(</span>result<span class="op">);</span></span>
+<span id="cb20-51"><a href="#cb20-51" aria-hidden="true" tabindex="-1"></a>                <span class="op">}</span></span>
+<span id="cb20-52"><a href="#cb20-52" aria-hidden="true" tabindex="-1"></a>            <span class="op">}</span></span>
+<span id="cb20-53"><a href="#cb20-53" aria-hidden="true" tabindex="-1"></a>        <span class="op">}</span></span></code></pre></div>
+<ol start="5" type="1">
+<li><p>事件排序规则</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a> <span class="kw">private</span> <span class="kw">static</span> <span class="dt">int</span> <span class="fu">RaycastComparer</span><span class="op">(</span>RaycastResult lhs<span class="op">,</span> RaycastResult rhs<span class="op">)</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>        <span class="op">{</span></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>            <span class="co">//不同的 BaseRaycaster</span></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>            <span class="kw">if</span> <span class="op">(</span>lhs<span class="op">.</span><span class="fu">module</span> <span class="op">!=</span> rhs<span class="op">.</span><span class="fu">module</span><span class="op">)</span></span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>            <span class="op">{</span></span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>                <span class="dt">var</span> lhsEventCamera <span class="op">=</span> lhs<span class="op">.</span><span class="fu">module</span><span class="op">.</span><span class="fu">eventCamera</span><span class="op">;</span></span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>                <span class="dt">var</span> rhsEventCamera <span class="op">=</span> rhs<span class="op">.</span><span class="fu">module</span><span class="op">.</span><span class="fu">eventCamera</span><span class="op">;</span></span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>                <span class="co">//1. Raycaster的不相机的depth 越小越靠前</span></span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>                <span class="kw">if</span> <span class="op">(</span>lhsEventCamera <span class="op">!=</span> <span class="kw">null</span> <span class="op">&amp;&amp;</span> rhsEventCamera <span class="op">!=</span> <span class="kw">null</span> <span class="op">&amp;&amp;</span> lhsEventCamera<span class="op">.</span><span class="fu">depth</span> <span class="op">!=</span> rhsEventCamera<span class="op">.</span><span class="fu">depth</span><span class="op">)</span></span>
+<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a>                <span class="op">{</span></span>
+<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a>                    <span class="co">// need to reverse the standard compareTo</span></span>
+<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a>                    <span class="kw">if</span> <span class="op">(</span>lhsEventCamera<span class="op">.</span><span class="fu">depth</span> <span class="op">&lt;</span> rhsEventCamera<span class="op">.</span><span class="fu">depth</span><span class="op">)</span></span>
+<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a>                        <span class="kw">return</span> <span class="dv">1</span><span class="op">;</span></span>
+<span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a>                    <span class="kw">if</span> <span class="op">(</span>lhsEventCamera<span class="op">.</span><span class="fu">depth</span> <span class="op">==</span> rhsEventCamera<span class="op">.</span><span class="fu">depth</span><span class="op">)</span></span>
+<span id="cb21-15"><a href="#cb21-15" aria-hidden="true" tabindex="-1"></a>                        <span class="kw">return</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb21-16"><a href="#cb21-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-17"><a href="#cb21-17" aria-hidden="true" tabindex="-1"></a>                    <span class="kw">return</span> <span class="op">-</span><span class="dv">1</span><span class="op">;</span></span>
+<span id="cb21-18"><a href="#cb21-18" aria-hidden="true" tabindex="-1"></a>                <span class="op">}</span></span>
+<span id="cb21-19"><a href="#cb21-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-20"><a href="#cb21-20" aria-hidden="true" tabindex="-1"></a>                <span class="co">//2. Raycaster的排序优先级</span></span>
+<span id="cb21-21"><a href="#cb21-21" aria-hidden="true" tabindex="-1"></a>                <span class="kw">if</span> <span class="op">(</span>lhs<span class="op">.</span><span class="fu">module</span><span class="op">.</span><span class="fu">sortOrderPriority</span> <span class="op">!=</span> rhs<span class="op">.</span><span class="fu">module</span><span class="op">.</span><span class="fu">sortOrderPriority</span><span class="op">)</span></span>
+<span id="cb21-22"><a href="#cb21-22" aria-hidden="true" tabindex="-1"></a>                    <span class="kw">return</span> rhs<span class="op">.</span><span class="fu">module</span><span class="op">.</span><span class="fu">sortOrderPriority</span><span class="op">.</span><span class="fu">CompareTo</span><span class="op">(</span>lhs<span class="op">.</span><span class="fu">module</span><span class="op">.</span><span class="fu">sortOrderPriority</span><span class="op">);</span></span>
+<span id="cb21-23"><a href="#cb21-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-24"><a href="#cb21-24" aria-hidden="true" tabindex="-1"></a>                <span class="co">//3. Raycaster的渲染优先级</span></span>
+<span id="cb21-25"><a href="#cb21-25" aria-hidden="true" tabindex="-1"></a>                <span class="kw">if</span> <span class="op">(</span>lhs<span class="op">.</span><span class="fu">module</span><span class="op">.</span><span class="fu">renderOrderPriority</span> <span class="op">!=</span> rhs<span class="op">.</span><span class="fu">module</span><span class="op">.</span><span class="fu">renderOrderPriority</span><span class="op">)</span></span>
+<span id="cb21-26"><a href="#cb21-26" aria-hidden="true" tabindex="-1"></a>                    <span class="kw">return</span> rhs<span class="op">.</span><span class="fu">module</span><span class="op">.</span><span class="fu">renderOrderPriority</span><span class="op">.</span><span class="fu">CompareTo</span><span class="op">(</span>lhs<span class="op">.</span><span class="fu">module</span><span class="op">.</span><span class="fu">renderOrderPriority</span><span class="op">);</span></span>
+<span id="cb21-27"><a href="#cb21-27" aria-hidden="true" tabindex="-1"></a>            <span class="op">}</span></span>
+<span id="cb21-28"><a href="#cb21-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-29"><a href="#cb21-29" aria-hidden="true" tabindex="-1"></a>            <span class="co">//层级排序</span></span>
+<span id="cb21-30"><a href="#cb21-30" aria-hidden="true" tabindex="-1"></a>            <span class="kw">if</span> <span class="op">(</span>lhs<span class="op">.</span><span class="fu">sortingLayer</span> <span class="op">!=</span> rhs<span class="op">.</span><span class="fu">sortingLayer</span><span class="op">)</span></span>
+<span id="cb21-31"><a href="#cb21-31" aria-hidden="true" tabindex="-1"></a>            <span class="op">{</span></span>
+<span id="cb21-32"><a href="#cb21-32" aria-hidden="true" tabindex="-1"></a>                <span class="co">// Uses the layer value to properly compare the relative order of the layers.</span></span>
+<span id="cb21-33"><a href="#cb21-33" aria-hidden="true" tabindex="-1"></a>                <span class="dt">var</span> rid <span class="op">=</span> SortingLayer<span class="op">.</span><span class="fu">GetLayerValueFromID</span><span class="op">(</span>rhs<span class="op">.</span><span class="fu">sortingLayer</span><span class="op">);</span></span>
+<span id="cb21-34"><a href="#cb21-34" aria-hidden="true" tabindex="-1"></a>                <span class="dt">var</span> lid <span class="op">=</span> SortingLayer<span class="op">.</span><span class="fu">GetLayerValueFromID</span><span class="op">(</span>lhs<span class="op">.</span><span class="fu">sortingLayer</span><span class="op">);</span></span>
+<span id="cb21-35"><a href="#cb21-35" aria-hidden="true" tabindex="-1"></a>                <span class="kw">return</span> rid<span class="op">.</span><span class="fu">CompareTo</span><span class="op">(</span>lid<span class="op">);</span></span>
+<span id="cb21-36"><a href="#cb21-36" aria-hidden="true" tabindex="-1"></a>            <span class="op">}</span></span>
+<span id="cb21-37"><a href="#cb21-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-38"><a href="#cb21-38" aria-hidden="true" tabindex="-1"></a>            <span class="co">//深度值排序</span></span>
+<span id="cb21-39"><a href="#cb21-39" aria-hidden="true" tabindex="-1"></a>            <span class="kw">if</span> <span class="op">(</span>lhs<span class="op">.</span><span class="fu">sortingOrder</span> <span class="op">!=</span> rhs<span class="op">.</span><span class="fu">sortingOrder</span><span class="op">)</span></span>
+<span id="cb21-40"><a href="#cb21-40" aria-hidden="true" tabindex="-1"></a>                <span class="kw">return</span> rhs<span class="op">.</span><span class="fu">sortingOrder</span><span class="op">.</span><span class="fu">CompareTo</span><span class="op">(</span>lhs<span class="op">.</span><span class="fu">sortingOrder</span><span class="op">);</span></span>
+<span id="cb21-41"><a href="#cb21-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-42"><a href="#cb21-42" aria-hidden="true" tabindex="-1"></a>            <span class="co">// comparing depth only makes sense if the two raycast results have the same root canvas (case 912396)</span></span>
+<span id="cb21-43"><a href="#cb21-43" aria-hidden="true" tabindex="-1"></a>            <span class="kw">if</span> <span class="op">(</span>lhs<span class="op">.</span><span class="fu">depth</span> <span class="op">!=</span> rhs<span class="op">.</span><span class="fu">depth</span> <span class="op">&amp;&amp;</span> lhs<span class="op">.</span><span class="fu">module</span><span class="op">.</span><span class="fu">rootRaycaster</span> <span class="op">==</span> rhs<span class="op">.</span><span class="fu">module</span><span class="op">.</span><span class="fu">rootRaycaster</span><span class="op">)</span></span>
+<span id="cb21-44"><a href="#cb21-44" aria-hidden="true" tabindex="-1"></a>                <span class="kw">return</span> rhs<span class="op">.</span><span class="fu">depth</span><span class="op">.</span><span class="fu">CompareTo</span><span class="op">(</span>lhs<span class="op">.</span><span class="fu">depth</span><span class="op">);</span></span>
+<span id="cb21-45"><a href="#cb21-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-46"><a href="#cb21-46" aria-hidden="true" tabindex="-1"></a>            <span class="co">//距离</span></span>
+<span id="cb21-47"><a href="#cb21-47" aria-hidden="true" tabindex="-1"></a>            <span class="kw">if</span> <span class="op">(</span>lhs<span class="op">.</span><span class="fu">distance</span> <span class="op">!=</span> rhs<span class="op">.</span><span class="fu">distance</span><span class="op">)</span></span>
+<span id="cb21-48"><a href="#cb21-48" aria-hidden="true" tabindex="-1"></a>                <span class="kw">return</span> lhs<span class="op">.</span><span class="fu">distance</span><span class="op">.</span><span class="fu">CompareTo</span><span class="op">(</span>rhs<span class="op">.</span><span class="fu">distance</span><span class="op">);</span></span>
+<span id="cb21-49"><a href="#cb21-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-50"><a href="#cb21-50" aria-hidden="true" tabindex="-1"></a>            <span class="co">//条件相同的情况 使用射线监测的反向顺序</span></span>
+<span id="cb21-51"><a href="#cb21-51" aria-hidden="true" tabindex="-1"></a>            <span class="kw">return</span> lhs<span class="op">.</span><span class="fu">index</span><span class="op">.</span><span class="fu">CompareTo</span><span class="op">(</span>rhs<span class="op">.</span><span class="fu">index</span><span class="op">);</span></span>
+<span id="cb21-52"><a href="#cb21-52" aria-hidden="true" tabindex="-1"></a>        <span class="op">}</span></span></code></pre></div></li>
+</ol></li>
+<li><p>其他</p>
+<ol type="1">
+<li>Display.RelativeMouseAt 对于多显示器取相对位置。 z轴为相机的
+<code>targetDisplay</code></li>
+<li>RectTransformUtility.RectangleContainsScreenPoint
+监测屏幕点包含于Rect</li>
+</ol></li>
+</ol></li>
+</ol>
+<p>​</p>
+<p>​</p>
+<p>​</p>
+<p>​</p>
+<p>​</p></li>
+</ol>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">Yonggang Long</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://one2world.github.io/2022/08/10/unity/ugui-yuan-ma-ji-lu/5.ugui-eventsystem/">https://one2world.github.io/2022/08/10/unity/ugui-yuan-ma-ji-lu/5.ugui-eventsystem/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">Yonggang Long</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/null" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/null" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+        <div class="disqus-card card" data-aos="fade-up">
+    <div id="disqus_thread" class="card-content">
+        <noscript>Please enable JavaScript to view the
+            <a target="_blank" rel="noopener" href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+    </div>
+</div>
+
+<script type="text/javascript">
+    disqus_config = function () {
+        this.page.url = 'https://one2world.github.io/2022/08/10/unity/ugui-yuan-ma-ji-lu/5.ugui-eventsystem/';
+        this.page.identifier = '/2022/08/10/unity/ugui-yuan-ma-ji-lu/5.ugui-eventsystem/';
+        this.page.title = '';
+    };
+    let disqus_shortname = '';
+
+    (function () { // DON'T EDIT BELOW THIS LINE
+        let d = document, s = d.createElement('script');
+        // 如：s.src = 'https://blinkfox.disqus.com/embed.js';
+        s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2022/08/10/unity/ugui-yuan-ma-ji-lu/6.ugui-rebuild/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
+                        
+                        <span class="card-title"></span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-08-10
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            Yonggang Long
+                            
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2022/08/10/unity/ugui-yuan-ma-ji-lu/4.ugui-maskablegraphic/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
+                        
+                        <span class="card-title"></span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-08-10
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            Yonggang Long
+                            
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="503838841"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2019-2022</span>
+            
+            <span id="year">2019</span>
+            <a href="/about" target="_blank">Yonggang Long</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/one2world" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:longyonggang2@gmail.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=873415756" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 873415756" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+    <a href="https://www.zhihu.com/people/cheng-xu-jie-kang-ba-zi" class="tooltipped" target="_blank" data-tooltip="关注我的知乎: https://www.zhihu.com/people/cheng-xu-jie-kang-ba-zi" data-position="top" data-delay="50">
+        <i class="fab fa-zhihu1">知</i>
+    </a>
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+	
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>

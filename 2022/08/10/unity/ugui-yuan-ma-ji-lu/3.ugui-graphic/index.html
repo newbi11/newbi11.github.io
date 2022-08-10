@@ -1,0 +1,1836 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="Game, Unity, Graphics, Tools, Scripts, C#, Python, Lua, C/C++">
+    <meta name="description" content="游戏编程的一些文章">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>游戏编程</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.0.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">游戏编程</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">游戏编程</div>
+        <div class="logo-desc">
+            
+            游戏编程的一些文章
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title"></h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2022-08-10
+                </div>
+                
+
+                
+
+                
+
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h2 id="ugui之graphic">uGUI之graphic</h2>
+<blockquote>
+<p>所有需要绘制的ui组件的抽象基类</p>
+</blockquote>
+<ol type="1">
+<li><p>Graphic</p>
+<blockquote>
+<p>继承自UIBehaviour、<code>ICanvesElement</code> ，可渲染的ui组件</p>
+</blockquote>
+<ol type="1">
+<li><p>ICanvasElement</p>
+<blockquote>
+<p>依赖Canves 的ui元素接口， 主要是<code>rebuild</code>接口标记</p>
+</blockquote>
+<div class="sourceCode" id="cb1"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>      <span class="co">/// </span><span class="kw">&lt;summary&gt;</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">/// Values of 'update' called on a Canvas update.</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="co">/// </span><span class="kw">&lt;/summary&gt;</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="kw">enum</span> CanvasUpdate</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="op">{</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>        <span class="co">/// </span><span class="kw">&lt;summary&gt;</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>        <span class="co">/// Called before layout.</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>        <span class="co">/// </span><span class="kw">&lt;/summary&gt;</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>        Prelayout <span class="op">=</span> <span class="dv">0</span><span class="op">,</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>        <span class="co">/// </span><span class="kw">&lt;summary&gt;</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>        <span class="co">/// Called for layout.</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>        <span class="co">/// </span><span class="kw">&lt;/summary&gt;</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>        Layout <span class="op">=</span> <span class="dv">1</span><span class="op">,</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>        <span class="co">/// </span><span class="kw">&lt;summary&gt;</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>        <span class="co">/// Called after layout.</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>        <span class="co">/// </span><span class="kw">&lt;/summary&gt;</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>        PostLayout <span class="op">=</span> <span class="dv">2</span><span class="op">,</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>        <span class="co">/// </span><span class="kw">&lt;summary&gt;</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>        <span class="co">/// Called before rendering.</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>        <span class="co">/// </span><span class="kw">&lt;/summary&gt;</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>        PreRender <span class="op">=</span> <span class="dv">3</span><span class="op">,</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>        <span class="co">/// </span><span class="kw">&lt;summary&gt;</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>        <span class="co">/// Called late, before render.</span></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>        <span class="co">/// </span><span class="kw">&lt;/summary&gt;</span></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>        LatePreRender <span class="op">=</span> <span class="dv">4</span><span class="op">,</span></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>        <span class="co">/// </span><span class="kw">&lt;summary&gt;</span></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>        <span class="co">/// Max enum value. Always last.</span></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>        <span class="co">/// </span><span class="kw">&lt;/summary&gt;</span></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>        MaxUpdateValue <span class="op">=</span> <span class="dv">5</span></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>  <span class="co">/// </span><span class="kw">&lt;summary&gt;</span></span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>    <span class="co">/// This is an element that can live on a Canvas.</span></span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>    <span class="co">/// </span><span class="kw">&lt;/summary&gt;</span></span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="kw">interface</span> ICanvasElement</span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>    <span class="op">{</span></span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>        <span class="co">/// </span><span class="kw">&lt;summary&gt;</span></span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>        <span class="co">/// Rebuild the element for the given stage.</span></span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>        <span class="co">/// </span><span class="kw">&lt;/summary&gt;</span></span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>        <span class="co">/// </span><span class="kw">&lt;param</span><span class="ot"> name=</span><span class="dt">"executing"</span><span class="kw">&gt;</span><span class="co">The current CanvasUpdate stage being rebuild.</span><span class="kw">&lt;/param&gt;</span></span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>        <span class="dt">void</span> <span class="fu">Rebuild</span><span class="op">(</span>CanvasUpdate executing<span class="op">);</span></span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>        <span class="co">/// </span><span class="kw">&lt;summary&gt;</span></span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>        <span class="co">/// Get the transform associated with the ICanvasElement.</span></span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>        <span class="co">/// </span><span class="kw">&lt;/summary&gt;</span></span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>        Transform transform <span class="op">{</span> <span class="kw">get</span><span class="op">;</span> <span class="op">}</span></span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>        <span class="co">/// </span><span class="kw">&lt;summary&gt;</span></span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>        <span class="co">/// Callback sent when this ICanvasElement has completed layout.</span></span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>        <span class="co">/// </span><span class="kw">&lt;/summary&gt;</span></span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>        <span class="dt">void</span> <span class="fu">LayoutComplete</span><span class="op">();</span></span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>        <span class="co">/// </span><span class="kw">&lt;summary&gt;</span></span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>        <span class="co">/// Callback sent when this ICanvasElement has completed Graphic rebuild.</span></span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>        <span class="co">/// </span><span class="kw">&lt;/summary&gt;</span></span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>        <span class="dt">void</span> <span class="fu">GraphicUpdateComplete</span><span class="op">();</span></span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a>        <span class="co">/// </span><span class="kw">&lt;summary&gt;</span></span>
+<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a>        <span class="co">/// Used if the native representation has been destroyed.</span></span>
+<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a>        <span class="co">/// </span><span class="kw">&lt;/summary&gt;</span></span>
+<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a>        <span class="co">/// </span><span class="kw">&lt;returns&gt;</span><span class="co">Return true if the element is considered destroyed.</span><span class="kw">&lt;/returns&gt;</span></span>
+<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a>        <span class="dt">bool</span> <span class="fu">IsDestroyed</span><span class="op">();</span></span>
+<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span></code></pre></div></li>
+<li><p>ICanvesElement 接口实现</p></li>
+<li><p>Rebuild</p></li>
+</ol>
+<pre><code>  &gt; canvasRenderer ui渲染元素依赖组件的**render**组件
+  &gt;
+  &gt; 这里只对**渲染前**进行`顶点`和`材质`进行更新。
+
+  ```csharp
+         public virtual void Rebuild(CanvasUpdate update)
+          {
+              if (canvasRenderer == null || canvasRenderer.cull)
+                  return;
+
+              switch (update)
+              {
+                  case CanvasUpdate.PreRender:
+                      if (m_VertsDirty)
+                      {
+                          UpdateGeometry();
+                          m_VertsDirty = false;
+                      }
+                      if (m_MaterialDirty)
+                      {
+                          UpdateMaterial();
+                          m_MaterialDirty = false;
+                      }
+                      break;
+              }
+          }
+  ```</code></pre>
+<ol start="2" type="1">
+<li>transform</li>
+</ol>
+<pre><code>   ​ transform 沿用基类 `Component` 的transform 属性</code></pre>
+<ol start="3" type="1">
+<li>LayoutComponent</li>
+</ol>
+<pre><code>   ```csharp
+   //暂时为空       
+   public virtual void LayoutComplete()
+   {}
+   ```</code></pre>
+<ol start="4" type="1">
+<li><p>GraphicUpdateComplete</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">//暂时为空       </span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">virtual</span> <span class="dt">void</span> <span class="fu">GraphicUpdateComplete</span><span class="op">()</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="op">{}</span></span></code></pre></div></li>
+<li><p>IsDestroyed</p>
+<p>IsDestroyed 沿用 UIBehaviour 的IsDestroyed 属性</p></li>
+<li><p>新增和实现</p>
+<blockquote>
+<p>作为需要渲染的控件， 必须有 <code>Render</code>、渲染的数据
+<code>顶点数据</code> 、<code>材质数据</code></p>
+</blockquote>
+<ol type="1">
+<li><p>理论部分</p></li>
+<li><p>Render 使用 <code>CanvasRenderer</code></p></li>
+<li><p>材质以及材质属性</p></li>
+<li><p>代码部分</p>
+<ol type="1">
+<li>材质以及材质属性静态公共数据 &gt;
+s_WhiteTexture静态默认贴图属性作为共享的默认贴图，OnEnable 进行赋值</li>
+</ol>
+<div class="sourceCode" id="cb6"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">static</span> <span class="kw">protected</span> Texture2D s_WhiteTexture <span class="op">=</span> <span class="kw">null</span><span class="op">;</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co">// 贴图赋值</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="kw">protected</span> <span class="kw">override</span> <span class="dt">void</span> <span class="fu">OnEnable</span><span class="op">()</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    <span class="co">// 。。。</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">if</span> <span class="op">(</span>s_WhiteTexture <span class="op">==</span> <span class="kw">null</span><span class="op">)</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>        s_WhiteTexture <span class="op">=</span> Texture2D<span class="op">.</span><span class="fu">whiteTexture</span><span class="op">;</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>    <span class="co">// 。。。</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<blockquote>
+<p>s_DefaultUI静态默认材质属性作为共享的默认贴图，Get进行单例赋值</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">static</span> <span class="kw">public</span> Material defaultGraphicMaterial</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>get</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="kw">if</span> <span class="op">(</span>s_DefaultUI <span class="op">==</span> <span class="kw">null</span><span class="op">)</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>s_DefaultUI <span class="op">=</span> Canvas<span class="op">.</span><span class="fu">GetDefaultCanvasMaterial</span><span class="op">();</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="kw">return</span> s_DefaultUI<span class="op">;</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<p>s_VertexHelper 顶点辅助器</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="op">[</span>NonSerialized<span class="op">]</span> <span class="kw">private</span> <span class="kw">static</span> <span class="kw">readonly</span> VertexHelper s_VertexHelper <span class="op">=</span> <span class="kw">new</span> <span class="fu">VertexHelper</span><span class="op">();</span></span></code></pre></div>
+</blockquote>
+<ol start="2" type="1">
+<li><p>渲染控制相关</p></li>
+<li><p>材质以及材质属性</p></li>
+</ol>
+<pre><code>  ```csharp
+  //材质对象
+  [FormerlySerializedAs("m_Mat")]
+  [SerializeField] protected Material m_Material;  
+
+  //材质属性 颜色
+  [SerializeField] private Color m_Color = Color.white;
+  ```</code></pre>
+<ol start="2" type="1">
+<li><p>顶点、Mesh (辅助顶点mesh类 <code>VertexHelper</code>)</p>
+<blockquote>
+<p>Rebuild调用<code>UpdateGeometry</code> 进行顶点、Mesh
+计算，顶点效果<code>IMeshModifier</code>回调触发</p>
+<p>在 <code>OnPopulateMesh</code> 中进行顶点属性处理，简单的顶点
+和includies, 以及 uv</p>
+</blockquote>
+<div class="sourceCode" id="cb10"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>     <span class="kw">public</span> <span class="kw">virtual</span> <span class="dt">void</span> <span class="fu">Rebuild</span><span class="op">(</span>CanvasUpdate update<span class="op">)</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>        <span class="op">{</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>          <span class="co">///...</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>              <span class="fu">UpdateGeometry</span><span class="op">();</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>                 m_VertsDirty <span class="op">=</span> <span class="kw">false</span><span class="op">;</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>              <span class="co">///...</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>            <span class="op">}</span></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>        <span class="op">}</span> </span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a><span class="co">/// </span><span class="kw">&lt;summary&gt;</span></span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>        <span class="co">/// Call to update the geometry of the Graphic onto the CanvasRenderer.</span></span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>        <span class="co">/// </span><span class="kw">&lt;/summary&gt;</span></span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>        <span class="kw">protected</span> <span class="kw">virtual</span> <span class="dt">void</span> <span class="fu">UpdateGeometry</span><span class="op">()</span></span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>        <span class="op">{</span></span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a>            <span class="kw">if</span> <span class="op">(</span>useLegacyMeshGeneration<span class="op">)</span></span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a>            <span class="op">{</span></span>
+<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a>                <span class="fu">DoLegacyMeshGeneration</span><span class="op">();</span></span>
+<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a>            <span class="op">}</span></span>
+<span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a>            <span class="kw">else</span></span>
+<span id="cb10-20"><a href="#cb10-20" aria-hidden="true" tabindex="-1"></a>            <span class="op">{</span></span>
+<span id="cb10-21"><a href="#cb10-21" aria-hidden="true" tabindex="-1"></a>                <span class="fu">DoMeshGeneration</span><span class="op">();</span></span>
+<span id="cb10-22"><a href="#cb10-22" aria-hidden="true" tabindex="-1"></a>            <span class="op">}</span></span>
+<span id="cb10-23"><a href="#cb10-23" aria-hidden="true" tabindex="-1"></a>        <span class="op">}</span></span>
+<span id="cb10-24"><a href="#cb10-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-25"><a href="#cb10-25" aria-hidden="true" tabindex="-1"></a>        <span class="kw">private</span> <span class="dt">void</span> <span class="fu">DoMeshGeneration</span><span class="op">()</span></span>
+<span id="cb10-26"><a href="#cb10-26" aria-hidden="true" tabindex="-1"></a>        <span class="op">{</span></span>
+<span id="cb10-27"><a href="#cb10-27" aria-hidden="true" tabindex="-1"></a>            <span class="kw">if</span> <span class="op">(</span>rectTransform <span class="op">!=</span> <span class="kw">null</span> <span class="op">&amp;&amp;</span> rectTransform<span class="op">.</span><span class="fu">rect</span><span class="op">.</span><span class="fu">width</span> <span class="op">&gt;=</span> <span class="dv">0</span> <span class="op">&amp;&amp;</span> rectTransform<span class="op">.</span><span class="fu">rect</span><span class="op">.</span><span class="fu">height</span> <span class="op">&gt;=</span> <span class="dv">0</span><span class="op">)</span></span>
+<span id="cb10-28"><a href="#cb10-28" aria-hidden="true" tabindex="-1"></a>                <span class="fu">OnPopulateMesh</span><span class="op">(</span>s_VertexHelper<span class="op">);</span></span>
+<span id="cb10-29"><a href="#cb10-29" aria-hidden="true" tabindex="-1"></a>            <span class="kw">else</span></span>
+<span id="cb10-30"><a href="#cb10-30" aria-hidden="true" tabindex="-1"></a>                s_VertexHelper<span class="op">.</span><span class="fu">Clear</span><span class="op">();</span> <span class="co">// clear the vertex helper so invalid graphics dont draw.</span></span>
+<span id="cb10-31"><a href="#cb10-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-32"><a href="#cb10-32" aria-hidden="true" tabindex="-1"></a>            <span class="dt">var</span> components <span class="op">=</span> ListPool<span class="op">&lt;</span>Component<span class="op">&gt;.</span><span class="fu">Get</span><span class="op">();</span></span>
+<span id="cb10-33"><a href="#cb10-33" aria-hidden="true" tabindex="-1"></a>            <span class="fu">GetComponents</span><span class="op">(</span><span class="kw">typeof</span><span class="op">(</span>IMeshModifier<span class="op">),</span> components<span class="op">);</span></span>
+<span id="cb10-34"><a href="#cb10-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-35"><a href="#cb10-35" aria-hidden="true" tabindex="-1"></a>            <span class="kw">for</span> <span class="op">(</span><span class="dt">var</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> components<span class="op">.</span><span class="fu">Count</span><span class="op">;</span> i<span class="op">++)</span></span>
+<span id="cb10-36"><a href="#cb10-36" aria-hidden="true" tabindex="-1"></a>                <span class="op">((</span>IMeshModifier<span class="op">)</span>components<span class="op">[</span>i<span class="op">]).</span><span class="fu">ModifyMesh</span><span class="op">(</span>s_VertexHelper<span class="op">);</span></span>
+<span id="cb10-37"><a href="#cb10-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-38"><a href="#cb10-38" aria-hidden="true" tabindex="-1"></a>            ListPool<span class="op">&lt;</span>Component<span class="op">&gt;.</span><span class="fu">Release</span><span class="op">(</span>components<span class="op">);</span></span>
+<span id="cb10-39"><a href="#cb10-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-40"><a href="#cb10-40" aria-hidden="true" tabindex="-1"></a>            s_VertexHelper<span class="op">.</span><span class="fu">FillMesh</span><span class="op">(</span>workerMesh<span class="op">);</span></span>
+<span id="cb10-41"><a href="#cb10-41" aria-hidden="true" tabindex="-1"></a>            canvasRenderer<span class="op">.</span><span class="fu">SetMesh</span><span class="op">(</span>workerMesh<span class="op">);</span></span>
+<span id="cb10-42"><a href="#cb10-42" aria-hidden="true" tabindex="-1"></a>        <span class="op">}</span></span>
+<span id="cb10-43"><a href="#cb10-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-44"><a href="#cb10-44" aria-hidden="true" tabindex="-1"></a>        <span class="kw">private</span> <span class="dt">void</span> <span class="fu">DoLegacyMeshGeneration</span><span class="op">()</span></span>
+<span id="cb10-45"><a href="#cb10-45" aria-hidden="true" tabindex="-1"></a>        <span class="op">{</span></span>
+<span id="cb10-46"><a href="#cb10-46" aria-hidden="true" tabindex="-1"></a>            <span class="kw">if</span> <span class="op">(</span>rectTransform <span class="op">!=</span> <span class="kw">null</span> <span class="op">&amp;&amp;</span> rectTransform<span class="op">.</span><span class="fu">rect</span><span class="op">.</span><span class="fu">width</span> <span class="op">&gt;=</span> <span class="dv">0</span> <span class="op">&amp;&amp;</span> rectTransform<span class="op">.</span><span class="fu">rect</span><span class="op">.</span><span class="fu">height</span> <span class="op">&gt;=</span> <span class="dv">0</span><span class="op">)</span></span>
+<span id="cb10-47"><a href="#cb10-47" aria-hidden="true" tabindex="-1"></a>            <span class="op">{</span></span>
+<span id="cb10-48"><a href="#cb10-48" aria-hidden="true" tabindex="-1"></a>#pragma warning disable <span class="dv">618</span></span>
+<span id="cb10-49"><a href="#cb10-49" aria-hidden="true" tabindex="-1"></a>                <span class="fu">OnPopulateMesh</span><span class="op">(</span>workerMesh<span class="op">);</span></span>
+<span id="cb10-50"><a href="#cb10-50" aria-hidden="true" tabindex="-1"></a>#pragma warning restore <span class="dv">618</span></span>
+<span id="cb10-51"><a href="#cb10-51" aria-hidden="true" tabindex="-1"></a>            <span class="op">}</span></span>
+<span id="cb10-52"><a href="#cb10-52" aria-hidden="true" tabindex="-1"></a>            <span class="kw">else</span></span>
+<span id="cb10-53"><a href="#cb10-53" aria-hidden="true" tabindex="-1"></a>            <span class="op">{</span></span>
+<span id="cb10-54"><a href="#cb10-54" aria-hidden="true" tabindex="-1"></a>                workerMesh<span class="op">.</span><span class="fu">Clear</span><span class="op">();</span></span>
+<span id="cb10-55"><a href="#cb10-55" aria-hidden="true" tabindex="-1"></a>            <span class="op">}</span></span>
+<span id="cb10-56"><a href="#cb10-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-57"><a href="#cb10-57" aria-hidden="true" tabindex="-1"></a>            <span class="dt">var</span> components <span class="op">=</span> ListPool<span class="op">&lt;</span>Component<span class="op">&gt;.</span><span class="fu">Get</span><span class="op">();</span></span>
+<span id="cb10-58"><a href="#cb10-58" aria-hidden="true" tabindex="-1"></a>            <span class="fu">GetComponents</span><span class="op">(</span><span class="kw">typeof</span><span class="op">(</span>IMeshModifier<span class="op">),</span> components<span class="op">);</span></span>
+<span id="cb10-59"><a href="#cb10-59" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-60"><a href="#cb10-60" aria-hidden="true" tabindex="-1"></a>            <span class="kw">for</span> <span class="op">(</span><span class="dt">var</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> components<span class="op">.</span><span class="fu">Count</span><span class="op">;</span> i<span class="op">++)</span></span>
+<span id="cb10-61"><a href="#cb10-61" aria-hidden="true" tabindex="-1"></a>            <span class="op">{</span></span>
+<span id="cb10-62"><a href="#cb10-62" aria-hidden="true" tabindex="-1"></a>#pragma warning disable <span class="dv">618</span></span>
+<span id="cb10-63"><a href="#cb10-63" aria-hidden="true" tabindex="-1"></a>                <span class="op">((</span>IMeshModifier<span class="op">)</span>components<span class="op">[</span>i<span class="op">]).</span><span class="fu">ModifyMesh</span><span class="op">(</span>workerMesh<span class="op">);</span></span>
+<span id="cb10-64"><a href="#cb10-64" aria-hidden="true" tabindex="-1"></a>#pragma warning restore <span class="dv">618</span></span>
+<span id="cb10-65"><a href="#cb10-65" aria-hidden="true" tabindex="-1"></a>            <span class="op">}</span></span>
+<span id="cb10-66"><a href="#cb10-66" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-67"><a href="#cb10-67" aria-hidden="true" tabindex="-1"></a>            ListPool<span class="op">&lt;</span>Component<span class="op">&gt;.</span><span class="fu">Release</span><span class="op">(</span>components<span class="op">);</span></span>
+<span id="cb10-68"><a href="#cb10-68" aria-hidden="true" tabindex="-1"></a>            canvasRenderer<span class="op">.</span><span class="fu">SetMesh</span><span class="op">(</span>workerMesh<span class="op">);</span></span>
+<span id="cb10-69"><a href="#cb10-69" aria-hidden="true" tabindex="-1"></a>        <span class="op">}</span></span>
+<span id="cb10-70"><a href="#cb10-70" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-71"><a href="#cb10-71" aria-hidden="true" tabindex="-1"></a>     <span class="co">// 提供虚函数，改变顶点属性</span></span>
+<span id="cb10-72"><a href="#cb10-72" aria-hidden="true" tabindex="-1"></a>        <span class="kw">protected</span> <span class="kw">virtual</span> <span class="dt">void</span> <span class="fu">OnPopulateMesh</span><span class="op">(</span>VertexHelper vh<span class="op">)</span></span>
+<span id="cb10-73"><a href="#cb10-73" aria-hidden="true" tabindex="-1"></a>        <span class="op">{</span></span>
+<span id="cb10-74"><a href="#cb10-74" aria-hidden="true" tabindex="-1"></a>            <span class="dt">var</span> r <span class="op">=</span> <span class="fu">GetPixelAdjustedRect</span><span class="op">();</span></span>
+<span id="cb10-75"><a href="#cb10-75" aria-hidden="true" tabindex="-1"></a>            <span class="dt">var</span> v <span class="op">=</span> <span class="kw">new</span> <span class="fu">Vector4</span><span class="op">(</span>r<span class="op">.</span><span class="fu">x</span><span class="op">,</span> r<span class="op">.</span><span class="fu">y</span><span class="op">,</span> r<span class="op">.</span><span class="fu">x</span> <span class="op">+</span> r<span class="op">.</span><span class="fu">width</span><span class="op">,</span> r<span class="op">.</span><span class="fu">y</span> <span class="op">+</span> r<span class="op">.</span><span class="fu">height</span><span class="op">);</span></span>
+<span id="cb10-76"><a href="#cb10-76" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-77"><a href="#cb10-77" aria-hidden="true" tabindex="-1"></a>            Color32 color32 <span class="op">=</span> color<span class="op">;</span></span>
+<span id="cb10-78"><a href="#cb10-78" aria-hidden="true" tabindex="-1"></a>            vh<span class="op">.</span><span class="fu">Clear</span><span class="op">();</span></span>
+<span id="cb10-79"><a href="#cb10-79" aria-hidden="true" tabindex="-1"></a>            vh<span class="op">.</span><span class="fu">AddVert</span><span class="op">(</span><span class="kw">new</span> <span class="fu">Vector3</span><span class="op">(</span>v<span class="op">.</span><span class="fu">x</span><span class="op">,</span> v<span class="op">.</span><span class="fu">y</span><span class="op">),</span> color32<span class="op">,</span> <span class="kw">new</span> <span class="fu">Vector2</span><span class="op">(</span>0f<span class="op">,</span> 0f<span class="op">));</span></span>
+<span id="cb10-80"><a href="#cb10-80" aria-hidden="true" tabindex="-1"></a>            vh<span class="op">.</span><span class="fu">AddVert</span><span class="op">(</span><span class="kw">new</span> <span class="fu">Vector3</span><span class="op">(</span>v<span class="op">.</span><span class="fu">x</span><span class="op">,</span> v<span class="op">.</span><span class="fu">w</span><span class="op">),</span> color32<span class="op">,</span> <span class="kw">new</span> <span class="fu">Vector2</span><span class="op">(</span>0f<span class="op">,</span> 1f<span class="op">));</span></span>
+<span id="cb10-81"><a href="#cb10-81" aria-hidden="true" tabindex="-1"></a>            vh<span class="op">.</span><span class="fu">AddVert</span><span class="op">(</span><span class="kw">new</span> <span class="fu">Vector3</span><span class="op">(</span>v<span class="op">.</span><span class="fu">z</span><span class="op">,</span> v<span class="op">.</span><span class="fu">w</span><span class="op">),</span> color32<span class="op">,</span> <span class="kw">new</span> <span class="fu">Vector2</span><span class="op">(</span>1f<span class="op">,</span> 1f<span class="op">));</span></span>
+<span id="cb10-82"><a href="#cb10-82" aria-hidden="true" tabindex="-1"></a>            vh<span class="op">.</span><span class="fu">AddVert</span><span class="op">(</span><span class="kw">new</span> <span class="fu">Vector3</span><span class="op">(</span>v<span class="op">.</span><span class="fu">z</span><span class="op">,</span> v<span class="op">.</span><span class="fu">y</span><span class="op">),</span> color32<span class="op">,</span> <span class="kw">new</span> <span class="fu">Vector2</span><span class="op">(</span>1f<span class="op">,</span> 0f<span class="op">));</span></span>
+<span id="cb10-83"><a href="#cb10-83" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-84"><a href="#cb10-84" aria-hidden="true" tabindex="-1"></a>            vh<span class="op">.</span><span class="fu">AddTriangle</span><span class="op">(</span><span class="dv">0</span><span class="op">,</span> <span class="dv">1</span><span class="op">,</span> <span class="dv">2</span><span class="op">);</span></span>
+<span id="cb10-85"><a href="#cb10-85" aria-hidden="true" tabindex="-1"></a>            vh<span class="op">.</span><span class="fu">AddTriangle</span><span class="op">(</span><span class="dv">2</span><span class="op">,</span> <span class="dv">3</span><span class="op">,</span> <span class="dv">0</span><span class="op">);</span></span>
+<span id="cb10-86"><a href="#cb10-86" aria-hidden="true" tabindex="-1"></a>        <span class="op">}</span></span></code></pre></div></li>
+<li><p>设置Render的贴图和材质属性</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>        <span class="kw">protected</span> <span class="kw">virtual</span> <span class="dt">void</span> <span class="fu">UpdateMaterial</span><span class="op">()</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>        <span class="op">{</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>            <span class="kw">if</span> <span class="op">(!</span><span class="fu">IsActive</span><span class="op">())</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>                <span class="kw">return</span><span class="op">;</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>            canvasRenderer<span class="op">.</span><span class="fu">materialCount</span> <span class="op">=</span> <span class="dv">1</span><span class="op">;</span></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>            canvasRenderer<span class="op">.</span><span class="fu">SetMaterial</span><span class="op">(</span>materialForRendering<span class="op">,</span> <span class="dv">0</span><span class="op">);</span></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>            canvasRenderer<span class="op">.</span><span class="fu">SetTexture</span><span class="op">(</span>mainTexture<span class="op">);</span></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>        <span class="op">}</span></span></code></pre></div></li>
+<li><p>Rebuild</p></li>
+</ol>
+<pre><code>  1. GraphicRegistry 按顺序注册缓存
+
+     &gt; 储存渲染元素， 以`Canvas`为Key，IndexedSet&lt;Graphic&gt; 为value 的字典
+     &gt;
+     &gt; 这个Canvas 是父节点遍历的第一个Canvas
+
+     ```csharp
+     private readonly Dictionary&lt;Canvas, IndexedSet&lt;Graphic&gt;&gt; m_Graphics = new Dictionary&lt;Canvas, IndexedSet&lt;Graphic&gt;&gt;();
+     ```
+
+     1. 注册 GraphicRegistry.RegisterGraphicForCanvas， 静态方法内部处理使用 内部静态对象 s_Instance
+
+        &gt; 按顺序添加到 Canvas 对应的Graphic 列表中
+
+        1. void RegisterGraphicForCanvas(Canvas c, Graphic graphic)
+
+     2. GetGraphicsForCanvas(Canvas c)
+
+        &gt; 或者对应的Canvas 的Graphic 的元素列表
+
+  2. CanvasUpdateRegistry
+
+     &gt; 分为两大类 ：
+     &gt;
+     &gt; 1. IndexedSet&lt;ICanvasElement&gt; m_LayoutRebuildQueue
+     &gt;
+     &gt; 2. IndexedSet&lt;ICanvasElement&gt; m_GraphicRebuildQueue 
+     &gt;
+     &gt;    主要提供注册和移除接口， 内部处理使用 Canvas.willRenderCanvases += PerformUpdate; 回调处理
+     &gt;
+     &gt;    ~~，因此流程时序很重要~~。
+
+     1. RegisterCanvasElementForGraphicRebuild 
+
+     2. RegisterCanvasElementForLayoutRebuild
+
+     3. UnRegisterCanvasElementForRebuild, 移除layout和graphic队列
+
+     4. PerformUpdate
+
+        &gt; 主要步骤如下：
+
+        ```csharp
+        public enum CanvasUpdate
+            {
+                /// &lt;summary&gt;
+                /// Called before layout.
+                /// &lt;/summary&gt;
+                Prelayout = 0,
+                /// &lt;summary&gt;
+                /// Called for layout.
+                /// &lt;/summary&gt;
+                Layout = 1,
+                /// &lt;summary&gt;
+                /// Called after layout.
+                /// &lt;/summary&gt;
+                PostLayout = 2,
+                /// &lt;summary&gt;
+                /// Called before rendering.
+                /// &lt;/summary&gt;
+                PreRender = 3,
+                /// &lt;summary&gt;
+                /// Called late, before render.
+                /// &lt;/summary&gt;
+                LatePreRender = 4,
+                /// &lt;summary&gt;
+                /// Max enum value. Always last.
+                /// &lt;/summary&gt;
+                MaxUpdateValue = 5
+            }
+        ```
+
+        验证非null的UnityObject
+
+        ```csharp
+         private bool ObjectValidForUpdate(ICanvasElement element)
+                {
+                    var valid = element != null;
+
+                    var isUnityObject = element is Object;
+                    if (isUnityObject)
+                        valid = (element as Object) != null; //Here we make use of the overloaded UnityEngine.Object == null, that checks if the native object is alive.
+
+                    return valid;
+                }
+        ```
+
+
+
+
+
+        1. CleanInvalidItems 移除量大队列的null 元素和标记为销毁的元素， **标记销毁是因为引擎设计销毁操作在下一帧的缘故**
+
+        2.  layout队列 根据transform层级排序(父节点数作为的层级)。进行两次迭代验证非null的UnityObject并 执行 Rebuild回调的 Prelayout， 和Rebuild回调的 Layout. 最后遍历回调 LayoutComplete。 清理Layout 临时引用。
+           ```csharp
+           m_PerformingLayoutUpdate = true;
+           m_LayoutRebuildQueue.Sort(s_SortLayoutFunction);
+           ```                    
+           ```csharp
+                   private static int ParentCount(Transform child)
+                   {
+                       if (child == null)
+                           return 0;
+
+                       var parent = child.parent;
+                       int count = 0;
+                       while (parent != null)
+                       {
+                           count++;
+                           parent = parent.parent;
+                       }
+                       return count;
+                   }
+           ```
+           ```csharp
+                 private bool ObjectValidForUpdate(ICanvasElement element)
+                   {
+                       var valid = element != null;
+
+                       var isUnityObject = element is Object;
+                       if (isUnityObject)
+                           valid = (element as Object) != null; //Here we make use of the overloaded UnityEngine.Object == null, that checks if the native object is alive.
+
+                       return valid;
+                   }
+           ```
+           ```csharp
+            m_LayoutRebuildQueue.Sort(s_SortLayoutFunction);
+                       for (int i = 0; i &lt;= (int)CanvasUpdate.PostLayout; i++)
+                       {
+                           for (int j = 0; j &lt; m_LayoutRebuildQueue.Count; j++)
+                           {
+                               var rebuild = instance.m_LayoutRebuildQueue[j];
+                               try
+                               {
+                                   if (ObjectValidForUpdate(rebuild))
+                                       rebuild.Rebuild((CanvasUpdate)i);
+                               }
+                               catch (Exception e)
+                               {
+                                   Debug.LogException(e, rebuild.transform);
+                               }
+                           }
+                       }
+           ```
+           ```csharp
+           for (int i = 0; i &lt; m_LayoutRebuildQueue.Count; ++i)
+                m_LayoutRebuildQueue[i].LayoutComplete();
+           ```
+           ```csharp
+           instance.m_LayoutRebuildQueue.Clear();
+           m_PerformingLayoutUpdate = false;
+           ```
+
+        3.  执行 Cull
+           ```csharp
+           // now layout is complete do culling...
+           ClipperRegistry.instance.Cull();
+           ```
+
+
+
+        4. Graphic队列 ,进行两次迭代验证非null的UnityObject并 执行 Rebuild回调的 PreRender， 和Rebuild回调的 LatePreRender. 最后遍历回调 GraphicUpdateComplete。 清理Graphic临时引用。
+           ```csharp
+           m_PerformingGraphicUpdate = true;
+                       for (var i = (int)CanvasUpdate.PreRender; i &lt; (int)CanvasUpdate.MaxUpdateValue; i++)
+                       {
+                           for (var k = 0; k &lt; instance.m_GraphicRebuildQueue.Count; k++)
+                           {
+                               try
+                               {
+                                   var element = instance.m_GraphicRebuildQueue[k];
+                                   if (ObjectValidForUpdate(element))
+                                       element.Rebuild((CanvasUpdate)i);
+                               }
+                               catch (Exception e)
+                               {
+                                   Debug.LogException(e, instance.m_GraphicRebuildQueue[k].transform);
+                               }
+                           }
+                       }
+           ```
+           ```csharp
+           for (int i = 0; i &lt; m_GraphicRebuildQueue.Count; ++i)
+                           m_GraphicRebuildQueue[i].GraphicUpdateComplete();
+           ```
+           ```csharp
+           instance.m_GraphicRebuildQueue.Clear();
+            m_PerformingGraphicUpdate = false;
+           ```
+
+  3. LayoutRebuilder， Layout集中的 Rebuild处理
+
+     &gt; CanvasElement 包装器，专门处理Layout的rebuild，
+     &gt;
+     &gt; 主要接口 `MarkLayoutForRebuild`, 这个包装只处理包含并激活ILayoutGroup的RectTransform
+     &gt;
+     &gt; 最后调用 `TryRegisterCanvasElementForLayoutRebuild` 处理
+
+     1. 被触发的方法
+
+        ```csharp
+        protected override void OnBeforeTransformParentChanged()
+        {
+           GraphicRegistry.UnregisterGraphicForCanvas(canvas, this);
+            LayoutRebuilder.MarkLayoutForRebuild(rectTransform);
+        }
+        ```
+
+        ```csharp
+        public virtual void SetLayoutDirty()
+        {
+           if (!IsActive())
+               return;
+           LayoutRebuilder.MarkLayoutForRebuild(rectTransform);
+           if (m_OnDirtyLayoutCallback != null)
+               m_OnDirtyLayoutCallback();
+        }
+        ```
+
+        ```csharp
+           protected override void OnDisable()
+           {
+               //。。。
+               LayoutRebuilder.MarkLayoutForRebuild(rectTransform);
+               //。。。
+           }
+        ```
+
+
+
+     2. 注册的回调事件
+
+        ```csharp
+
+        static LayoutRebuilder()
+        {
+           RectTransform.reapplyDrivenProperties += ReapplyDrivenProperties;
+        }
+
+        //...
+        static void ReapplyDrivenProperties(RectTransform driven)
+        {
+           MarkLayoutForRebuild(driven);
+        }
+        ```
+
+     3.  MarkLayoutForRebuild 实现细节
+
+        ```csharp
+        public static void MarkLayoutForRebuild(RectTransform rect)
+        {
+           if (rect == null || rect.gameObject == null)
+               return;
+
+           var comps = ListPool&lt;Component&gt;.Get();
+            bool validLayoutGroup = true;
+            RectTransform layoutRoot = rect;
+            var parent = layoutRoot.parent as RectTransform;
+            //如果父节点含有 ILayoutGroup， 则 layoutRoot = parent,
+            //parent = parent'parent
+            while (validLayoutGroup &amp;&amp; !(parent == null || parent.gameObject == null))
+            {
+               validLayoutGroup = false;
+               parent.GetComponents(typeof(ILayoutGroup), comps);
+
+                for (int i = 0; i &lt; comps.Count; ++i)
+                {
+                     var cur = comps[i];
+                     if (cur != null &amp;&amp; cur is Behaviour &amp;&amp; ((Behaviour)cur).isActiveAndEnabled)
+                     {
+                          validLayoutGroup = true;
+                          layoutRoot = parent;
+                          break;
+                      }
+                   }
+
+                   parent = parent.parent as RectTransform;
+            }
+
+                    // We know the layout root is valid if it's not the same as the rect,
+                    // since we checked that above. But if they're the same we still need to check.
+            //1. 不含有 ILayoutGroup组件的情况， 或者ILayoutGroup没有激活的情况
+           if (layoutRoot == rect &amp;&amp; !ValidController(layoutRoot, comps))
+            {
+               ListPool&lt;Component&gt;.Release(comps);
+                return;
+             }
+
+            //2. 包含 ILayoutGroup且控件激活
+             MarkLayoutRootForRebuild(layoutRoot);
+             ListPool&lt;Component&gt;.Release(comps);
+        }
+        ```
+
+        ```csharp
+           private static void MarkLayoutRootForRebuild(RectTransform controller)
+                {
+                    if (controller == null)
+                        return;
+
+                    var rebuilder = s_Rebuilders.Get();
+                    rebuilder.Initialize(controller);
+                    if (!CanvasUpdateRegistry.TryRegisterCanvasElementForLayoutRebuild(rebuilder))
+                        s_Rebuilders.Release(rebuilder);
+                }
+        ```
+
+     4. 设置回调， 对应设置徐然数据改变最后的回调方法
+
+        1. RegisterDirtyLayoutCallback
+        2. UnregisterDirtyLayoutCallback
+        3. RegisterDirtyVerticesCallback
+        4. UnregisterDirtyVerticesCallback
+        5. RegisterDirtyMaterialCallback
+        6. UnregisterDirtyMaterialCallback
+
+  4. ~~GraphicRebuildTracker.TrackGraphic~~(this);</code></pre>
+<ol start="3" type="1">
+<li>物理以及事件</li>
+</ol>
+<blockquote>
+<p>Raycast、</p>
+</blockquote>
+<ol type="1">
+<li><p>m_RaycastTarget，启动input事件检测</p></li>
+<li><p>Raycast 方法，用于事件监测，<code>Canvas ，eventsystem</code></p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a> <span class="kw">public</span> <span class="kw">virtual</span> <span class="dt">bool</span> <span class="fu">Raycast</span><span class="op">(</span>Vector2 sp<span class="op">,</span> Camera eventCamera<span class="op">)</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>        <span class="op">{</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>            <span class="kw">if</span> <span class="op">(!</span>isActiveAndEnabled<span class="op">)</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>                <span class="kw">return</span> <span class="kw">false</span><span class="op">;</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>            <span class="dt">var</span> t <span class="op">=</span> transform<span class="op">;</span></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>            <span class="dt">var</span> components <span class="op">=</span> ListPool<span class="op">&lt;</span>Component<span class="op">&gt;.</span><span class="fu">Get</span><span class="op">();</span></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>            <span class="dt">bool</span> ignoreParentGroups <span class="op">=</span> <span class="kw">false</span><span class="op">;</span></span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>            <span class="dt">bool</span> continueTraversal <span class="op">=</span> <span class="kw">true</span><span class="op">;</span></span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>            <span class="kw">while</span> <span class="op">(</span>t <span class="op">!=</span> <span class="kw">null</span><span class="op">)</span></span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>            <span class="op">{</span></span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a>                t<span class="op">.</span><span class="fu">GetComponents</span><span class="op">(</span>components<span class="op">);</span></span>
+<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a>                <span class="kw">for</span> <span class="op">(</span><span class="dt">var</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> components<span class="op">.</span><span class="fu">Count</span><span class="op">;</span> i<span class="op">++)</span></span>
+<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a>                <span class="op">{</span></span>
+<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a>                    <span class="dt">var</span> canvas <span class="op">=</span> components<span class="op">[</span>i<span class="op">]</span> <span class="kw">as</span> Canvas<span class="op">;</span></span>
+<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a>                    <span class="kw">if</span> <span class="op">(</span>canvas <span class="op">!=</span> <span class="kw">null</span> <span class="op">&amp;&amp;</span> canvas<span class="op">.</span><span class="fu">overrideSorting</span><span class="op">)</span></span>
+<span id="cb13-19"><a href="#cb13-19" aria-hidden="true" tabindex="-1"></a>                        continueTraversal <span class="op">=</span> <span class="kw">false</span><span class="op">;</span></span>
+<span id="cb13-20"><a href="#cb13-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-21"><a href="#cb13-21" aria-hidden="true" tabindex="-1"></a>                    <span class="dt">var</span> filter <span class="op">=</span> components<span class="op">[</span>i<span class="op">]</span> <span class="kw">as</span> ICanvasRaycastFilter<span class="op">;</span></span>
+<span id="cb13-22"><a href="#cb13-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-23"><a href="#cb13-23" aria-hidden="true" tabindex="-1"></a>                    <span class="kw">if</span> <span class="op">(</span>filter <span class="op">==</span> <span class="kw">null</span><span class="op">)</span></span>
+<span id="cb13-24"><a href="#cb13-24" aria-hidden="true" tabindex="-1"></a>                        <span class="kw">continue</span><span class="op">;</span></span>
+<span id="cb13-25"><a href="#cb13-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-26"><a href="#cb13-26" aria-hidden="true" tabindex="-1"></a>                    <span class="dt">var</span> raycastValid <span class="op">=</span> <span class="kw">true</span><span class="op">;</span></span>
+<span id="cb13-27"><a href="#cb13-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-28"><a href="#cb13-28" aria-hidden="true" tabindex="-1"></a>                    <span class="dt">var</span> group <span class="op">=</span> components<span class="op">[</span>i<span class="op">]</span> <span class="kw">as</span> CanvasGroup<span class="op">;</span></span>
+<span id="cb13-29"><a href="#cb13-29" aria-hidden="true" tabindex="-1"></a>                    <span class="kw">if</span> <span class="op">(</span>group <span class="op">!=</span> <span class="kw">null</span><span class="op">)</span></span>
+<span id="cb13-30"><a href="#cb13-30" aria-hidden="true" tabindex="-1"></a>                    <span class="op">{</span></span>
+<span id="cb13-31"><a href="#cb13-31" aria-hidden="true" tabindex="-1"></a>                        <span class="kw">if</span> <span class="op">(</span>ignoreParentGroups <span class="op">==</span> <span class="kw">false</span> <span class="op">&amp;&amp;</span> group<span class="op">.</span><span class="fu">ignoreParentGroups</span><span class="op">)</span></span>
+<span id="cb13-32"><a href="#cb13-32" aria-hidden="true" tabindex="-1"></a>                        <span class="op">{</span></span>
+<span id="cb13-33"><a href="#cb13-33" aria-hidden="true" tabindex="-1"></a>                            ignoreParentGroups <span class="op">=</span> <span class="kw">true</span><span class="op">;</span></span>
+<span id="cb13-34"><a href="#cb13-34" aria-hidden="true" tabindex="-1"></a>                            raycastValid <span class="op">=</span> filter<span class="op">.</span><span class="fu">IsRaycastLocationValid</span><span class="op">(</span>sp<span class="op">,</span> eventCamera<span class="op">);</span></span>
+<span id="cb13-35"><a href="#cb13-35" aria-hidden="true" tabindex="-1"></a>                        <span class="op">}</span></span>
+<span id="cb13-36"><a href="#cb13-36" aria-hidden="true" tabindex="-1"></a>                        <span class="kw">else</span> <span class="kw">if</span> <span class="op">(!</span>ignoreParentGroups<span class="op">)</span></span>
+<span id="cb13-37"><a href="#cb13-37" aria-hidden="true" tabindex="-1"></a>                            raycastValid <span class="op">=</span> filter<span class="op">.</span><span class="fu">IsRaycastLocationValid</span><span class="op">(</span>sp<span class="op">,</span> eventCamera<span class="op">);</span></span>
+<span id="cb13-38"><a href="#cb13-38" aria-hidden="true" tabindex="-1"></a>                    <span class="op">}</span></span>
+<span id="cb13-39"><a href="#cb13-39" aria-hidden="true" tabindex="-1"></a>                    <span class="kw">else</span></span>
+<span id="cb13-40"><a href="#cb13-40" aria-hidden="true" tabindex="-1"></a>                    <span class="op">{</span></span>
+<span id="cb13-41"><a href="#cb13-41" aria-hidden="true" tabindex="-1"></a>                        raycastValid <span class="op">=</span> filter<span class="op">.</span><span class="fu">IsRaycastLocationValid</span><span class="op">(</span>sp<span class="op">,</span> eventCamera<span class="op">);</span></span>
+<span id="cb13-42"><a href="#cb13-42" aria-hidden="true" tabindex="-1"></a>                    <span class="op">}</span></span>
+<span id="cb13-43"><a href="#cb13-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-44"><a href="#cb13-44" aria-hidden="true" tabindex="-1"></a>                    <span class="kw">if</span> <span class="op">(!</span>raycastValid<span class="op">)</span></span>
+<span id="cb13-45"><a href="#cb13-45" aria-hidden="true" tabindex="-1"></a>                    <span class="op">{</span></span>
+<span id="cb13-46"><a href="#cb13-46" aria-hidden="true" tabindex="-1"></a>                        ListPool<span class="op">&lt;</span>Component<span class="op">&gt;.</span><span class="fu">Release</span><span class="op">(</span>components<span class="op">);</span></span>
+<span id="cb13-47"><a href="#cb13-47" aria-hidden="true" tabindex="-1"></a>                        <span class="kw">return</span> <span class="kw">false</span><span class="op">;</span></span>
+<span id="cb13-48"><a href="#cb13-48" aria-hidden="true" tabindex="-1"></a>                    <span class="op">}</span></span>
+<span id="cb13-49"><a href="#cb13-49" aria-hidden="true" tabindex="-1"></a>                <span class="op">}</span></span>
+<span id="cb13-50"><a href="#cb13-50" aria-hidden="true" tabindex="-1"></a>                t <span class="op">=</span> continueTraversal <span class="op">?</span> t<span class="op">.</span><span class="fu">parent</span> <span class="op">:</span> <span class="kw">null</span><span class="op">;</span></span>
+<span id="cb13-51"><a href="#cb13-51" aria-hidden="true" tabindex="-1"></a>            <span class="op">}</span></span>
+<span id="cb13-52"><a href="#cb13-52" aria-hidden="true" tabindex="-1"></a>            ListPool<span class="op">&lt;</span>Component<span class="op">&gt;.</span><span class="fu">Release</span><span class="op">(</span>components<span class="op">);</span></span>
+<span id="cb13-53"><a href="#cb13-53" aria-hidden="true" tabindex="-1"></a>            <span class="kw">return</span> <span class="kw">true</span><span class="op">;</span></span>
+<span id="cb13-54"><a href="#cb13-54" aria-hidden="true" tabindex="-1"></a>        <span class="op">}</span></span></code></pre></div></li>
+<li><p>基础Tween动画</p>
+<ol type="1">
+<li>CrossFadeColor、</li>
+<li>CrossFadeColor、</li>
+<li>CreateColorFromAlpha、</li>
+<li>CrossFadeAlpha</li>
+</ol></li>
+<li><p>相对坐标像素计算</p>
+<ol type="1">
+<li>PixelAdjustPoint、</li>
+<li>GetPixelAdjustedRect</li>
+</ol></li>
+<li><p><a href="">辅助类 Pool, IndexedSet</a></p></li>
+</ol></li>
+</ol></li>
+</ol></li>
+</ol>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">Yonggang Long</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://one2world.github.io/2022/08/10/unity/ugui-yuan-ma-ji-lu/3.ugui-graphic/">https://one2world.github.io/2022/08/10/unity/ugui-yuan-ma-ji-lu/3.ugui-graphic/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">Yonggang Long</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/null" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/null" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+        <div class="disqus-card card" data-aos="fade-up">
+    <div id="disqus_thread" class="card-content">
+        <noscript>Please enable JavaScript to view the
+            <a target="_blank" rel="noopener" href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+    </div>
+</div>
+
+<script type="text/javascript">
+    disqus_config = function () {
+        this.page.url = 'https://one2world.github.io/2022/08/10/unity/ugui-yuan-ma-ji-lu/3.ugui-graphic/';
+        this.page.identifier = '/2022/08/10/unity/ugui-yuan-ma-ji-lu/3.ugui-graphic/';
+        this.page.title = '';
+    };
+    let disqus_shortname = '';
+
+    (function () { // DON'T EDIT BELOW THIS LINE
+        let d = document, s = d.createElement('script');
+        // 如：s.src = 'https://blinkfox.disqus.com/embed.js';
+        s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2022/08/10/unity/ugui-yuan-ma-ji-lu/4.ugui-maskablegraphic/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
+                        
+                        <span class="card-title"></span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-08-10
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            Yonggang Long
+                            
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2022/08/10/unity/ugui-yuan-ma-ji-lu/2.ugui-ji-cheng-jie-gou/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
+                        
+                        <span class="card-title"></span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-08-10
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            Yonggang Long
+                            
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="503838841"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2019-2022</span>
+            
+            <span id="year">2019</span>
+            <a href="/about" target="_blank">Yonggang Long</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/one2world" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:longyonggang2@gmail.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=873415756" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 873415756" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+    <a href="https://www.zhihu.com/people/cheng-xu-jie-kang-ba-zi" class="tooltipped" target="_blank" data-tooltip="关注我的知乎: https://www.zhihu.com/people/cheng-xu-jie-kang-ba-zi" data-position="top" data-delay="50">
+        <i class="fab fa-zhihu1">知</i>
+    </a>
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+	
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>
