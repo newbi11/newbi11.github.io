@@ -1722,7 +1722,7 @@
       <link href="/2020/09/25/unity/xing-neng-you-hua/0.gai-lun/"/>
       <url>/2020/09/25/unity/xing-neng-you-hua/0.gai-lun/</url>
       
-        <content type="html"><![CDATA[<p>完整流程图</p><pre class="mermaid"><code>graph TD;    0(开始)--&gt;A;    subgraph 人工参与        A[性能指标1]--&gt;分析--&gt;conditionA{问题?}        conditionA--&gt;|是|B;        conditionA--&gt;|否|F;         F[存指标结束]--&gt;合入主干        subgraph 一轮优化            B(确定改进方案)--&gt;优化修改;            优化修改--&gt;性能指标2            性能指标2--&gt;分析diff        end        分析diff--&gt;A    end</code></pre><p>重新规划</p><pre class="mermaid"><code>graph TD;    0(开始)--&gt;A    subgraph 自动化        A[图表数据指标1]--&gt;B--&gt;conditionA{问题?}        conditionA--&gt;|是|C;        conditionA--&gt;|否|F;         F[存指标结束]--&gt;合入主干                 C(确定改进方案)--&gt;优化修改;        优化修改--&gt;性能指标2        性能指标2--&gt;分析diff        分析diff--&gt;A        subgraph 人工参与            B[分析]        end    end</code></pre>]]></content>
+        <content type="html"><![CDATA[<p>完整流程图</p><pre class="mermaid">graph TD;    0(开始)--&gt;A;    subgraph 人工参与        A[性能指标1]--&gt;分析--&gt;conditionA{问题?}        conditionA--&gt;|是|B;        conditionA--&gt;|否|F;         F[存指标结束]--&gt;合入主干        subgraph 一轮优化            B(确定改进方案)--&gt;优化修改;            优化修改--&gt;性能指标2            性能指标2--&gt;分析diff        end        分析diff--&gt;A    end</pre><p>重新规划</p><pre class="mermaid">graph TD;    0(开始)--&gt;A    subgraph 自动化        A[图表数据指标1]--&gt;B--&gt;conditionA{问题?}        conditionA--&gt;|是|C;        conditionA--&gt;|否|F;         F[存指标结束]--&gt;合入主干                 C(确定改进方案)--&gt;优化修改;        优化修改--&gt;性能指标2        性能指标2--&gt;分析diff        分析diff--&gt;A        subgraph 人工参与            B[分析]        end    end</pre>]]></content>
       
       
       <categories>

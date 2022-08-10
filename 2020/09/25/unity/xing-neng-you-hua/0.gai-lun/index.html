@@ -437,7 +437,7 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <p>完整流程图</p>
-<pre class="mermaid"><code>graph TD;
+<pre class="mermaid">graph TD;
     0(开始)--&gt;A;
     subgraph 人工参与
         A[性能指标1]--&gt;分析--&gt;conditionA{问题?}
@@ -451,9 +451,9 @@
             性能指标2--&gt;分析diff
         end
         分析diff--&gt;A
-    end</code></pre>
+    end</pre>
 <p>重新规划</p>
-<pre class="mermaid"><code>graph TD;
+<pre class="mermaid">graph TD;
     0(开始)--&gt;A
     subgraph 自动化
         A[图表数据指标1]--&gt;B--&gt;conditionA{问题?}
@@ -469,8 +469,7 @@
         subgraph 人工参与
             B[分析]
         end
-    end
-</code></pre>
+    end</pre>
 
                 
             </div>
@@ -1116,9 +1115,18 @@
 
 </div>
     </div>
+    
 </footer>
 
 <div class="progress-bar"></div>
+
+
+    <script src='https://unpkg.com/mermaid@8.13.5/dist/mermaid.min.js'></script>
+    <script>
+      if (window.mermaid) {
+        mermaid.initialize({theme: 'forest'});
+      }
+    </script>
 
 
     <!-- 搜索遮罩框 -->
