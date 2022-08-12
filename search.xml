@@ -4,13 +4,31 @@
   
     
     <entry>
-      <title>0.概述</title>
-      <link href="/2022/08/10/0-gai-shu/"/>
-      <url>/2022/08/10/0-gai-shu/</url>
+      <title>1.线性代数</title>
+      <link href="/2022/08/12/xuan-ran/ta-ru-men/2.xian-xing-dai-shu/"/>
+      <url>/2022/08/12/xuan-ran/ta-ru-men/2.xian-xing-dai-shu/</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<h2 id="一什么事是线性代数">一、什么事是线性代数</h2><p> 顾名思义，它是研究线性问题的代数理论。</p><p> 代数英文是Algebra，源于阿拉伯语，其本意是“结合在一起”的意思。也就是说代数的功能是把许多看似不相关的事物“结合在一起”，也就是进行抽象。抽象的目的不是为了显示某些人智商高，而是为了解决问题的方便，为了提高效率，把许多看似不相关的问题化归为一类问题。比如线性代数中的一个重要的抽象概念是线性空间（对所谓的要满足“加法”和“数乘”等八条公理的元素的集合），而其元素被称为向量。也就是说，只要某个集合里的元素满足那么几条公理，元素之间的变化满足这些规律，我们就可以对这个集合（现在可以改名为线性空间了）进行一系列线性化处理和分析，这个陌生的集合的性质和结构特点我们一下子就全知道了，因为宇宙间的所有的线性空间类的集合的性质都一样，地球人都知道（如果地球人都学了线性代数的话）。多么深刻而美妙的结论！这就是代数的一个抽象特性。</p><h3 id="线性的意义">1.1 线性的意义</h3><p> 线性代数里面的线性主要的意思就是线性空间里的线性变换。</p><p> 线性函数表现为直线，这只是几何意义。那么所谓“线性”的代数意义是什么呢？实际上，最基本的意义只有两条：可加性和比例性。</p><ol type="1"><li><p>可加性,<strong>和的函数等于函数的和</strong>。即如果函数<span class="math inline">\(f(x)\)</span>是线性的，那么有： <span class="math display">\[f(x_1 + x_2) = f(x_1) + f(x_2)\]</span></p></li><li><p>比例性，<strong>比例的函数等于函数的比例；或者说自变量缩放，函数也同等比例地缩放</strong>。也叫其次性、数乘性或均匀性,如果<span class="math inline">\(f(x)\)</span>是线性，那么有： <span class="math display">\[f(kx) = kf(x) , 其中 k 是常量。\]</span></p></li></ol><blockquote><p>💡 注：对于函数 <span class="math inline">\(f(x) = ax + b\)</span>而言不满足此比例性， <span class="math inline">\(f(kx) = akx +b\)</span>, <span class="math inline">\(kf(x) = akx + kb\)</span>因此<span class="math inline">\(f(kx) \ne kf(x)\)</span>。严格的讲， <span class="math inline">\(f(x) = ax + b\)</span> 不能再叫线性函数了。</p></blockquote><p>可加性与比例性组合在一块就是“线性”的全部意义了，<strong>线性组合的函数，等于函数的线性组合。</strong>，即有:<span class="math display">\[f(k_1x_1 + k_2x_2) = k_1f(x_1) + k_2f(x_2), 其中 k_1, k_2 是常量。\]</span></p><p> 线性函数的可加性表明函数所描述的事物具有累加性，所有起因的累加所导致的结果完全等于每个起因独自所引起的结果的累加。</p><blockquote><p>💡 注：线性齐次函数形如 $ y = k_1x_1 + k_2x_2 +...k_nx_n$，这个正比例函数的式子中每项里的变量出现的次数都是一次的（没有常数项），<strong>整齐划一</strong>，故此称为“齐次”的，全称为n 元线性齐次函数。</p></blockquote><ol type="1"><li>初等线性函数的自变量由一个数<span class="math inline">\(x\)</span>拓展定义为一个竖排的数组<span class="math inline">\(\begin{pmatrix}x_1 \\x_2 \\...\\x_m\end{pmatrix}\)</span>, 因变量一个数<span class="math inline">\(y\)</span>也拓展定义为一个竖排的数组<span class="math inline">\(\begin{pmatrix}y_1 \\y_2 \\...\\y_m\end{pmatrix}\)</span>, 这些 n元数组和m元数组称之为列向量。</li><li>初等线性函数的比例系数<span class="math inline">\(k\)</span>拓展为由所有的<span class="math inline">\(k_{ij}\)</span>构成一个数的方针，称之为系数矩阵如下：&gt; 因为 <span class="math inline">\(y_1 = kf(x_1)\)</span> 的时候<span class="math inline">\(k\)</span>, 虽为常量,枚举全则有 <span class="math inline">\(n\)</span>个， 因此拓展为行 <span class="math inline">\(\begin{pmatrix}k_1 &amp; k_2 &amp; ...&amp;k_n\end{pmatrix}\)</span>。 再随着<span class="math inline">\(x,y\)</span>拓展, 因此拓展为<span class="math inline">\(mn\)</span>系数矩阵。</li></ol><p><span class="math display">\[\begin{bmatrix}    k_{11} &amp; k_{12}  &amp; ...... k_{1n}\\    k_{21} &amp; k_{22}  &amp; ...... k_{2n}\\    ...    &amp; ...     &amp; ..........   \\    k_{m1} &amp; k_{m2}  &amp; ...... k_{mn}\\  \end{bmatrix}\]</span></p><ol start="3" type="1"><li><p>然后定义一种系数矩阵与向量相乘的运算法则： &gt;矩阵运算顺序,由左向右。 <span class="math display">\[\begin{pmatrix}y_1\\y_2 \\ ...\\y_m\end{pmatrix}= \begin{bmatrix}k_{11} &amp; k_{12}  &amp; ...... k_{1n}\\k_{21} &amp; k_{22}  &amp; ...... k_{2n}\\...    &amp; ...     &amp; ..........   \\k_{m1} &amp; k_{m2}  &amp; ...... k_{mn}\\  \end{bmatrix}  \begin{pmatrix}x_1 \\x_2 \\ ...\\x_m\end{pmatrix}  \]</span></p></li><li><p>进一步简写为：y = f(x) = Kx ,其中： <span class="math display">\[y= f(x) = \begin{pmatrix}y_1 \\y_2 \\ ...\\y_m\end{pmatrix},K = \begin{bmatrix}k_{11} &amp; k_{12}  &amp; ...... k_{1n}\\k_{21} &amp; k_{22}  &amp; ...... k_{2n}\\...    &amp; ...     &amp; ..........   \\k_{m1} &amp; k_{m2}  &amp; ...... k_{mn}\\  \end{bmatrix},  x = \begin{pmatrix}x_1 \\x_2 \\ ...\\x_m\end{pmatrix}  \]</span></p></li></ol><h4 id="多元线性函数的几何意义">多元线性函数的几何意义</h4><p>一元线性函数<span class="math inline">\(f(x) = kx\)</span>,拓展到二元线性函数$ f(x_1,x_2) = k_1x_1 + k_2x_2$ 1.坐标系由二维拓展为三维： <span class="math inline">\(f(x) = kx\)</span>的直线图形是在二维笛卡尔坐标下的几何图形，放到三维笛卡尔坐标系下，应写为$ f(x_1, x_2) = k_1x_1<span class="math inline">\(, 或者\)</span> f(x_1,x_2) = k_2x_2<span class="math inline">\(, 取\)</span> f(x_1, x_2) =k_1x_1$ 为$ f(x) = kx$的拓展维表达式。 &gt; 一元只有一个变量, $ f(x) =kx$表达式, 简单来说 一元是二元的其中一个元为<code>0</code>的特例。</p><p><span class="math inline">\(f(x1, x_2) =k_1x_1\)</span>的图形是过原点的平面。也就是说拓维后由一条直线变成了一个平面。这是因为函数$f(x_1, x_2) = k_1x_1$ 与新生长出来的坐标轴<span class="math inline">\(x_2\)</span>没有关系，<span class="math inline">\(x_2\)</span>可以取任意值；换句话说， <span class="math inline">\(x_2\)</span>的 任意值都在函数 <span class="math inline">\(f(x1, x_2) =k_1x_1\)</span>的图像上。进一步说，这是一个过 <span class="math inline">\(x_2\)</span>坐标轴的平面 <img src="/imgs/matrix2.png"></p><ol start="2" type="1"><li>两个平面加起来，显然要得到函数$ f(x_1,x_2) = k_1x_1 + k_2x_2<span class="math inline">\(的图形，只要把三维坐标系下的两个函数\)</span>f(x_1,x_2) = k_1x_1$ 和 $ f(x_2,x_2) =k_2x_2$所对应的平面加起来即可得到。<strong>一般情形下，两个平面相加仍然是一个平面</strong><img src="/imgs/matrix3.png"> <img src="/imgs/matrix4.png"></li></ol><p>因此，线性函数$ f(x_1,x_2) = k_1x_1 +k_2x_2$的几何图形是一个过原点的平面。</p><p> 可以想象，由二元线性函数 1 2 11 2 (, ) 2 f x x kx kx = +继续扩展到三元及 n 元的线性函数 1 2 11 2 2 ( , ..., ) ... n n n f x x xkx kx kx = + ++ （坐标系由三维扩展到四维及其 n 维）后，其几何图形仍然是一个“平面”，是一个扩展意义上的平面，常被称为超平面。</p><h3 id="线性映射或变换的几何意义">1.2 线性映射或变换的几何意义</h3><p>TODO</p>]]></content>
       
       
+      <categories>
+          
+          <category> 图形 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 渲染 </tag>
+            
+            <tag> 图形 </tag>
+            
+            <tag> TA </tag>
+            
+            <tag> 3D数学 </tag>
+            
+        </tags>
       
     </entry>
     
@@ -252,21 +270,8 @@
     
     <entry>
       <title></title>
-      <link href="/2022/08/10/tu-xing-jiao-cheng-bi-ji/1.opengl-dai-zheng-li/"/>
-      <url>/2022/08/10/tu-xing-jiao-cheng-bi-ji/1.opengl-dai-zheng-li/</url>
-      
-        <content type="html"><![CDATA[<h1 id="opengl-待整理">OpenGL 待整理</h1><ol type="1"><li>纹理上传立即模式。 相同图片不同图片对象buffer也会重复上传。</li><li>OUT_OF_MEMORY状态没办法处理，因为查询状态可能true，但是使用的时候状态可能变了，OS有多个程序使用。</li></ol>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title></title>
-      <link href="/2022/08/10/tu-xing-jiao-cheng-bi-ji/0.xian-dai-ji-suan-ji-tu-xing-xue-ru-men-yan-ling-qi/"/>
-      <url>/2022/08/10/tu-xing-jiao-cheng-bi-ji/0.xian-dai-ji-suan-ji-tu-xing-xue-ru-men-yan-ling-qi/</url>
+      <link href="/2022/08/10/xuan-ran/0.xian-dai-ji-suan-ji-tu-xing-xue-ru-men-yan-ling-qi/"/>
+      <url>/2022/08/10/xuan-ran/0.xian-dai-ji-suan-ji-tu-xing-xue-ru-men-yan-ling-qi/</url>
       
         <content type="html"><![CDATA[<h1 id="线性代数">线性代数</h1><p>图形学默认向量为 列向量 <span class="math display">\[A =\begin{bmatrix}x\\y\\z\end{bmatrix}, \]</span> 也可以转换为行向量 <span class="math display">\[ A^T = \begin{bmatrix}x &amp;y&amp;z\end{bmatrix}, \]</span></p><h2 id="点乘法dot">点乘法dot</h2><p>向量点成 dot， <span class="math display">\[ a . b  = |a||b|\cos\theta \]</span> , 几何意义投影。 向量点乘， <span class="math display">\[ a . b  =\begin{bmatrix}a_x\\a_y\\a_z\end{bmatrix}\begin{bmatrix}b_x\\b_y\\b_z\end{bmatrix}= a_x* b_x + a_y* b_y + a_z* b_z\]</span></p>矩阵向量点乘， $ a . b =<span class="math display">\[\begin{bmatrix}a_x &amp; a_y &amp;a_z\end{bmatrix}\begin{bmatrix} b_x \\ b_y \\ b_z \end{bmatrix}\]</span><p>= a_x* b_x + a_y* b_y + a_z* b_z $$</p><h2 id="叉乘-cross">叉乘 cross</h2><p>(MxN)(NxP) = MxP, Eij = RowAi Cross ColumnBj.</p><p>axb = - bxa., <strong>前提是 a的列等于b的行</strong> 大小： <span class="math display">\[|axb| = |a||b|\sin\theta\]</span> 方向：右手螺旋定则 拇指方向。 <strong>满足结合律和交换律</strong></p><h3 id="叉乘应用">叉乘应用</h3><ol type="1"><li>判定b向量在a向量左右，** a叉乘b 看z 如果大于0 则在左 **</li><li>判定p 在三角形内，</li></ol>]]></content>
       
@@ -2040,6 +2045,35 @@
             <tag> iOS </tag>
             
             <tag> Windows </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>1.渲染流水线</title>
+      <link href="/2020/09/25/xuan-ran/ta-ru-men/1.xuan-ran-liu-shui-xian/"/>
+      <url>/2020/09/25/xuan-ran/ta-ru-men/1.xuan-ran-liu-shui-xian/</url>
+      
+        <content type="html"><![CDATA[<h2 id="渲染流水线render-pipline">渲染流水线(Render Pipline)</h2><p>简化流水线:</p><pre class="mermaid">graph TD;    A[数据]--&gt;B[顶点Shader]--&gt;C[光栅化]--&gt;D[片元着色器]--&gt;E[渲染输出];</pre><p><a href="https://vulkan-tutorial.com/Drawing_a_triangle/Graphics_pipeline_basics/Introduction">vulkan-tutorial介绍</a></p><p><img src="https://vulkan-tutorial.com/images/vulkan_simplified_pipeline.svg"></p><ol type="1"><li>输入装载。 从提交的buffer中, 根据设置收集顶点数据。</li><li>顶点着色器。对每个顶点进行处理，通常是执行顶点从模型空间转换到屏幕空间。然后再传递到流水线中。</li><li>曲面细分着色器。根据某些规则细分网格以提高质量。</li><li>几何着色器。对每个图元(三角形、线、点)进行处理，丢弃或者输出更多的图元。类似<code>曲面细分着色器</code>，但更灵活。</li><li>光栅化阶段。将图元离散为片元。这些是他们在缓冲区中填充的元素。任何屏幕外的片元都将被丢弃，<code>顶点着色器输出的属性都将被插值到片元中</code>。</li><li>片元着色器。为<code>每个幸存的片元</code>执行片元着色器，并确定将片元写入<code>哪些缓冲区</code>以及使用<code>哪些颜色</code>和<code>深度值</code>。它可以使用来自顶点着色器的插值数据来执行此操作，其中可以包括纹理坐标和光照法线等内容。</li><li>混合阶段（逐像素处理阶段）。应用<code>混合操作</code>映射到同一像素的不同片元。片元混合可以是相互覆盖、叠加或者基于透明度的混合。</li></ol><ul><li>其中输入装载、光栅化、混合阶段称之为<code>固定功能阶段</code>。这些阶段是预定义的，允许使用选项/参数调整他们的操作。比如:<ol type="1"><li>输入装载。提交顶点数据进行渲染需要创建一个顶点流，然后告诉Pipline如何解释该流。(各种顶点buff填充与绑定提交)</li><li>光栅化。<a href="https://www.khronos.org/opengl/wiki/Rendering_Pipeline_Overview#Rasterization">多重采样</a>。</li><li>混合阶段。<ol type="1"><li>像素所有权测试（Pixel ownership test）。如果片段的像素不是OpenGL“拥有”的（如果另一个窗口与 GL 窗口重叠），则失败。使用FramebufferObject时总是通过。失败意味着像素包含未定义的值。</li><li>裁剪测试（ScissorTest）：启用后，如果片段的像素位于屏幕的指定矩形之外，则测试失败。</li><li>模板测试（StencilTest）：：启用后，如果测试提供的模板值没有与用户指定的模板缓冲区中底层样本的模板值进行比较，则测试失败。请注意，即使模板测试失败（即使深度测试失败），仍然可以修改帧缓冲区中的模板值。</li><li>深度测试（DepthTest）：启用后，如果片段的深度没有按照用户指定的与深度缓冲区中基础样本的深度值进行比较，则测试失败。</li></ol></li></ol></li></ul><p>** 注意：虽然这些被指定在FragmentShader之后发生，但在某些条件下它们可以在片段着色器之前发生。如果它们发生在FS 之前，那么片段的任何剔除也会阻止片段着色器执行，从而节省性能。在此之后执行颜色混合。对于每个片段颜色值，在它与该位置帧缓冲区中已经存在的颜色之间都有一个特定的混合操作。逻辑操作也可以代替混合进行，混合在片段颜色和帧缓冲区颜色之间执行按位操作。**</p><p>最后，将片段数据写入帧缓冲区。屏蔽操作允许用户防止写入某些值。可以打开和关闭颜色、深度和模板书写；单个颜色通道也可以被屏蔽。</p><figure><img src="https://www.khronos.org/opengl/wiki_opengl/images/RenderingPipeline.png" alt="opengl pipline"><figcaption aria-hidden="true">opengl pipline</figcaption></figure><p><a href="https://www.khronos.org/opengl/wiki/Rendering_Pipeline_Overview#Rasterization">https://www.khronos.org/opengl/wiki/Rendering_Pipeline_Overview#Rasterization</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 图形 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 渲染 </tag>
+            
+            <tag> 图形 </tag>
+            
+            <tag> TA </tag>
             
         </tags>
       

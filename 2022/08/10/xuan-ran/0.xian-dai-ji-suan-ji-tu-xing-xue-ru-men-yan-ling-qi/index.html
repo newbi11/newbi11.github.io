@@ -407,11 +407,27 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="opengl-待整理">OpenGL 待整理</h1>
+                <h1 id="线性代数">线性代数</h1>
+<p>图形学默认向量为 列向量 <span class="math display">\[A =
+\begin{bmatrix}x\\y\\z\end{bmatrix}, \]</span> 也可以转换为行向量 <span class="math display">\[ A^T = \begin{bmatrix}x &amp;y
+&amp;z\end{bmatrix}, \]</span></p>
+<h2 id="点乘法dot">点乘法dot</h2>
+<p>向量点成 dot， <span class="math display">\[ a . b  = |a||b|
+\cos\theta \]</span> , 几何意义投影。 向量点乘， <span class="math display">\[ a . b  =
+\begin{bmatrix}a_x\\a_y\\a_z\end{bmatrix}\begin{bmatrix}b_x\\b_y\\b_z\end{bmatrix}
+= a_x* b_x + a_y* b_y + a_z* b_z\]</span></p>
+矩阵向量点乘， $ a . b =
+<span class="math display">\[\begin{bmatrix}a_x &amp; a_y &amp;
+a_z\end{bmatrix}\begin{bmatrix} b_x \\ b_y \\ b_z \end{bmatrix}\]</span>
+<p>= a_x* b_x + a_y* b_y + a_z* b_z $$</p>
+<h2 id="叉乘-cross">叉乘 cross</h2>
+<p>(MxN)(NxP) = MxP, Eij = RowAi Cross ColumnBj.</p>
+<p>axb = - bxa., <strong>前提是 a的列等于b的行</strong> 大小： <span class="math display">\[|axb| = |a||b|\sin\theta\]</span> 方向：
+右手螺旋定则 拇指方向。 <strong>满足结合律和交换律</strong></p>
+<h3 id="叉乘应用">叉乘应用</h3>
 <ol type="1">
-<li>纹理上传立即模式。 相同图片不同图片对象buffer也会重复上传。</li>
-<li>OUT_OF_MEMORY状态没办法处理，因为查询状态可能true，
-但是使用的时候状态可能变了，OS有多个程序使用。</li>
+<li>判定b向量在a向量左右，** a叉乘b 看z 如果大于0 则在左 **</li>
+<li>判定p 在三角形内，</li>
 </ol>
 
                 
@@ -439,7 +455,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://one2world.github.io/2022/08/10/tu-xing-jiao-cheng-bi-ji/1.opengl-dai-zheng-li/">https://one2world.github.io/2022/08/10/tu-xing-jiao-cheng-bi-ji/1.opengl-dai-zheng-li/</a>
+                    <a href="https://one2world.github.io/2022/08/10/xuan-ran/0.xian-dai-ji-suan-ji-tu-xing-xue-ru-men-yan-ling-qi/">https://one2world.github.io/2022/08/10/xuan-ran/0.xian-dai-ji-suan-ji-tu-xing-xue-ru-men-yan-ling-qi/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -640,8 +656,8 @@
 
 <script type="text/javascript">
     disqus_config = function () {
-        this.page.url = 'https://one2world.github.io/2022/08/10/tu-xing-jiao-cheng-bi-ji/1.opengl-dai-zheng-li/';
-        this.page.identifier = '/2022/08/10/tu-xing-jiao-cheng-bi-ji/1.opengl-dai-zheng-li/';
+        this.page.url = 'https://one2world.github.io/2022/08/10/xuan-ran/0.xian-dai-ji-suan-ji-tu-xing-xue-ru-men-yan-ling-qi/';
+        this.page.identifier = '/2022/08/10/xuan-ran/0.xian-dai-ji-suan-ji-tu-xing-xue-ru-men-yan-ling-qi/';
         this.page.title = '';
     };
     let disqus_shortname = '';
@@ -711,7 +727,7 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/08/10/tu-xing-jiao-cheng-bi-ji/0.xian-dai-ji-suan-ji-tu-xing-xue-ru-men-yan-ling-qi/">
+                <a href="/2022/08/10/she-ji-mo-shi/1.she-ji-mo-shi/">
                     <div class="card-image">
                         
                         

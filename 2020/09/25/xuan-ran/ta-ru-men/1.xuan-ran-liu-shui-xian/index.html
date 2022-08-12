@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Game, Unity, Graphics, Tools, Scripts, C#, Python, Lua, C/C++">
+    <meta name="keywords" content="1.渲染流水线, Game, Unity, Graphics, Tools, Scripts, C#, Python, Lua, C/C++">
     <meta name="description" content="游戏编程的一些文章">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>游戏编程</title>
+    <title>1.渲染流水线 | 游戏编程</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -253,12 +253,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title"></h1>
+                    <h1 class="description center-align post-title">1.渲染流水线</h1>
                 </div>
             </div>
         </div>
@@ -372,12 +372,33 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E6%B8%B2%E6%9F%93/">
+                                <span class="chip bg-color">渲染</span>
+                            </a>
+                        
+                            <a href="/tags/%E5%9B%BE%E5%BD%A2/">
+                                <span class="chip bg-color">图形</span>
+                            </a>
+                        
+                            <a href="/tags/TA/">
+                                <span class="chip bg-color">TA</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E5%9B%BE%E5%BD%A2/" class="post-category">
+                                图形
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -386,7 +407,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-08-10
+                    2020-09-25
                 </div>
                 
 
@@ -407,28 +428,53 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="线性代数">线性代数</h1>
-<p>图形学默认向量为 列向量 <span class="math display">\[A =
-\begin{bmatrix}x\\y\\z\end{bmatrix}, \]</span> 也可以转换为行向量 <span class="math display">\[ A^T = \begin{bmatrix}x &amp;y
-&amp;z\end{bmatrix}, \]</span></p>
-<h2 id="点乘法dot">点乘法dot</h2>
-<p>向量点成 dot， <span class="math display">\[ a . b  = |a||b|
-\cos\theta \]</span> , 几何意义投影。 向量点乘， <span class="math display">\[ a . b  =
-\begin{bmatrix}a_x\\a_y\\a_z\end{bmatrix}\begin{bmatrix}b_x\\b_y\\b_z\end{bmatrix}
-= a_x* b_x + a_y* b_y + a_z* b_z\]</span></p>
-矩阵向量点乘， $ a . b =
-<span class="math display">\[\begin{bmatrix}a_x &amp; a_y &amp;
-a_z\end{bmatrix}\begin{bmatrix} b_x \\ b_y \\ b_z \end{bmatrix}\]</span>
-<p>= a_x* b_x + a_y* b_y + a_z* b_z $$</p>
-<h2 id="叉乘-cross">叉乘 cross</h2>
-<p>(MxN)(NxP) = MxP, Eij = RowAi Cross ColumnBj.</p>
-<p>axb = - bxa., <strong>前提是 a的列等于b的行</strong> 大小： <span class="math display">\[|axb| = |a||b|\sin\theta\]</span> 方向：
-右手螺旋定则 拇指方向。 <strong>满足结合律和交换律</strong></p>
-<h3 id="叉乘应用">叉乘应用</h3>
+                <h2 id="渲染流水线render-pipline">渲染流水线(Render Pipline)</h2>
+<p>简化流水线:</p>
+<pre class="mermaid">graph TD;
+    A[数据]--&gt;B[顶点Shader]--&gt;C[光栅化]--&gt;D[片元着色器]--&gt;E[渲染输出];</pre>
+<p><a target="_blank" rel="noopener" href="https://vulkan-tutorial.com/Drawing_a_triangle/Graphics_pipeline_basics/Introduction">vulkan-tutorial介绍</a></p>
+<p><img src="https://vulkan-tutorial.com/images/vulkan_simplified_pipeline.svg"></p>
 <ol type="1">
-<li>判定b向量在a向量左右，** a叉乘b 看z 如果大于0 则在左 **</li>
-<li>判定p 在三角形内，</li>
+<li>输入装载。 从提交的buffer中, 根据设置收集顶点数据。</li>
+<li>顶点着色器。对每个顶点进行处理，通常是执行顶点从模型空间转换到屏幕空间。然后再传递到流水线中。</li>
+<li>曲面细分着色器。根据某些规则细分网格以提高质量。</li>
+<li>几何着色器。对每个图元(三角形、线、点)进行处理，丢弃或者输出更多的图元。类似<code>曲面细分着色器</code>，但更灵活。</li>
+<li>光栅化阶段。将图元离散为片元。这些是他们在缓冲区中填充的元素。任何屏幕外的片元都将被丢弃，<code>顶点着色器输出的属性都将被插值到片元中</code>。</li>
+<li>片元着色器。为<code>每个幸存的片元</code>执行片元着色器，并确定将片元写入<code>哪些缓冲区</code>以及使用<code>哪些颜色</code>和<code>深度值</code>。它可以使用来自顶点着色器的插值数据来执行此操作，其中可以包括纹理坐标和光照法线等内容。</li>
+<li>混合阶段（逐像素处理阶段）。
+应用<code>混合操作</code>映射到同一像素的不同片元。片元混合可以是相互覆盖、叠加或者基于透明度的混合。</li>
 </ol>
+<ul>
+<li>其中输入装载、光栅化、混合阶段称之为<code>固定功能阶段</code>。这些阶段是预定义的，允许使用选项/参数调整他们的操作。比如:
+<ol type="1">
+<li>输入装载。提交顶点数据进行渲染需要创建一个顶点流，然后告诉Pipline
+如何解释该流。(各种顶点buff填充与绑定提交)</li>
+<li>光栅化。<a target="_blank" rel="noopener" href="https://www.khronos.org/opengl/wiki/Rendering_Pipeline_Overview#Rasterization">多重采样</a>。</li>
+<li>混合阶段。
+<ol type="1">
+<li>像素所有权测试（Pixel ownership test）。如果片段的像素不是
+OpenGL“拥有”的（如果另一个窗口与 GL 窗口重叠），则失败。使用Framebuffer
+Object时总是通过。失败意味着像素包含未定义的值。</li>
+<li>裁剪测试（Scissor
+Test）：启用后，如果片段的像素位于屏幕的指定矩形之外，则测试失败。</li>
+<li>模板测试（Stencil
+Test）：：启用后，如果测试提供的模板值没有与用户指定的模板缓冲区中底层样本的模板值进行比较，则测试失败。请注意，即使模板测试失败（即使深度测试失败），仍然可以修改帧缓冲区中的模板值。</li>
+<li>深度测试（Depth
+Test）：启用后，如果片段的深度没有按照用户指定的与深度缓冲区中基础样本的深度值进行比较，则测试失败。</li>
+</ol></li>
+</ol></li>
+</ul>
+<p>** 注意：虽然这些被指定在Fragment
+Shader之后发生，但在某些条件下它们可以在片段着色器之前发生。如果它们发生在
+FS 之前，那么片段的任何剔除也会阻止片段着色器执行，从而节省性能。
+在此之后执行颜色混合。对于每个片段颜色值，在它与该位置帧缓冲区中已经存在的颜色之间都有一个特定的混合操作。逻辑操作也可以代替混合进行，混合在片段颜色和帧缓冲区颜色之间执行按位操作。
+**</p>
+<p>最后，将片段数据写入帧缓冲区。屏蔽操作允许用户防止写入某些值。可以打开和关闭颜色、深度和模板书写；单个颜色通道也可以被屏蔽。</p>
+<figure>
+<img src="https://www.khronos.org/opengl/wiki_opengl/images/RenderingPipeline.png" alt="opengl pipline">
+<figcaption aria-hidden="true">opengl pipline</figcaption>
+</figure>
+<p><a target="_blank" rel="noopener" href="https://www.khronos.org/opengl/wiki/Rendering_Pipeline_Overview#Rasterization">https://www.khronos.org/opengl/wiki/Rendering_Pipeline_Overview#Rasterization</a></p>
 
                 
             </div>
@@ -445,7 +491,7 @@ a_z\end{bmatrix}\begin{bmatrix} b_x \\ b_y \\ b_z \end{bmatrix}\]</span>
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="/about" rel="external nofollow noreferrer">Yonggang Long</a>
+                    <a href="/about" rel="external nofollow noreferrer">lyg</a>
                 </span>
             </div>
             <div class="reprint__type">
@@ -455,7 +501,7 @@ a_z\end{bmatrix}\begin{bmatrix} b_x \\ b_y \\ b_z \end{bmatrix}\]</span>
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://one2world.github.io/2022/08/10/tu-xing-jiao-cheng-bi-ji/0.xian-dai-ji-suan-ji-tu-xing-xue-ru-men-yan-ling-qi/">https://one2world.github.io/2022/08/10/tu-xing-jiao-cheng-bi-ji/0.xian-dai-ji-suan-ji-tu-xing-xue-ru-men-yan-ling-qi/</a>
+                    <a href="https://one2world.github.io/2020/09/25/xuan-ran/ta-ru-men/1.xuan-ran-liu-shui-xian/">https://one2world.github.io/2020/09/25/xuan-ran/ta-ru-men/1.xuan-ran-liu-shui-xian/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -468,7 +514,7 @@ a_z\end{bmatrix}\begin{bmatrix} b_x \\ b_y \\ b_z \end{bmatrix}\]</span>
                     本博客所有文章除特別声明外，均采用
                     <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
                     许可协议。转载请注明来源
-                    <a href="/about" target="_blank">Yonggang Long</a>
+                    <a href="/about" target="_blank">lyg</a>
                     !
                 </span>
             </div>
@@ -492,7 +538,19 @@ a_z\end{bmatrix}\begin{bmatrix} b_x \\ b_y \\ b_z \end{bmatrix}\]</span>
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/%E6%B8%B2%E6%9F%93/">
+                                    <span class="chip bg-color">渲染</span>
+                                </a>
+                            
+                                <a href="/tags/%E5%9B%BE%E5%BD%A2/">
+                                    <span class="chip bg-color">图形</span>
+                                </a>
+                            
+                                <a href="/tags/TA/">
+                                    <span class="chip bg-color">TA</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -656,9 +714,9 @@ a_z\end{bmatrix}\begin{bmatrix} b_x \\ b_y \\ b_z \end{bmatrix}\]</span>
 
 <script type="text/javascript">
     disqus_config = function () {
-        this.page.url = 'https://one2world.github.io/2022/08/10/tu-xing-jiao-cheng-bi-ji/0.xian-dai-ji-suan-ji-tu-xing-xue-ru-men-yan-ling-qi/';
-        this.page.identifier = '/2022/08/10/tu-xing-jiao-cheng-bi-ji/0.xian-dai-ji-suan-ji-tu-xing-xue-ru-men-yan-ling-qi/';
-        this.page.title = '';
+        this.page.url = 'https://one2world.github.io/2020/09/25/xuan-ran/ta-ru-men/1.xuan-ran-liu-shui-xian/';
+        this.page.identifier = '/2020/09/25/xuan-ran/ta-ru-men/1.xuan-ran-liu-shui-xian/';
+        this.page.title = '1.渲染流水线';
     };
     let disqus_shortname = '';
 
@@ -690,13 +748,13 @@ a_z\end{bmatrix}\begin{bmatrix} b_x \\ b_y \\ b_z \end{bmatrix}\]</span>
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2022/08/10/tu-xing-jiao-cheng-bi-ji/1.opengl-dai-zheng-li/">
+                <a href="/2020/09/25/unity/xing-neng-you-hua/9.wang-luo-shu-ju/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="9.网络数据优化">
                         
-                        <span class="card-title"></span>
+                        <span class="card-title">9.网络数据优化</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -707,15 +765,43 @@ a_z\end{bmatrix}\begin{bmatrix} b_x \\ b_y \\ b_z \end{bmatrix}\]</span>
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-08-10
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-09-25
                         </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            Yonggang Long
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" class="post-category">
+                                    性能优化
+                                </a>
+                            
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/">
+                        <span class="chip bg-color">性能优化</span>
+                    </a>
+                    
+                    <a href="/tags/Unity/">
+                        <span class="chip bg-color">Unity</span>
+                    </a>
+                    
+                    <a href="/tags/Android/">
+                        <span class="chip bg-color">Android</span>
+                    </a>
+                    
+                    <a href="/tags/iOS/">
+                        <span class="chip bg-color">iOS</span>
+                    </a>
+                    
+                    <a href="/tags/Windows/">
+                        <span class="chip bg-color">Windows</span>
+                    </a>
+                    
                 </div>
                 
             </div>
@@ -727,13 +813,13 @@ a_z\end{bmatrix}\begin{bmatrix} b_x \\ b_y \\ b_z \end{bmatrix}\]</span>
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/08/10/she-ji-mo-shi/1.she-ji-mo-shi/">
+                <a href="/2020/09/23/3d-shu-xue/3.ju-zhen/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="3.矩阵">
                         
-                        <span class="card-title"></span>
+                        <span class="card-title">3.矩阵</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -744,15 +830,31 @@ a_z\end{bmatrix}\begin{bmatrix} b_x \\ b_y \\ b_z \end{bmatrix}\]</span>
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-08-10
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-09-23
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            Yonggang Long
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/3d%E6%95%B0%E5%AD%A6/" class="post-category">
+                                    3d数学
+                                </a>
+                            
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E5%BC%95%E6%93%8E/">
+                        <span class="chip bg-color">引擎</span>
+                    </a>
+                    
+                    <a href="/tags/3d%E6%95%B0%E5%AD%A6/">
+                        <span class="chip bg-color">3d数学</span>
+                    </a>
+                    
                 </div>
                 
             </div>
