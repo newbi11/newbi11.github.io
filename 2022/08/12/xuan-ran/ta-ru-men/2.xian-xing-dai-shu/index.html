@@ -432,7 +432,7 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="一什么事是线性代数">一、什么事是线性代数</h2>
+                <h2 id="一什么是线性代数">一、什么是线性代数</h2>
 <p> 顾名思义，它是研究线性问题的代数理论。</p>
 <p> 代数英文是
 Algebra，源于阿拉伯语，其本意是“结合在一起”的意思。也就是说代数的功能是把
@@ -464,9 +464,8 @@ b\)</span>, <span class="math inline">\(kf(x) = akx + kb\)</span>因此
 <p> 线性函数的可加性表明函数所描述的事物具有累加性，所有起因的累加所导致的结果完全等于每
 个起因独自所引起的结果的累加。</p>
 <blockquote>
-<p>💡 注：线性齐次函数形如 $ y = k_1x_1 + k_2x_2 +
-...k_nx_n$，这个正比例函数的式子中每项里的变量出现的
-次数都是一次的（没有常数项），<strong>整齐划一</strong>，故此称为“齐次”的，全称为
+<p>💡 注：线性齐次函数形如 $ y = k_1x_1 + k_2x_2 + ...k_nx_n
+$，这个正比例函数的式子中每项里的变量出现的次数都是一次的（没有常数项），<strong>整齐划一</strong>，故此称为“齐次”的，全称为
 n 元线性齐次函数。</p>
 </blockquote>
 <ol type="1">
@@ -487,19 +486,24 @@ y\)</span>拓展, 因此拓展为<span class="math inline">\(mn\)</span>系数�
     k_{m1} &amp; k_{m2}  &amp; ...... k_{mn}\\
   \end{bmatrix}\]</span></p>
 <ol start="3" type="1">
-<li><p>然后定义一种系数矩阵与向量相乘的运算法则： &gt;
-矩阵运算顺序,由左向右。 <span class="math display">\[\begin{pmatrix}y_1
-\\y_2 \\ ...\\y_m\end{pmatrix}
-= \begin{bmatrix}
-k_{11} &amp; k_{12}  &amp; ...... k_{1n}\\
-k_{21} &amp; k_{22}  &amp; ...... k_{2n}\\
-...    &amp; ...     &amp; ..........   \\
-k_{m1} &amp; k_{m2}  &amp; ...... k_{mn}\\
+<li>然后定义一种系数矩阵与向量相乘的运算法则：</li>
+</ol>
+<blockquote>
+<p>矩阵运算顺序,由左向右。</p>
+</blockquote>
+<p><span class="math display">\[\begin{pmatrix}y_1 \\y_2 \\
+...\\y_m\end{pmatrix}
+   = \begin{bmatrix}
+    k_{11} &amp; k_{12}  &amp; ...... k_{1n}\\
+    k_{21} &amp; k_{22}  &amp; ...... k_{2n}\\
+    ...    &amp; ...     &amp; ..........   \\
+    k_{m1} &amp; k_{m2}  &amp; ...... k_{mn}\\
   \end{bmatrix}
   \begin{pmatrix}x_1 \\x_2 \\ ...\\x_m\end{pmatrix}
-  \]</span></p></li>
-<li><p>进一步简写为：y = f(x) = Kx ,其中： <span class="math display">\[
-y= f(x) = \begin{pmatrix}y_1 \\y_2 \\ ...\\y_m\end{pmatrix},
+  \]</span></p>
+<ol start="4" type="1">
+<li>进一步简写为：y = f(x) = Kx ,其中： <span class="math display">\[ y=
+f(x) = \begin{pmatrix}y_1 \\y_2 \\ ...\\y_m\end{pmatrix},
 K = \begin{bmatrix}
 k_{11} &amp; k_{12}  &amp; ...... k_{1n}\\
 k_{21} &amp; k_{22}  &amp; ...... k_{2n}\\
@@ -507,32 +511,32 @@ k_{21} &amp; k_{22}  &amp; ...... k_{2n}\\
 k_{m1} &amp; k_{m2}  &amp; ...... k_{mn}\\
   \end{bmatrix},
   x = \begin{pmatrix}x_1 \\x_2 \\ ...\\x_m\end{pmatrix}
-  \]</span></p></li>
+  \]</span></li>
 </ol>
 <h4 id="多元线性函数的几何意义">多元线性函数的几何意义</h4>
-<p>一元线性函数<span class="math inline">\(f(x) = kx\)</span>,
-拓展到二元线性函数$ f(x_1,x_2) = k_1x_1 + k_2x_2$ 1.
-坐标系由二维拓展为三维： <span class="math inline">\(f(x) = kx\)</span>
+<p>一元线性函数 $ f(x) = kx $, 拓展到二元线性函数 $ f(x_1,x_2) = k_1x_1
++ k_2x_2$ 1. 坐标系由二维拓展为三维：<span class="math inline">\(f(x) =
+kx\)</span>
 的直线图形是在二维笛卡尔坐标下的几何图形，放到三维笛卡尔坐标系下，应写为
-$ f(x_1, x_2) = k_1x_1<span class="math inline">\(, 或者\)</span> f(x_1,
-x_2) = k_2x_2<span class="math inline">\(, 取\)</span> f(x_1, x_2) =
-k_1x_1$ 为$ f(x) = kx$的拓展维表达式。 &gt; 一元只有一个变量, $ f(x) =
-kx$表达式, 简单来说 一元是二元的其中一个元为<code>0</code>的特例。</p>
+<span class="math inline">\(f(x_1, x_2) = k_1x_1\)</span>, 或者$ f(x_1,
+x_2) = k_2x_2$, 取 $ f(x_1, x_2) = k_1x_1$ 为$ f(x) =
+kx$的拓展维表达式。 &gt; 一元只有一个变量, $ f(x) = kx$表达式, 简单来说
+一元是二元的其中一个元为<code>0</code>的特例。</p>
 <p><span class="math inline">\(f(x1, x_2) =
-k_1x_1\)</span>的图形是过原点的平面。也就是说拓维后由一条直线变成了一个平面。这是因为函数$
-f(x_1, x_2) = k_1x_1$ 与新生长出来的坐标轴<span class="math inline">\(x_2\)</span>没有关系，<span class="math inline">\(x_2\)</span>可以取任意值；换句话说， <span class="math inline">\(x_2\)</span>的 任意值都在函数 <span class="math inline">\(f(x1, x_2) =
+k_1x_1\)</span>的图形是过原点的平面。也就是说拓维后由一条直线变成了一个平面。这是因为函数
+$ f(x_1, x_2) = k_1x_1$ 与新生长出来的坐标轴<span class="math inline">\(x_2\)</span>没有关系，<span class="math inline">\(x_2\)</span>可以取任意值；换句话说， <span class="math inline">\(x_2\)</span>的任意值都在函数 <span class="math inline">\(f(x1, x_2) =
 k_1x_1\)</span>的图像上。进一步说，这是一个过 <span class="math inline">\(x_2\)</span>坐标轴的平面 <img src="/imgs/matrix2.png"></p>
 <ol start="2" type="1">
-<li>两个平面加起来，显然要得到函数$ f(x_1,x_2) = k_1x_1 + k_2x_2<span class="math inline">\(的图形，只要把三维坐标系下的两个函数\)</span>
-f(x_1,x_2) = k_1x_1$ 和 $ f(x_2,x_2) =
-k_2x_2$所对应的平面加起来即可得到。<strong>一般情形下，两个平面相加仍然是一个平面</strong>
+<li>两个平面加起来，显然要得到函数$ f(x_1,x_2) = k_1x_1 +
+k_2x_2$的图形，只要把三维坐标系下的两个函数 <span class="math inline">\(f(x_1,x_2) = k_1x_1\)</span> 和 <span class="math inline">\(f(x_2,x_2) = k_2x_2\)</span>
+所对应的平面加起来即可得到。<strong>一般情形下，两个平面相加仍然是一个平面</strong>
 <img src="/imgs/matrix3.png"> <img src="/imgs/matrix4.png"></li>
 </ol>
-<p>因此，线性函数$ f(x_1,x_2) = k_1x_1 +
-k_2x_2$的几何图形是一个过原点的平面。</p>
-<p> 可以想象，由二元线性函数 1 2 11 2 (, ) 2 f x x kx kx = +
-继续扩展到三元及 n 元的线性函数 1 2 11 2 2 ( , ..., ) ... n n n f x x x
-kx kx kx = + ++ （坐标系由三维扩展到四维及其 n 维）后，其几何图形仍然是
+<p>因此，线性函数 <span class="math inline">\(f(x_1,x_2) = k_1x_1 +
+k_2x_2\)</span>的几何图形是一个过原点的平面。</p>
+<p> 可以想象，由二元线性函数 <span class="math inline">\(f(x_1,x_2) =
+k_1x_1 + k_2x_2\)</span> 继续扩展到三元及n元的线性函数 <span class="math inline">\(f(x_1,x_2...,x_n)= k_1x_1 +...
+k_nx_n\)</span>（坐标系由三维扩展到四维及其 n 维）后，其几何图形仍然是
 一个“平面”，是一个扩展意义上的平面，常被称为超平面。</p>
 <h3 id="线性映射或变换的几何意义">1.2 线性映射或变换的几何意义</h3>
 <p>TODO</p>

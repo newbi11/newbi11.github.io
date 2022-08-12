@@ -8,7 +8,7 @@
       <link href="/2022/08/12/xuan-ran/ta-ru-men/2.xian-xing-dai-shu/"/>
       <url>/2022/08/12/xuan-ran/ta-ru-men/2.xian-xing-dai-shu/</url>
       
-        <content type="html"><![CDATA[<h2 id="一什么事是线性代数">一、什么事是线性代数</h2><p> 顾名思义，它是研究线性问题的代数理论。</p><p> 代数英文是Algebra，源于阿拉伯语，其本意是“结合在一起”的意思。也就是说代数的功能是把许多看似不相关的事物“结合在一起”，也就是进行抽象。抽象的目的不是为了显示某些人智商高，而是为了解决问题的方便，为了提高效率，把许多看似不相关的问题化归为一类问题。比如线性代数中的一个重要的抽象概念是线性空间（对所谓的要满足“加法”和“数乘”等八条公理的元素的集合），而其元素被称为向量。也就是说，只要某个集合里的元素满足那么几条公理，元素之间的变化满足这些规律，我们就可以对这个集合（现在可以改名为线性空间了）进行一系列线性化处理和分析，这个陌生的集合的性质和结构特点我们一下子就全知道了，因为宇宙间的所有的线性空间类的集合的性质都一样，地球人都知道（如果地球人都学了线性代数的话）。多么深刻而美妙的结论！这就是代数的一个抽象特性。</p><h3 id="线性的意义">1.1 线性的意义</h3><p> 线性代数里面的线性主要的意思就是线性空间里的线性变换。</p><p> 线性函数表现为直线，这只是几何意义。那么所谓“线性”的代数意义是什么呢？实际上，最基本的意义只有两条：可加性和比例性。</p><ol type="1"><li><p>可加性,<strong>和的函数等于函数的和</strong>。即如果函数<span class="math inline">\(f(x)\)</span>是线性的，那么有： <span class="math display">\[f(x_1 + x_2) = f(x_1) + f(x_2)\]</span></p></li><li><p>比例性，<strong>比例的函数等于函数的比例；或者说自变量缩放，函数也同等比例地缩放</strong>。也叫其次性、数乘性或均匀性,如果<span class="math inline">\(f(x)\)</span>是线性，那么有： <span class="math display">\[f(kx) = kf(x) , 其中 k 是常量。\]</span></p></li></ol><blockquote><p>💡 注：对于函数 <span class="math inline">\(f(x) = ax + b\)</span>而言不满足此比例性， <span class="math inline">\(f(kx) = akx +b\)</span>, <span class="math inline">\(kf(x) = akx + kb\)</span>因此<span class="math inline">\(f(kx) \ne kf(x)\)</span>。严格的讲， <span class="math inline">\(f(x) = ax + b\)</span> 不能再叫线性函数了。</p></blockquote><p>可加性与比例性组合在一块就是“线性”的全部意义了，<strong>线性组合的函数，等于函数的线性组合。</strong>，即有:<span class="math display">\[f(k_1x_1 + k_2x_2) = k_1f(x_1) + k_2f(x_2), 其中 k_1, k_2 是常量。\]</span></p><p> 线性函数的可加性表明函数所描述的事物具有累加性，所有起因的累加所导致的结果完全等于每个起因独自所引起的结果的累加。</p><blockquote><p>💡 注：线性齐次函数形如 $ y = k_1x_1 + k_2x_2 +...k_nx_n$，这个正比例函数的式子中每项里的变量出现的次数都是一次的（没有常数项），<strong>整齐划一</strong>，故此称为“齐次”的，全称为n 元线性齐次函数。</p></blockquote><ol type="1"><li>初等线性函数的自变量由一个数<span class="math inline">\(x\)</span>拓展定义为一个竖排的数组<span class="math inline">\(\begin{pmatrix}x_1 \\x_2 \\...\\x_m\end{pmatrix}\)</span>, 因变量一个数<span class="math inline">\(y\)</span>也拓展定义为一个竖排的数组<span class="math inline">\(\begin{pmatrix}y_1 \\y_2 \\...\\y_m\end{pmatrix}\)</span>, 这些 n元数组和m元数组称之为列向量。</li><li>初等线性函数的比例系数<span class="math inline">\(k\)</span>拓展为由所有的<span class="math inline">\(k_{ij}\)</span>构成一个数的方针，称之为系数矩阵如下：&gt; 因为 <span class="math inline">\(y_1 = kf(x_1)\)</span> 的时候<span class="math inline">\(k\)</span>, 虽为常量,枚举全则有 <span class="math inline">\(n\)</span>个， 因此拓展为行 <span class="math inline">\(\begin{pmatrix}k_1 &amp; k_2 &amp; ...&amp;k_n\end{pmatrix}\)</span>。 再随着<span class="math inline">\(x,y\)</span>拓展, 因此拓展为<span class="math inline">\(mn\)</span>系数矩阵。</li></ol><p><span class="math display">\[\begin{bmatrix}    k_{11} &amp; k_{12}  &amp; ...... k_{1n}\\    k_{21} &amp; k_{22}  &amp; ...... k_{2n}\\    ...    &amp; ...     &amp; ..........   \\    k_{m1} &amp; k_{m2}  &amp; ...... k_{mn}\\  \end{bmatrix}\]</span></p><ol start="3" type="1"><li><p>然后定义一种系数矩阵与向量相乘的运算法则： &gt;矩阵运算顺序,由左向右。 <span class="math display">\[\begin{pmatrix}y_1\\y_2 \\ ...\\y_m\end{pmatrix}= \begin{bmatrix}k_{11} &amp; k_{12}  &amp; ...... k_{1n}\\k_{21} &amp; k_{22}  &amp; ...... k_{2n}\\...    &amp; ...     &amp; ..........   \\k_{m1} &amp; k_{m2}  &amp; ...... k_{mn}\\  \end{bmatrix}  \begin{pmatrix}x_1 \\x_2 \\ ...\\x_m\end{pmatrix}  \]</span></p></li><li><p>进一步简写为：y = f(x) = Kx ,其中： <span class="math display">\[y= f(x) = \begin{pmatrix}y_1 \\y_2 \\ ...\\y_m\end{pmatrix},K = \begin{bmatrix}k_{11} &amp; k_{12}  &amp; ...... k_{1n}\\k_{21} &amp; k_{22}  &amp; ...... k_{2n}\\...    &amp; ...     &amp; ..........   \\k_{m1} &amp; k_{m2}  &amp; ...... k_{mn}\\  \end{bmatrix},  x = \begin{pmatrix}x_1 \\x_2 \\ ...\\x_m\end{pmatrix}  \]</span></p></li></ol><h4 id="多元线性函数的几何意义">多元线性函数的几何意义</h4><p>一元线性函数<span class="math inline">\(f(x) = kx\)</span>,拓展到二元线性函数$ f(x_1,x_2) = k_1x_1 + k_2x_2$ 1.坐标系由二维拓展为三维： <span class="math inline">\(f(x) = kx\)</span>的直线图形是在二维笛卡尔坐标下的几何图形，放到三维笛卡尔坐标系下，应写为$ f(x_1, x_2) = k_1x_1<span class="math inline">\(, 或者\)</span> f(x_1,x_2) = k_2x_2<span class="math inline">\(, 取\)</span> f(x_1, x_2) =k_1x_1$ 为$ f(x) = kx$的拓展维表达式。 &gt; 一元只有一个变量, $ f(x) =kx$表达式, 简单来说 一元是二元的其中一个元为<code>0</code>的特例。</p><p><span class="math inline">\(f(x1, x_2) =k_1x_1\)</span>的图形是过原点的平面。也就是说拓维后由一条直线变成了一个平面。这是因为函数$f(x_1, x_2) = k_1x_1$ 与新生长出来的坐标轴<span class="math inline">\(x_2\)</span>没有关系，<span class="math inline">\(x_2\)</span>可以取任意值；换句话说， <span class="math inline">\(x_2\)</span>的 任意值都在函数 <span class="math inline">\(f(x1, x_2) =k_1x_1\)</span>的图像上。进一步说，这是一个过 <span class="math inline">\(x_2\)</span>坐标轴的平面 <img src="/imgs/matrix2.png"></p><ol start="2" type="1"><li>两个平面加起来，显然要得到函数$ f(x_1,x_2) = k_1x_1 + k_2x_2<span class="math inline">\(的图形，只要把三维坐标系下的两个函数\)</span>f(x_1,x_2) = k_1x_1$ 和 $ f(x_2,x_2) =k_2x_2$所对应的平面加起来即可得到。<strong>一般情形下，两个平面相加仍然是一个平面</strong><img src="/imgs/matrix3.png"> <img src="/imgs/matrix4.png"></li></ol><p>因此，线性函数$ f(x_1,x_2) = k_1x_1 +k_2x_2$的几何图形是一个过原点的平面。</p><p> 可以想象，由二元线性函数 1 2 11 2 (, ) 2 f x x kx kx = +继续扩展到三元及 n 元的线性函数 1 2 11 2 2 ( , ..., ) ... n n n f x x xkx kx kx = + ++ （坐标系由三维扩展到四维及其 n 维）后，其几何图形仍然是一个“平面”，是一个扩展意义上的平面，常被称为超平面。</p><h3 id="线性映射或变换的几何意义">1.2 线性映射或变换的几何意义</h3><p>TODO</p>]]></content>
+        <content type="html"><![CDATA[<h2 id="一什么是线性代数">一、什么是线性代数</h2><p> 顾名思义，它是研究线性问题的代数理论。</p><p> 代数英文是Algebra，源于阿拉伯语，其本意是“结合在一起”的意思。也就是说代数的功能是把许多看似不相关的事物“结合在一起”，也就是进行抽象。抽象的目的不是为了显示某些人智商高，而是为了解决问题的方便，为了提高效率，把许多看似不相关的问题化归为一类问题。比如线性代数中的一个重要的抽象概念是线性空间（对所谓的要满足“加法”和“数乘”等八条公理的元素的集合），而其元素被称为向量。也就是说，只要某个集合里的元素满足那么几条公理，元素之间的变化满足这些规律，我们就可以对这个集合（现在可以改名为线性空间了）进行一系列线性化处理和分析，这个陌生的集合的性质和结构特点我们一下子就全知道了，因为宇宙间的所有的线性空间类的集合的性质都一样，地球人都知道（如果地球人都学了线性代数的话）。多么深刻而美妙的结论！这就是代数的一个抽象特性。</p><h3 id="线性的意义">1.1 线性的意义</h3><p> 线性代数里面的线性主要的意思就是线性空间里的线性变换。</p><p> 线性函数表现为直线，这只是几何意义。那么所谓“线性”的代数意义是什么呢？实际上，最基本的意义只有两条：可加性和比例性。</p><ol type="1"><li><p>可加性,<strong>和的函数等于函数的和</strong>。即如果函数<span class="math inline">\(f(x)\)</span>是线性的，那么有： <span class="math display">\[f(x_1 + x_2) = f(x_1) + f(x_2)\]</span></p></li><li><p>比例性，<strong>比例的函数等于函数的比例；或者说自变量缩放，函数也同等比例地缩放</strong>。也叫其次性、数乘性或均匀性,如果<span class="math inline">\(f(x)\)</span>是线性，那么有： <span class="math display">\[f(kx) = kf(x) , 其中 k 是常量。\]</span></p></li></ol><blockquote><p>💡 注：对于函数 <span class="math inline">\(f(x) = ax + b\)</span>而言不满足此比例性， <span class="math inline">\(f(kx) = akx +b\)</span>, <span class="math inline">\(kf(x) = akx + kb\)</span>因此<span class="math inline">\(f(kx) \ne kf(x)\)</span>。严格的讲， <span class="math inline">\(f(x) = ax + b\)</span> 不能再叫线性函数了。</p></blockquote><p>可加性与比例性组合在一块就是“线性”的全部意义了，<strong>线性组合的函数，等于函数的线性组合。</strong>，即有:<span class="math display">\[f(k_1x_1 + k_2x_2) = k_1f(x_1) + k_2f(x_2), 其中 k_1, k_2 是常量。\]</span></p><p> 线性函数的可加性表明函数所描述的事物具有累加性，所有起因的累加所导致的结果完全等于每个起因独自所引起的结果的累加。</p><blockquote><p>💡 注：线性齐次函数形如 $ y = k_1x_1 + k_2x_2 + ...k_nx_n$，这个正比例函数的式子中每项里的变量出现的次数都是一次的（没有常数项），<strong>整齐划一</strong>，故此称为“齐次”的，全称为n 元线性齐次函数。</p></blockquote><ol type="1"><li>初等线性函数的自变量由一个数<span class="math inline">\(x\)</span>拓展定义为一个竖排的数组<span class="math inline">\(\begin{pmatrix}x_1 \\x_2 \\...\\x_m\end{pmatrix}\)</span>, 因变量一个数<span class="math inline">\(y\)</span>也拓展定义为一个竖排的数组<span class="math inline">\(\begin{pmatrix}y_1 \\y_2 \\...\\y_m\end{pmatrix}\)</span>, 这些 n元数组和m元数组称之为列向量。</li><li>初等线性函数的比例系数<span class="math inline">\(k\)</span>拓展为由所有的<span class="math inline">\(k_{ij}\)</span>构成一个数的方针，称之为系数矩阵如下：&gt; 因为 <span class="math inline">\(y_1 = kf(x_1)\)</span> 的时候<span class="math inline">\(k\)</span>, 虽为常量,枚举全则有 <span class="math inline">\(n\)</span>个， 因此拓展为行 <span class="math inline">\(\begin{pmatrix}k_1 &amp; k_2 &amp; ...&amp;k_n\end{pmatrix}\)</span>。 再随着<span class="math inline">\(x,y\)</span>拓展, 因此拓展为<span class="math inline">\(mn\)</span>系数矩阵。</li></ol><p><span class="math display">\[\begin{bmatrix}    k_{11} &amp; k_{12}  &amp; ...... k_{1n}\\    k_{21} &amp; k_{22}  &amp; ...... k_{2n}\\    ...    &amp; ...     &amp; ..........   \\    k_{m1} &amp; k_{m2}  &amp; ...... k_{mn}\\  \end{bmatrix}\]</span></p><ol start="3" type="1"><li>然后定义一种系数矩阵与向量相乘的运算法则：</li></ol><blockquote><p>矩阵运算顺序,由左向右。</p></blockquote><p><span class="math display">\[\begin{pmatrix}y_1 \\y_2 \\...\\y_m\end{pmatrix}   = \begin{bmatrix}    k_{11} &amp; k_{12}  &amp; ...... k_{1n}\\    k_{21} &amp; k_{22}  &amp; ...... k_{2n}\\    ...    &amp; ...     &amp; ..........   \\    k_{m1} &amp; k_{m2}  &amp; ...... k_{mn}\\  \end{bmatrix}  \begin{pmatrix}x_1 \\x_2 \\ ...\\x_m\end{pmatrix}  \]</span></p><ol start="4" type="1"><li>进一步简写为：y = f(x) = Kx ,其中： <span class="math display">\[ y=f(x) = \begin{pmatrix}y_1 \\y_2 \\ ...\\y_m\end{pmatrix},K = \begin{bmatrix}k_{11} &amp; k_{12}  &amp; ...... k_{1n}\\k_{21} &amp; k_{22}  &amp; ...... k_{2n}\\...    &amp; ...     &amp; ..........   \\k_{m1} &amp; k_{m2}  &amp; ...... k_{mn}\\  \end{bmatrix},  x = \begin{pmatrix}x_1 \\x_2 \\ ...\\x_m\end{pmatrix}  \]</span></li></ol><h4 id="多元线性函数的几何意义">多元线性函数的几何意义</h4><p>一元线性函数 $ f(x) = kx $, 拓展到二元线性函数 $ f(x_1,x_2) = k_1x_1+ k_2x_2$ 1. 坐标系由二维拓展为三维：<span class="math inline">\(f(x) =kx\)</span>的直线图形是在二维笛卡尔坐标下的几何图形，放到三维笛卡尔坐标系下，应写为<span class="math inline">\(f(x_1, x_2) = k_1x_1\)</span>, 或者$ f(x_1,x_2) = k_2x_2$, 取 $ f(x_1, x_2) = k_1x_1$ 为$ f(x) =kx$的拓展维表达式。 &gt; 一元只有一个变量, $ f(x) = kx$表达式, 简单来说一元是二元的其中一个元为<code>0</code>的特例。</p><p><span class="math inline">\(f(x1, x_2) =k_1x_1\)</span>的图形是过原点的平面。也就是说拓维后由一条直线变成了一个平面。这是因为函数$ f(x_1, x_2) = k_1x_1$ 与新生长出来的坐标轴<span class="math inline">\(x_2\)</span>没有关系，<span class="math inline">\(x_2\)</span>可以取任意值；换句话说， <span class="math inline">\(x_2\)</span>的任意值都在函数 <span class="math inline">\(f(x1, x_2) =k_1x_1\)</span>的图像上。进一步说，这是一个过 <span class="math inline">\(x_2\)</span>坐标轴的平面 <img src="/imgs/matrix2.png"></p><ol start="2" type="1"><li>两个平面加起来，显然要得到函数$ f(x_1,x_2) = k_1x_1 +k_2x_2$的图形，只要把三维坐标系下的两个函数 <span class="math inline">\(f(x_1,x_2) = k_1x_1\)</span> 和 <span class="math inline">\(f(x_2,x_2) = k_2x_2\)</span>所对应的平面加起来即可得到。<strong>一般情形下，两个平面相加仍然是一个平面</strong><img src="/imgs/matrix3.png"> <img src="/imgs/matrix4.png"></li></ol><p>因此，线性函数 <span class="math inline">\(f(x_1,x_2) = k_1x_1 +k_2x_2\)</span>的几何图形是一个过原点的平面。</p><p> 可以想象，由二元线性函数 <span class="math inline">\(f(x_1,x_2) =k_1x_1 + k_2x_2\)</span> 继续扩展到三元及n元的线性函数 <span class="math inline">\(f(x_1,x_2...,x_n)= k_1x_1 +...k_nx_n\)</span>（坐标系由三维扩展到四维及其 n 维）后，其几何图形仍然是一个“平面”，是一个扩展意义上的平面，常被称为超平面。</p><h3 id="线性映射或变换的几何意义">1.2 线性映射或变换的几何意义</h3><p>TODO</p>]]></content>
       
       
       <categories>
@@ -1669,6 +1669,33 @@
     
     
     <entry>
+      <title>1.git</title>
+      <link href="/2020/09/25/ban-ben-kong-zhi/1.git/"/>
+      <url>/2020/09/25/ban-ben-kong-zhi/1.git/</url>
+      
+        <content type="html"><![CDATA[<h1 id="git-gitee">git &amp; gitee</h1><h2 id="git-gitee-1">git &amp; gitee</h2><p>国内环境gitee速度较快可作为Clone &amp; poll中转。</p><h2 id="push提交">push提交</h2><div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push <span class="at">-f</span> git@github.com:<span class="kw">`</span><span class="ex">USERNAME</span><span class="kw">`</span>/<span class="kw">`</span><span class="ex">REPO</span><span class="kw">`</span>.git master:gh-pages</span><span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push <span class="at">-f</span> git@gitee.com:<span class="kw">`</span><span class="ex">USERNAME</span><span class="kw">`</span>/<span class="kw">`</span><span class="ex">REPO</span><span class="kw">`</span>.git master:gh-pages</span></code></pre></div><h2 id="同步操作">同步操作</h2><p><a href="https://www.cnblogs.com/einstein-2014731/p/11492637.html"></a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 版本控制 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 版本控制 </tag>
+            
+            <tag> git </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>1.gitbook</title>
       <link href="/2020/09/25/bo-ke-wang-zhan/1.gitbook/"/>
       <url>/2020/09/25/bo-ke-wang-zhan/1.gitbook/</url>
@@ -1688,33 +1715,6 @@
             <tag> 博客网站 </tag>
             
             <tag> git </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>1.git</title>
-      <link href="/2020/09/25/ban-ben-kong-zhi/1.git/"/>
-      <url>/2020/09/25/ban-ben-kong-zhi/1.git/</url>
-      
-        <content type="html"><![CDATA[<h1 id="git-gitee">git &amp; gitee</h1><h2 id="git-gitee-1">git &amp; gitee</h2><p>国内环境gitee速度较快可作为Clone &amp; poll中转。</p><h2 id="push提交">push提交</h2><div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push <span class="at">-f</span> git@github.com:<span class="kw">`</span><span class="ex">USERNAME</span><span class="kw">`</span>/<span class="kw">`</span><span class="ex">REPO</span><span class="kw">`</span>.git master:gh-pages</span><span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push <span class="at">-f</span> git@gitee.com:<span class="kw">`</span><span class="ex">USERNAME</span><span class="kw">`</span>/<span class="kw">`</span><span class="ex">REPO</span><span class="kw">`</span>.git master:gh-pages</span></code></pre></div><h2 id="同步操作">同步操作</h2><p><a href="https://www.cnblogs.com/einstein-2014731/p/11492637.html"></a></p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 版本控制 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> git </tag>
-            
-            <tag> 版本控制 </tag>
             
         </tags>
       
@@ -1888,39 +1888,6 @@
     
     
     <entry>
-      <title>8. GPU优化</title>
-      <link href="/2020/09/25/unity/xing-neng-you-hua/8.gpu/"/>
-      <url>/2020/09/25/unity/xing-neng-you-hua/8.gpu/</url>
-      
-        <content type="html"><![CDATA[<h2 id="一gpu">一、GPU</h2><ol type="1"><li>SetPassCall渲染状态切换频次控制</li><li>DrawCall数量控制</li><li>带宽负载</li><li>显存占用</li><li>GPU计算量</li></ol><h2 id="二资源优化">二、资源优化</h2><ol type="1"><li>纹理优化</li><li>UI优化</li><li>字体优化</li><li>模型优化</li><li>场景优化</li><li>粒子优化</li><li>材质优化</li><li>指定标准美术规范</li><li>Shader变体数量优化</li></ol>]]></content>
-      
-      
-      <categories>
-          
-          <category> 性能优化 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 性能优化 </tag>
-            
-            <tag> Unity </tag>
-            
-            <tag> Android </tag>
-            
-            <tag> iOS </tag>
-            
-            <tag> Windows </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>5.RDC Profiler</title>
       <link href="/2020/09/25/unity/xing-neng-you-hua/5.renderdoc-python-zi-dong-hua-gong-ju/"/>
       <url>/2020/09/25/unity/xing-neng-you-hua/5.renderdoc-python-zi-dong-hua-gong-ju/</url>
@@ -1992,6 +1959,39 @@
       <url>/2020/09/25/unity/xing-neng-you-hua/7.cpu/</url>
       
         <content type="html"><![CDATA[<p>cpu耗时 1. drawcall 2. 动画 3. 资源加卸载 4. ugui 问题 1. Rebuild 2.Raycast 5. GC系统 1. lua gc 2. C# GC 6. 分帧撞上下一帧重任务 7.自定义控件效率 8. 常驻周期函数 1. Update 2. LateUpdate 3. OnGUI 4.FixedUpdate 9. 引擎系统 1. 网络序列化&amp;派发 2. 输入指令的频率 3.分模块监控 4. 数据包合并 5. 代码效率以及重构</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 性能优化 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 性能优化 </tag>
+            
+            <tag> Unity </tag>
+            
+            <tag> Android </tag>
+            
+            <tag> iOS </tag>
+            
+            <tag> Windows </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>8. GPU优化</title>
+      <link href="/2020/09/25/unity/xing-neng-you-hua/8.gpu/"/>
+      <url>/2020/09/25/unity/xing-neng-you-hua/8.gpu/</url>
+      
+        <content type="html"><![CDATA[<h2 id="一gpu">一、GPU</h2><ol type="1"><li>SetPassCall渲染状态切换频次控制</li><li>DrawCall数量控制</li><li>带宽负载</li><li>显存占用</li><li>GPU计算量</li></ol><h2 id="二资源优化">二、资源优化</h2><ol type="1"><li>纹理优化</li><li>UI优化</li><li>字体优化</li><li>模型优化</li><li>场景优化</li><li>粒子优化</li><li>材质优化</li><li>指定标准美术规范</li><li>Shader变体数量优化</li></ol>]]></content>
       
       
       <categories>
