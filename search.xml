@@ -1642,33 +1642,6 @@
     
     
     <entry>
-      <title>1.gitbook</title>
-      <link href="/2020/09/25/bo-ke-wang-zhan/1.gitbook/"/>
-      <url>/2020/09/25/bo-ke-wang-zhan/1.gitbook/</url>
-      
-        <content type="html"><![CDATA[<ol type="1"><li>安装gitbook<ol type="1"><li><p>安装gitbook</p><pre><code> $ npm install gitbook-cli -g</code></pre></li><li><p>验证安装版本</p><pre><code> $ gitbook -V CLI version: 2.3.2 GitBook version: 3.2.3</code></pre></li></ol></li><li>使用('markdown语法')<ol type="1"><li><p>创建文件夹工作区并初始化</p><pre><code>  $ mkdir 文件夹名 &amp; cd 文件夹名   #默认文件夹名作为书名  $ gitbook init                  #在文件夹目录下执行初始化命令</code></pre></li><li><p>完成后自动生成的目录结构<br><code>SUMMARY.md</code> 书目录结构，默认的介绍连接为<code>README.md</code>，网站侧栏的目录。<br><code>README.md</code> 介绍文章</p></li><li><p>编写文章，并在<code>SUMMARY.md</code>添加连接</p></li><li><p>构建</p><pre><code> $gitbook build # 可选参数： 书路径 输出路径,</code></pre></li><li><p>生成, 生成电子书需要安装 <a href="https://calibre-ebook.com/download">转换软件</a>,并添加环境变量。</p><ol type="1"><li><p>网页本地预览,启动成功后使用浏览器访问 ``</p><pre><code>     $ gitbook serve # 可选参数： --port 本机电脑端口</code></pre></li><li><p>生成pdf电子书</p><pre><code>     $ gitbook pdf  # 可选参数 书路径 输出文件路径</code></pre></li><li><p>生成epub电子书</p><pre><code>     $ gitbook epub   # 可选参数 书路径 输出文件路径</code></pre></li><li><p>生成mobi电子书</p><pre><code>     $ gitbook mobi   # 可选参数 书路径 输出文件路径</code></pre></li></ol></li></ol></li><li>插件安装方法<ol type="1"><li>方法一 (速度慢)<ol type="1"><li>在书目录新建 book.json, 添加需要安装的插件<code>{          "plugins":[              "-lunr", "-search", "search-pro",              "expandable-chapters",              "chapter-fold",              "splitter",              "anchor-navigation-ex",              "back-to-top-button",              "prism","-highlight",              "tbfed-pagefooter"          ],          "pluginsConfig": {              "prism": {                            }          }      }</code></li><li>执行 <code>gitbook install</code></li></ol></li><li>方法二 <code>$ npm install gitbook-plugin-插件名</code></li><li>方法三<ol type="1"><li><code>npm init</code> 初始化一个package.json</li><li>在package.json中<code>dependencies</code>添加插件</li><li>使用<code>npm install</code>安装插件</li></ol></li></ol></li><li>常用插件<ol type="1"><li>搜索<a href="https://www.npmjs.com/package/gitbook-plugin-search-pro">search-pro</a>，<ol type="1"><li>兼容性，需要<code>gitbook &gt;= 3.0.0 support</code>,</li><li>插件安装排除冲突<code>"-lunr", "-search", "search-pro"</code></li></ol></li><li>左侧可折叠菜单栏<a href="https://www.npmjs.com/package/gitbook-plugin-chapter-fold">chapter-fold</a><ol type="1"><li>插件安装 <code>"chapter-fold"</code></li><li>插件配置 <code>"chapter-fold":{}</code></li></ol></li><li>左侧可折叠菜单栏2<a href="https://www.npmjs.com/package/gitbook-plugin-chapter-fold">expandable-chapters</a><ol type="1"><li>插件安装 <code>"expandable-chapters"</code></li><li>插件配置 <code>"expandable-chapters":{}</code></li></ol></li><li>可调节侧栏宽度<a href="https://www.npmjs.com/package/gitbook-plugin-splitter">splitter</a><ol type="1"><li>插件安装 <code>"splitter"</code></li></ol></li><li>页面内目录<a href="">page-treeview</a><ol type="1"><li>插件安装 <code>"page-treeview"</code></li><li>插件配置<code>"page-treeview": {          "copyright": "Copyright &amp;#169; aleen42",          "minHeaderCount": "2",          "minHeaderDeep": "2"      }</code></li></ol></li><li>悬浮按钮目录<a href="https://www.npmjs.com/package/gitbook-plugin-anchor-navigation-ex">anchor-navigation-ex</a><ol type="1"><li>插件安装 <code>"anchor-navigation-ex"</code></li></ol></li><li>回到顶部<a href="https://www.npmjs.com/package/gitbook-plugin-back-to-top-button">back-to-top-button</a><ol type="1"><li>插件安装 <code>"back-to-top-button"</code></li></ol></li><li>数学公式支持<a href="https://www.npmjs.com/package/gitbook-plugin-mathjax-pro">mathjax-pro</a><ol type="1"><li>插件安装 <code>"mathjax-pro"</code></li><li>插件配置<code>"mathjax-pro":{          "version": "2.7.5"      }</code></li></ol></li><li>流程图<a href="https://www.npmjs.com/package/gitbook-plugin-flowchart">flowchart</a><ol type="1"><li>插件安装 <code>"flowchart"</code></li><li>插件配置<code>"flowchart": {          "line-color": "red"       }</code></li></ol></li></ol></li><li>其他内容<ul><li>更多插件<a href="https://www.npmjs.com/search?q=gitbook-plugin&amp;ranking=popularity&amp;page=1&amp;perPage=20">https://www.npmjs.com/search?q=gitbook-plugin&amp;ranking=popularity&amp;page=1&amp;perPage=20</a></li></ul></li></ol>]]></content>
-      
-      
-      <categories>
-          
-          <category> 博客网站 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 博客网站 </tag>
-            
-            <tag> git </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>2.Hexo</title>
       <link href="/2020/09/25/bo-ke-wang-zhan/2.hexo/"/>
       <url>/2020/09/25/bo-ke-wang-zhan/2.hexo/</url>
@@ -1688,6 +1661,33 @@
             <tag> 博客网站 </tag>
             
             <tag> Hexo </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>1.gitbook</title>
+      <link href="/2020/09/25/bo-ke-wang-zhan/1.gitbook/"/>
+      <url>/2020/09/25/bo-ke-wang-zhan/1.gitbook/</url>
+      
+        <content type="html"><![CDATA[<ol type="1"><li>安装gitbook<ol type="1"><li><p>安装gitbook</p><pre><code> $ npm install gitbook-cli -g</code></pre></li><li><p>验证安装版本</p><pre><code> $ gitbook -V CLI version: 2.3.2 GitBook version: 3.2.3</code></pre></li></ol></li><li>使用('markdown语法')<ol type="1"><li><p>创建文件夹工作区并初始化</p><pre><code>  $ mkdir 文件夹名 &amp; cd 文件夹名   #默认文件夹名作为书名  $ gitbook init                  #在文件夹目录下执行初始化命令</code></pre></li><li><p>完成后自动生成的目录结构<br><code>SUMMARY.md</code> 书目录结构，默认的介绍连接为<code>README.md</code>，网站侧栏的目录。<br><code>README.md</code> 介绍文章</p></li><li><p>编写文章，并在<code>SUMMARY.md</code>添加连接</p></li><li><p>构建</p><pre><code> $gitbook build # 可选参数： 书路径 输出路径,</code></pre></li><li><p>生成, 生成电子书需要安装 <a href="https://calibre-ebook.com/download">转换软件</a>,并添加环境变量。</p><ol type="1"><li><p>网页本地预览,启动成功后使用浏览器访问 ``</p><pre><code>     $ gitbook serve # 可选参数： --port 本机电脑端口</code></pre></li><li><p>生成pdf电子书</p><pre><code>     $ gitbook pdf  # 可选参数 书路径 输出文件路径</code></pre></li><li><p>生成epub电子书</p><pre><code>     $ gitbook epub   # 可选参数 书路径 输出文件路径</code></pre></li><li><p>生成mobi电子书</p><pre><code>     $ gitbook mobi   # 可选参数 书路径 输出文件路径</code></pre></li></ol></li></ol></li><li>插件安装方法<ol type="1"><li>方法一 (速度慢)<ol type="1"><li>在书目录新建 book.json, 添加需要安装的插件<code>{          "plugins":[              "-lunr", "-search", "search-pro",              "expandable-chapters",              "chapter-fold",              "splitter",              "anchor-navigation-ex",              "back-to-top-button",              "prism","-highlight",              "tbfed-pagefooter"          ],          "pluginsConfig": {              "prism": {                            }          }      }</code></li><li>执行 <code>gitbook install</code></li></ol></li><li>方法二 <code>$ npm install gitbook-plugin-插件名</code></li><li>方法三<ol type="1"><li><code>npm init</code> 初始化一个package.json</li><li>在package.json中<code>dependencies</code>添加插件</li><li>使用<code>npm install</code>安装插件</li></ol></li></ol></li><li>常用插件<ol type="1"><li>搜索<a href="https://www.npmjs.com/package/gitbook-plugin-search-pro">search-pro</a>，<ol type="1"><li>兼容性，需要<code>gitbook &gt;= 3.0.0 support</code>,</li><li>插件安装排除冲突<code>"-lunr", "-search", "search-pro"</code></li></ol></li><li>左侧可折叠菜单栏<a href="https://www.npmjs.com/package/gitbook-plugin-chapter-fold">chapter-fold</a><ol type="1"><li>插件安装 <code>"chapter-fold"</code></li><li>插件配置 <code>"chapter-fold":{}</code></li></ol></li><li>左侧可折叠菜单栏2<a href="https://www.npmjs.com/package/gitbook-plugin-chapter-fold">expandable-chapters</a><ol type="1"><li>插件安装 <code>"expandable-chapters"</code></li><li>插件配置 <code>"expandable-chapters":{}</code></li></ol></li><li>可调节侧栏宽度<a href="https://www.npmjs.com/package/gitbook-plugin-splitter">splitter</a><ol type="1"><li>插件安装 <code>"splitter"</code></li></ol></li><li>页面内目录<a href="">page-treeview</a><ol type="1"><li>插件安装 <code>"page-treeview"</code></li><li>插件配置<code>"page-treeview": {          "copyright": "Copyright &amp;#169; aleen42",          "minHeaderCount": "2",          "minHeaderDeep": "2"      }</code></li></ol></li><li>悬浮按钮目录<a href="https://www.npmjs.com/package/gitbook-plugin-anchor-navigation-ex">anchor-navigation-ex</a><ol type="1"><li>插件安装 <code>"anchor-navigation-ex"</code></li></ol></li><li>回到顶部<a href="https://www.npmjs.com/package/gitbook-plugin-back-to-top-button">back-to-top-button</a><ol type="1"><li>插件安装 <code>"back-to-top-button"</code></li></ol></li><li>数学公式支持<a href="https://www.npmjs.com/package/gitbook-plugin-mathjax-pro">mathjax-pro</a><ol type="1"><li>插件安装 <code>"mathjax-pro"</code></li><li>插件配置<code>"mathjax-pro":{          "version": "2.7.5"      }</code></li></ol></li><li>流程图<a href="https://www.npmjs.com/package/gitbook-plugin-flowchart">flowchart</a><ol type="1"><li>插件安装 <code>"flowchart"</code></li><li>插件配置<code>"flowchart": {          "line-color": "red"       }</code></li></ol></li></ol></li><li>其他内容<ul><li>更多插件<a href="https://www.npmjs.com/search?q=gitbook-plugin&amp;ranking=popularity&amp;page=1&amp;perPage=20">https://www.npmjs.com/search?q=gitbook-plugin&amp;ranking=popularity&amp;page=1&amp;perPage=20</a></li></ul></li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> 博客网站 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 博客网站 </tag>
+            
+            <tag> git </tag>
             
         </tags>
       
@@ -1822,6 +1822,39 @@
     
     
     <entry>
+      <title>3.Unity Memory Profiler</title>
+      <link href="/2020/09/25/unity/xing-neng-you-hua/3.unitymemoryprofiler/"/>
+      <url>/2020/09/25/unity/xing-neng-you-hua/3.unitymemoryprofiler/</url>
+      
+        <content type="html"><![CDATA[<p>Unity Profiler - Memory 的详细独立工具。</p><div class="sourceCode" id="cb1"><pre class="sourceCode c#"><code class="sourceCode cs"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>    <span class="co">// debug 模式</span></span><span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    EditorUserBuildSettings<span class="op">.</span><span class="fu">development</span> <span class="op">=</span> <span class="kw">true</span><span class="op">;</span></span><span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span><span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="co">//下面为 Unity Profiler 调试选项</span></span><span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    EditorUserBuildSettings<span class="op">.</span><span class="fu">connectProfiler</span> <span class="op">=</span> <span class="kw">true</span><span class="op">;</span></span><span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    EditorUserBuildSettings<span class="op">.</span><span class="fu">buildWithDeepProfilingSupport</span> <span class="op">=</span> <span class="kw">true</span><span class="op">;</span></span><span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span><span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    <span class="co">// deep 模式支持</span></span><span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    EditorUserBuildSettings<span class="op">.</span><span class="fu">buildWithDeepProfilingSupport</span> <span class="op">=</span> <span class="kw">true</span><span class="op">;</span></span></code></pre></div><p>Unity App 性能主要分三部分部分：</p><ol type="1"><li>引擎的Native部分</li><li>原生库的Native部分 (lualib、jni、其他c/c++部分)</li><li>非原生游戏部分 (这部分主要使用 Unity Profiler工具检测)</li></ol><p><a href="https://docs.unity3d.com/Packages/com.unity.memoryprofiler@0.2/manual/index.html">https://docs.unity3d.com/Packages/com.unity.memoryprofiler@0.2/manual/index.html</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 性能优化 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 性能优化 </tag>
+            
+            <tag> Unity </tag>
+            
+            <tag> Android </tag>
+            
+            <tag> iOS </tag>
+            
+            <tag> Windows </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>4.Android Profiler</title>
       <link href="/2020/09/25/unity/xing-neng-you-hua/4.androidprofiler/"/>
       <url>/2020/09/25/unity/xing-neng-you-hua/4.androidprofiler/</url>
@@ -1855,11 +1888,11 @@
     
     
     <entry>
-      <title>3.Unity Memory Profiler</title>
-      <link href="/2020/09/25/unity/xing-neng-you-hua/3.unitymemoryprofiler/"/>
-      <url>/2020/09/25/unity/xing-neng-you-hua/3.unitymemoryprofiler/</url>
+      <title>8. GPU优化</title>
+      <link href="/2020/09/25/unity/xing-neng-you-hua/8.gpu/"/>
+      <url>/2020/09/25/unity/xing-neng-you-hua/8.gpu/</url>
       
-        <content type="html"><![CDATA[<p>Unity Profiler - Memory 的详细独立工具。</p><div class="sourceCode" id="cb1"><pre class="sourceCode c#"><code class="sourceCode cs"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>    <span class="co">// debug 模式</span></span><span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    EditorUserBuildSettings<span class="op">.</span><span class="fu">development</span> <span class="op">=</span> <span class="kw">true</span><span class="op">;</span></span><span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span><span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="co">//下面为 Unity Profiler 调试选项</span></span><span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    EditorUserBuildSettings<span class="op">.</span><span class="fu">connectProfiler</span> <span class="op">=</span> <span class="kw">true</span><span class="op">;</span></span><span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    EditorUserBuildSettings<span class="op">.</span><span class="fu">buildWithDeepProfilingSupport</span> <span class="op">=</span> <span class="kw">true</span><span class="op">;</span></span><span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span><span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    <span class="co">// deep 模式支持</span></span><span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    EditorUserBuildSettings<span class="op">.</span><span class="fu">buildWithDeepProfilingSupport</span> <span class="op">=</span> <span class="kw">true</span><span class="op">;</span></span></code></pre></div><p>Unity App 性能主要分三部分部分：</p><ol type="1"><li>引擎的Native部分</li><li>原生库的Native部分 (lualib、jni、其他c/c++部分)</li><li>非原生游戏部分 (这部分主要使用 Unity Profiler工具检测)</li></ol><p><a href="https://docs.unity3d.com/Packages/com.unity.memoryprofiler@0.2/manual/index.html">https://docs.unity3d.com/Packages/com.unity.memoryprofiler@0.2/manual/index.html</a></p>]]></content>
+        <content type="html"><![CDATA[<h2 id="一gpu">一、GPU</h2><ol type="1"><li>SetPassCall渲染状态切换频次控制</li><li>DrawCall数量控制</li><li>带宽负载</li><li>显存占用</li><li>GPU计算量</li></ol><h2 id="二资源优化">二、资源优化</h2><ol type="1"><li>纹理优化</li><li>UI优化</li><li>字体优化</li><li>模型优化</li><li>场景优化</li><li>粒子优化</li><li>材质优化</li><li>指定标准美术规范</li><li>Shader变体数量优化</li></ol>]]></content>
       
       
       <categories>
@@ -1959,39 +1992,6 @@
       <url>/2020/09/25/unity/xing-neng-you-hua/7.cpu/</url>
       
         <content type="html"><![CDATA[<p>cpu耗时 1. drawcall 2. 动画 3. 资源加卸载 4. ugui 问题 1. Rebuild 2.Raycast 5. GC系统 1. lua gc 2. C# GC 6. 分帧撞上下一帧重任务 7.自定义控件效率 8. 常驻周期函数 1. Update 2. LateUpdate 3. OnGUI 4.FixedUpdate 9. 引擎系统 1. 网络序列化&amp;派发 2. 输入指令的频率 3.分模块监控 4. 数据包合并 5. 代码效率以及重构</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 性能优化 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 性能优化 </tag>
-            
-            <tag> Unity </tag>
-            
-            <tag> Android </tag>
-            
-            <tag> iOS </tag>
-            
-            <tag> Windows </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>8. GPU优化</title>
-      <link href="/2020/09/25/unity/xing-neng-you-hua/8.gpu/"/>
-      <url>/2020/09/25/unity/xing-neng-you-hua/8.gpu/</url>
-      
-        <content type="html"><![CDATA[<h2 id="一gpu">一、GPU</h2><ol type="1"><li>SetPassCall渲染状态切换频次控制</li><li>DrawCall数量控制</li><li>带宽负载</li><li>显存占用</li><li>GPU计算量</li></ol><h2 id="二资源优化">二、资源优化</h2><ol type="1"><li>纹理优化</li><li>UI优化</li><li>字体优化</li><li>模型优化</li><li>场景优化</li><li>粒子优化</li><li>材质优化</li><li>指定标准美术规范</li><li>Shader变体数量优化</li></ol>]]></content>
       
       
       <categories>
