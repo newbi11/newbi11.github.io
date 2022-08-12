@@ -443,21 +443,37 @@
             
             <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2020/09/25/unity/xing-neng-you-hua/7.cpu/">
+                    <a href="/2020/09/25/unity/xing-neng-you-hua/8.gpu/">
                         <div class="card-image tag-image">
                             
                             
-                            <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="7. CPU优化">
+                            <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="8. GPU优化">
                             
-                            <span class="card-title">7. CPU优化</span>
+                            <span class="card-title">8. GPU优化</span>
                         </div>
                     </a>
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                cpu耗时 1. drawcall 2. 动画 3. 资源加卸载 4. ugui 问题 1. Rebuild 2.
-Raycast 5. GC系统 1. lua gc 2. C# GC 6. 分帧撞上下一帧重任务 7.
-自定义控件效率 8.
+                                一、GPU
+
+SetPassCall渲染状态切换频次控制
+DrawCall数量控制
+带宽负载
+显存占用
+GPU计算量
+
+二、资源优化
+
+纹理优化
+UI优化
+字体优化
+模型优化
+场景优化
+粒子优化
+材质优化
+指定标准美术规范
+Shader变体
                             
                         </div>
                         <div class="publish-info">
@@ -507,37 +523,21 @@ Raycast 5. GC系统 1. lua gc 2. C# GC 6. 分帧撞上下一帧重任务 7.
             
             <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2020/09/25/unity/xing-neng-you-hua/8.gpu/">
+                    <a href="/2020/09/25/unity/xing-neng-you-hua/7.cpu/">
                         <div class="card-image tag-image">
                             
                             
-                            <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="8. GPU优化">
+                            <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="7. CPU优化">
                             
-                            <span class="card-title">8. GPU优化</span>
+                            <span class="card-title">7. CPU优化</span>
                         </div>
                     </a>
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                一、GPU
-
-SetPassCall渲染状态切换频次控制
-DrawCall数量控制
-带宽负载
-显存占用
-GPU计算量
-
-二、资源优化
-
-纹理优化
-UI优化
-字体优化
-模型优化
-场景优化
-粒子优化
-材质优化
-指定标准美术规范
-Shader变体
+                                cpu耗时 1. drawcall 2. 动画 3. 资源加卸载 4. ugui 问题 1. Rebuild 2.
+Raycast 5. GC系统 1. lua gc 2. C# GC 6. 分帧撞上下一帧重任务 7.
+自定义控件效率 8.
                             
                         </div>
                         <div class="publish-info">
@@ -734,23 +734,23 @@ if __name_
             
             <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2020/09/25/unity/xing-neng-you-hua/4.androidprofiler/">
+                    <a href="/2020/09/25/unity/xing-neng-you-hua/3.unitymemoryprofiler/">
                         <div class="card-image tag-image">
                             
                             
-                            <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="4.Android Profiler">
+                            <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="3.Unity Memory Profiler">
                             
-                            <span class="card-title">4.Android Profiler</span>
+                            <span class="card-title">3.Unity Memory Profiler</span>
                         </div>
                     </a>
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                Android 调试Unity程序，
-需要使用PlayerSettings.SetIl2CppCompilerConfiguration
-设置为 Debug 可调式il2cpp。
-    //调试 il2cpp
-    PlayerSett
+                                Unity Profiler - Memory 的详细独立工具。
+    // debug 模式
+    EditorUserBuildSettings.development = true;
+
+    //下面为 Unity Profil
                             
                         </div>
                         <div class="publish-info">
@@ -800,23 +800,23 @@ if __name_
             
             <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2020/09/25/unity/xing-neng-you-hua/3.unitymemoryprofiler/">
+                    <a href="/2020/09/25/unity/xing-neng-you-hua/4.androidprofiler/">
                         <div class="card-image tag-image">
                             
                             
-                            <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="3.Unity Memory Profiler">
+                            <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="4.Android Profiler">
                             
-                            <span class="card-title">3.Unity Memory Profiler</span>
+                            <span class="card-title">4.Android Profiler</span>
                         </div>
                     </a>
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                Unity Profiler - Memory 的详细独立工具。
-    // debug 模式
-    EditorUserBuildSettings.development = true;
-
-    //下面为 Unity Profil
+                                Android 调试Unity程序，
+需要使用PlayerSettings.SetIl2CppCompilerConfiguration
+设置为 Debug 可调式il2cpp。
+    //调试 il2cpp
+    PlayerSett
                             
                         </div>
                         <div class="publish-info">

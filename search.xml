@@ -1822,11 +1822,11 @@
     
     
     <entry>
-      <title>3.Unity Memory Profiler</title>
-      <link href="/2020/09/25/unity/xing-neng-you-hua/3.unitymemoryprofiler/"/>
-      <url>/2020/09/25/unity/xing-neng-you-hua/3.unitymemoryprofiler/</url>
+      <title>4.Android Profiler</title>
+      <link href="/2020/09/25/unity/xing-neng-you-hua/4.androidprofiler/"/>
+      <url>/2020/09/25/unity/xing-neng-you-hua/4.androidprofiler/</url>
       
-        <content type="html"><![CDATA[<p>Unity Profiler - Memory 的详细独立工具。</p><div class="sourceCode" id="cb1"><pre class="sourceCode c#"><code class="sourceCode cs"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>    <span class="co">// debug 模式</span></span><span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    EditorUserBuildSettings<span class="op">.</span><span class="fu">development</span> <span class="op">=</span> <span class="kw">true</span><span class="op">;</span></span><span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span><span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="co">//下面为 Unity Profiler 调试选项</span></span><span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    EditorUserBuildSettings<span class="op">.</span><span class="fu">connectProfiler</span> <span class="op">=</span> <span class="kw">true</span><span class="op">;</span></span><span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    EditorUserBuildSettings<span class="op">.</span><span class="fu">buildWithDeepProfilingSupport</span> <span class="op">=</span> <span class="kw">true</span><span class="op">;</span></span><span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span><span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    <span class="co">// deep 模式支持</span></span><span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    EditorUserBuildSettings<span class="op">.</span><span class="fu">buildWithDeepProfilingSupport</span> <span class="op">=</span> <span class="kw">true</span><span class="op">;</span></span></code></pre></div><p>Unity App 性能主要分三部分部分：</p><ol type="1"><li>引擎的Native部分</li><li>原生库的Native部分 (lualib、jni、其他c/c++部分)</li><li>非原生游戏部分 (这部分主要使用 Unity Profiler工具检测)</li></ol><p><a href="https://docs.unity3d.com/Packages/com.unity.memoryprofiler@0.2/manual/index.html">https://docs.unity3d.com/Packages/com.unity.memoryprofiler@0.2/manual/index.html</a></p>]]></content>
+        <content type="html"><![CDATA[<p>Android 调试Unity程序，需要使用<code>PlayerSettings.SetIl2CppCompilerConfiguration</code>设置为 Debug 可调式il2cpp。</p><div class="sourceCode" id="cb1"><pre class="sourceCode c#"><code class="sourceCode cs"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>    <span class="co">//调试 il2cpp</span></span><span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    PlayerSettings<span class="op">.</span><span class="fu">SetIl2CppCompilerConfiguration</span><span class="op">(</span>BuildTargetGroup<span class="op">.</span><span class="fu">Android</span><span class="op">,</span> Il2CppCompilerConfiguration<span class="op">.</span><span class="fu">Debug</span><span class="op">)</span></span><span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span><span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="co">// debug 模式</span></span><span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    EditorUserBuildSettings<span class="op">.</span><span class="fu">development</span> <span class="op">=</span> <span class="kw">true</span><span class="op">;</span></span><span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span><span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    <span class="co">//下面为 Unity Profiler 调试选项</span></span><span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    EditorUserBuildSettings<span class="op">.</span><span class="fu">connectProfiler</span> <span class="op">=</span> <span class="kw">true</span><span class="op">;</span></span><span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    EditorUserBuildSettings<span class="op">.</span><span class="fu">buildWithDeepProfilingSupport</span> <span class="op">=</span> <span class="kw">true</span><span class="op">;</span></span><span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    </span><span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    <span class="co">// 代码断点调试</span></span><span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    EditorUserBuildSettings<span class="op">.</span><span class="fu">allowDebugging</span> <span class="op">=</span> <span class="kw">true</span><span class="op">;</span></span></code></pre></div><p><a href="https://source.android.com/devices/tech/debug/native-memory">https://source.android.com/devices/tech/debug/native-memory</a><a href="https://perfetto.dev/#/heapprofd">Heapprofd</a></p>]]></content>
       
       
       <categories>
@@ -1855,11 +1855,11 @@
     
     
     <entry>
-      <title>4.Android Profiler</title>
-      <link href="/2020/09/25/unity/xing-neng-you-hua/4.androidprofiler/"/>
-      <url>/2020/09/25/unity/xing-neng-you-hua/4.androidprofiler/</url>
+      <title>3.Unity Memory Profiler</title>
+      <link href="/2020/09/25/unity/xing-neng-you-hua/3.unitymemoryprofiler/"/>
+      <url>/2020/09/25/unity/xing-neng-you-hua/3.unitymemoryprofiler/</url>
       
-        <content type="html"><![CDATA[<p>Android 调试Unity程序，需要使用<code>PlayerSettings.SetIl2CppCompilerConfiguration</code>设置为 Debug 可调式il2cpp。</p><div class="sourceCode" id="cb1"><pre class="sourceCode c#"><code class="sourceCode cs"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>    <span class="co">//调试 il2cpp</span></span><span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    PlayerSettings<span class="op">.</span><span class="fu">SetIl2CppCompilerConfiguration</span><span class="op">(</span>BuildTargetGroup<span class="op">.</span><span class="fu">Android</span><span class="op">,</span> Il2CppCompilerConfiguration<span class="op">.</span><span class="fu">Debug</span><span class="op">)</span></span><span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span><span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="co">// debug 模式</span></span><span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    EditorUserBuildSettings<span class="op">.</span><span class="fu">development</span> <span class="op">=</span> <span class="kw">true</span><span class="op">;</span></span><span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span><span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    <span class="co">//下面为 Unity Profiler 调试选项</span></span><span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    EditorUserBuildSettings<span class="op">.</span><span class="fu">connectProfiler</span> <span class="op">=</span> <span class="kw">true</span><span class="op">;</span></span><span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    EditorUserBuildSettings<span class="op">.</span><span class="fu">buildWithDeepProfilingSupport</span> <span class="op">=</span> <span class="kw">true</span><span class="op">;</span></span><span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    </span><span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    <span class="co">// 代码断点调试</span></span><span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    EditorUserBuildSettings<span class="op">.</span><span class="fu">allowDebugging</span> <span class="op">=</span> <span class="kw">true</span><span class="op">;</span></span></code></pre></div><p><a href="https://source.android.com/devices/tech/debug/native-memory">https://source.android.com/devices/tech/debug/native-memory</a><a href="https://perfetto.dev/#/heapprofd">Heapprofd</a></p>]]></content>
+        <content type="html"><![CDATA[<p>Unity Profiler - Memory 的详细独立工具。</p><div class="sourceCode" id="cb1"><pre class="sourceCode c#"><code class="sourceCode cs"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>    <span class="co">// debug 模式</span></span><span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    EditorUserBuildSettings<span class="op">.</span><span class="fu">development</span> <span class="op">=</span> <span class="kw">true</span><span class="op">;</span></span><span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span><span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="co">//下面为 Unity Profiler 调试选项</span></span><span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    EditorUserBuildSettings<span class="op">.</span><span class="fu">connectProfiler</span> <span class="op">=</span> <span class="kw">true</span><span class="op">;</span></span><span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    EditorUserBuildSettings<span class="op">.</span><span class="fu">buildWithDeepProfilingSupport</span> <span class="op">=</span> <span class="kw">true</span><span class="op">;</span></span><span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span><span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    <span class="co">// deep 模式支持</span></span><span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    EditorUserBuildSettings<span class="op">.</span><span class="fu">buildWithDeepProfilingSupport</span> <span class="op">=</span> <span class="kw">true</span><span class="op">;</span></span></code></pre></div><p>Unity App 性能主要分三部分部分：</p><ol type="1"><li>引擎的Native部分</li><li>原生库的Native部分 (lualib、jni、其他c/c++部分)</li><li>非原生游戏部分 (这部分主要使用 Unity Profiler工具检测)</li></ol><p><a href="https://docs.unity3d.com/Packages/com.unity.memoryprofiler@0.2/manual/index.html">https://docs.unity3d.com/Packages/com.unity.memoryprofiler@0.2/manual/index.html</a></p>]]></content>
       
       
       <categories>
@@ -1954,11 +1954,11 @@
     
     
     <entry>
-      <title>8. GPU优化</title>
-      <link href="/2020/09/25/unity/xing-neng-you-hua/8.gpu/"/>
-      <url>/2020/09/25/unity/xing-neng-you-hua/8.gpu/</url>
+      <title>7. CPU优化</title>
+      <link href="/2020/09/25/unity/xing-neng-you-hua/7.cpu/"/>
+      <url>/2020/09/25/unity/xing-neng-you-hua/7.cpu/</url>
       
-        <content type="html"><![CDATA[<h2 id="一gpu">一、GPU</h2><ol type="1"><li>SetPassCall渲染状态切换频次控制</li><li>DrawCall数量控制</li><li>带宽负载</li><li>显存占用</li><li>GPU计算量</li></ol><h2 id="二资源优化">二、资源优化</h2><ol type="1"><li>纹理优化</li><li>UI优化</li><li>字体优化</li><li>模型优化</li><li>场景优化</li><li>粒子优化</li><li>材质优化</li><li>指定标准美术规范</li><li>Shader变体数量优化</li></ol>]]></content>
+        <content type="html"><![CDATA[<p>cpu耗时 1. drawcall 2. 动画 3. 资源加卸载 4. ugui 问题 1. Rebuild 2.Raycast 5. GC系统 1. lua gc 2. C# GC 6. 分帧撞上下一帧重任务 7.自定义控件效率 8. 常驻周期函数 1. Update 2. LateUpdate 3. OnGUI 4.FixedUpdate 9. 引擎系统 1. 网络序列化&amp;派发 2. 输入指令的频率 3.分模块监控 4. 数据包合并 5. 代码效率以及重构</p>]]></content>
       
       
       <categories>
@@ -1987,11 +1987,11 @@
     
     
     <entry>
-      <title>7. CPU优化</title>
-      <link href="/2020/09/25/unity/xing-neng-you-hua/7.cpu/"/>
-      <url>/2020/09/25/unity/xing-neng-you-hua/7.cpu/</url>
+      <title>8. GPU优化</title>
+      <link href="/2020/09/25/unity/xing-neng-you-hua/8.gpu/"/>
+      <url>/2020/09/25/unity/xing-neng-you-hua/8.gpu/</url>
       
-        <content type="html"><![CDATA[<p>cpu耗时 1. drawcall 2. 动画 3. 资源加卸载 4. ugui 问题 1. Rebuild 2.Raycast 5. GC系统 1. lua gc 2. C# GC 6. 分帧撞上下一帧重任务 7.自定义控件效率 8. 常驻周期函数 1. Update 2. LateUpdate 3. OnGUI 4.FixedUpdate 9. 引擎系统 1. 网络序列化&amp;派发 2. 输入指令的频率 3.分模块监控 4. 数据包合并 5. 代码效率以及重构</p>]]></content>
+        <content type="html"><![CDATA[<h2 id="一gpu">一、GPU</h2><ol type="1"><li>SetPassCall渲染状态切换频次控制</li><li>DrawCall数量控制</li><li>带宽负载</li><li>显存占用</li><li>GPU计算量</li></ol><h2 id="二资源优化">二、资源优化</h2><ol type="1"><li>纹理优化</li><li>UI优化</li><li>字体优化</li><li>模型优化</li><li>场景优化</li><li>粒子优化</li><li>材质优化</li><li>指定标准美术规范</li><li>Shader变体数量优化</li></ol>]]></content>
       
       
       <categories>
