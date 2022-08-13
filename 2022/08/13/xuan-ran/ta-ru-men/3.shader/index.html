@@ -1,0 +1,1951 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="3.Shader, Game, Unity, Graphics, Tools, Scripts, C#, Python, Lua, C/C++">
+    <meta name="description" content="游戏编程的一些文章">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>3.Shader | 游戏编程</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.0.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">游戏编程</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">游戏编程</div>
+        <div class="logo-desc">
+            
+            游戏编程的一些文章
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/16.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">3.Shader</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Unity/">
+                                <span class="chip bg-color">Unity</span>
+                            </a>
+                        
+                            <a href="/tags/%E6%B8%B2%E6%9F%93/">
+                                <span class="chip bg-color">渲染</span>
+                            </a>
+                        
+                            <a href="/tags/%E5%9B%BE%E5%BD%A2/">
+                                <span class="chip bg-color">图形</span>
+                            </a>
+                        
+                            <a href="/tags/TA/">
+                                <span class="chip bg-color">TA</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E5%9B%BE%E5%BD%A2/" class="post-category">
+                                图形
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2022-08-13
+                </div>
+                
+
+                
+
+                
+
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h2 id="一着色器核心概念">一、着色器核心概念</h2>
+<h3 id="着色器简介">1.着色器简介</h3>
+<p>着色器程序，通常称为着色器，是在 GPU 上运行的程序。</p>
+<p>在 Unity 中，着色器分为三大类。每个类别的用途不同，使用方式也不同。
+1.
+作为图形管线一部分的着色器是最常见的着色器类型。它们执行一些计算来确定屏幕上像素的颜色。在
+Unity 中，通常是通过 Shader 对象使用这种类型的着色器。 2.
+计算着色器在常规图形管线之外，在 GPU 上执行计算。 3.
+光线追踪着色器执行与光线追踪相关的计算。</p>
+<p>术语
+着色器的相关术语可能令人困惑；人们通常使用“着色器”表示不同的内容。</p>
+<p>在本文档中，该术语的用法如下：</p>
+<ul>
+<li>着色器或者着色器程序 - 在 GPU
+上运行的程序。除非另有说明，否则这意味着着色器程序是图形管线的一部分。</li>
+<li>Shader 对象 - Shader 类的一个实例。Shader
+对象是着色器程序和其他信息的封装器。</li>
+<li>ShaderLab - 一种用于编写着色器的 Unity 特定语言。</li>
+<li>Shader Graph - 一种无需编写代码即可创建着色器的工具。</li>
+<li>着色器资源 - Unity 项目中扩展名为 .shader 的文件。它定义一个 Shader
+对象。</li>
+<li>Shader Graph 资源 - Unity 项目中的文件。它定义一个 Shader
+对象。</li>
+</ul>
+<h3 id="shader-类">2.Shader 类</h3>
+<p>在 Unity 中，当您使用的着色器属于图形管线 的一部分，通常用到 Shader
+类的实例。我们将一个 Shader 类的实例称为 Shader 对象。</p>
+<p>Shader 对象是 Unity
+使用着色器程序的特定方式；它是着色器程序和其他信息的封装器。它允许您在同一个文件中定义多个着色器程序，并告诉
+Unity 如何使用它们。</p>
+<ol type="1">
+<li>Shader 对象基础 Shader 对象包含着色器程序、更改 GPU
+上设置的指令（统称为渲染状态）以及告诉 Unity 如何使用它们的信息。</li>
+</ol>
+<p>将 Shader 对象与材质共同使用来确定场景的外观。</p>
+<ol start="2" type="1">
+<li>资源,</li>
+</ol>
+<p>您可以通过两种方式创建 Shader 对象。分别具有各自类型的资源： *
+您可以编写代码来创建一个着色器资源，这是一个带有 .shader
+扩展名的文本文件。 * 您可以使用 Shader Graph，创建一个 Shader Graph
+资源。</p>
+<p>无论您以何种方式创建 Shader 对象，Unity
+在内部都以相同的方式表示结果</p>
+<ol start="3" type="1">
+<li><p>在 Shader 对象内部 Shader
+对象具有嵌套结构。它将信息按照名为子着色器和通道的结构进行组织。它将着色器程序组织成着色器变体。</p></li>
+<li><p>Shader对象 shader对象包含：</p></li>
+</ol>
+<ul>
+<li>关于自身的信息，例如其名称fallback 一个可选的fallback Shader
+对象，如果 Unity 不能使用这个对象，则会使用fallback 对象</li>
+<li>一个或多个子着色器。</li>
+</ul>
+<ol start="5" type="1">
+<li>子着色器 子着色器用于将 Shader
+对象分成多个部分，分别兼容不同的硬件、渲染管线和运行时设置。</li>
+</ol>
+<p>一个子着色器包含：</p>
+<ul>
+<li>有关此子着色器与哪些硬件、渲染管线和运行时设置兼容的信息</li>
+<li>子着色器标签，这是提供有关子着色器的信息的键值对</li>
+<li>一个或多个通道</li>
+</ul>
+<ol start="6" type="1">
+<li>pass通道 通道包含：</li>
+</ol>
+<ul>
+<li>通道标签，这是提供有关通道的信息的键值对</li>
+<li>在运行着色器程序之前更新渲染状态的说明</li>
+<li>着色器程序，组织成一个或多个着色器变体</li>
+</ul>
+<ol start="7" type="1">
+<li>着色器变体</li>
+</ol>
+<p>通道包含的着色器程序被组织成着色器变体。着色器变体共享通用代码，通过启用或禁用给定Keyword，使其具有不同功能。</p>
+<p>通道中的着色器变体的数量取决于您在着色器代码中定义的Keyword数量以及目标平台。每个通道包含至少一个变体。</p>
+<ol start="8" type="1">
+<li>渲染期间的操作顺序</li>
+</ol>
+<p>这是 Unity 如何在所有渲染管线中使用 Shader
+对象渲染几何体的高级描述。</p>
+<p>在 Unity 使用 Shader 对象之前：</p>
+<p>1.Unity 为 Shader 对象创建一个子着色器列表。它添加 Shader
+对象中定义的所有子着色器，然后按顺序添加任何回退 Shader
+对象中的所有子着色器。</p>
+<p>当 Unity 首次使用 Shader 对象渲染几何体时，或者当着色器 LOD
+值或活动渲染管道更改时： 1.Unity
+遍历所有子着色器的列表并检查它们以确定它们是否：与设备硬件兼容；等于或低于当前着色器
+LOD 值；并与活动渲染管道兼容。
+2.如果列表包含一个或多个满足这些要求的子着色器，它会选择第一个子着色器。这是活动的子着色器。
+3.如果列表不包含任何满足所有要求的子着色器：
+1.如果列表包含一个或多个满足硬件要求（但不满足 LOD
+或渲染管线要求）的子着色器，则 Unity
+选择第一个子着色器。这是活动的子着色器。 2. If the list does not contain
+any SubShaders that meet the hardware requirements, Unity displays the
+error shader.</p>
+<p>Unity
+可以识别使用相同着色器变体的几何体并将其组织成批次实现更高效的渲染。每帧一次，对于每批几何体：</p>
+<p>1.Unity
+确定它应该渲染活动子着色器中的哪些通道，以及帧中的哪个点。此行为因渲染管道而异。
+2.对于它渲染的每个通道：
+1.如果当前渲染状态与通道中定义的渲染状态不匹配，Unity
+会根据通道中的定义设置渲染状态。 2.GPU
+使用相关的着色器变体渲染几何体。</p>
+<h3 id="着色器编译">3.着色器编译</h3>
+<ol type="1">
+<li>概述 每次构建项目时，Unity
+编辑器都会编译构建所需的所有着色器：针对每个所需的图形 API
+编译每个所需的着色器变体。</li>
+</ol>
+<p>当您在 Unity
+编辑器中工作时，编辑器不会提前编译所有内容。这是因为为每个图形 API
+编译每个变体可能需要很长时间。</p>
+<p>相反，Unity 编辑器会这样做：</p>
+<ul>
+<li>当导入一个着色器资源时，会执行一些最小的处理（例如表面着色器生成）。</li>
+<li>当需要显示着色器变体时，它会检查 Library/ShaderCache 文件夹。</li>
+<li>如果找到使用相同源代码的先前编译的着色器变体，则会使用该着色器变体。</li>
+<li>如果没有找到匹配项，则编译所需的着色器变体并将结果保存到缓存中。
+<ul>
+<li>注意：如果您启用异步着色器编译，它在后台执行此操作并同时显示占位着色器。</li>
+</ul></li>
+</ul>
+<p>着色器编译使用名为 UnityShaderCompiler 的进程。可启动多个
+UnityShaderCompiler 编译器进程（通常在机器中每个 CPU
+核心对应一个），这样在Player构建时就可以并行完成着色器编译。当编辑器不编译着色器时，编译器进程不执行任何操作，也不消耗计算机资源。</p>
+<p>如果有许多经常更改的着色器，着色器缓存文件夹可能会变得非常大。删除此文件夹是安全的；只会导致
+Unity 重新编译着色器变体。</p>
+<p>在Player构建时，所有“尚未编译”的着色器变体都将被编译，因此即使编辑器不会使用这些着色器变体，它们也会存在于游戏数据中</p>
+<ol start="2" type="1">
+<li>不同的着色器编译器
+不同平台使用不同的着色器编译器来编译着色器程序，如下所述：</li>
+</ol>
+<ul>
+<li>使用 DirectX 的平台会使用 Microsoft 的 FXC HLSL 编译器。</li>
+<li>使用 OpenGL (Core &amp; ES) 的平台会使用 Microsoft 的 FXC HLSL
+编译器，然后使用 HLSLcc 将字节代码转换为 GLSL。</li>
+<li>使用 Metal 的平台会使用 Microsoft 的 FXC HLSL 编译器，然后使用
+HLSLcc 将字节代码转换为 Metal。</li>
+<li>使用 Vulkan 的平台会使用 Microsoft 的 FXC HLSL 编译器，然后使用
+HLSLcc 将字节代码转换为 SPIR-V。</li>
+<li>其他平台（如游戏主机平台）使用其各自的编译器。</li>
+<li>表面着色器使用 HLSL 和 MojoShader 来完成代码生成分析步骤。 使用
+<code>pragma 指令</code>可以配置各种着色器编译器设置。</li>
+</ul>
+<blockquote>
+<p>FXC HLSL、 HLSLcc</p>
+</blockquote>
+<ol start="3" type="1">
+<li>缓存着色器预处理器</li>
+<li>构建时剥离</li>
+</ol>
+<p>在构建游戏时，Unity可以检测到一些内部着色器变体未被游戏使用，并从构建数据中排除(“剥离”)它们。</p>
+<h3 id="异步着色器编译">4.异步着色器编译</h3>
+<p>异步着色器编译是一项<strong>仅限于编辑器的功能</strong>，当您的
+Shader
+对象比较复杂，包含大量着色器变体时，此功能可以改进您的工作流程。</p>
+<h3 id="branching-variants-and-keywords">5.Branching, variants, and
+keywords</h3>
+<ol type="1">
+<li>着色器中的条件
+有时，您希望同一个着色器在不同的情况下做不同的事情。例如，您可能希望为不同的材质配置不同的设置，为不同的硬件定义功能，或者在运行时动态更改着色器的行为。您可能还希望避免在不需要时执行计算量大的代码，例如纹理读取、顶点输入、插值器或循环。
+可以使用条件来定义 GPU 仅在特定条件下执行的行为。
+<ul>
+<li>不同类型的条件句， 要在着色器中使用条件，可以使用一下方法：
+<ul>
+<li>静态分支，着色器编译器再编译时评估条件代码。</li>
+<li>动态分支，GPU再运行时平柜条件代码。</li>
+<li>着色器变体，Unity使用静态分支将着色器源代码变异成多个着色器程序。然后Unity在运行时使用匹配条件的着色器程序。</li>
+</ul></li>
+</ul></li>
+<li>合适使用哪些条件
+着色器中的条件没有“一刀切”的方法，在给定项目中，您应该考虑每种方法对于给定着色器的优缺点。</li>
+</ol>
+<p>请记住以下信息：</p>
+<ul>
+<li>如果您知道编译时的条件（例如，如果您知道您正在为给定的硬件构建），那么静态分支可能是最佳选择。静态分支代码易于编写和维护，不会对构建时间、文件大小或运行时性能产生负面影响。但是，您不能使用它在运行时针对不同条件执行代码。</li>
+<li>如果您需要在运行时针对不同的条件执行代码，您应该考虑以下选项：
+<ul>
+<li>着色器变体不会导致任何 GPU
+性能损失。但是，项目中的大量着色器变体可能会导致严重的问题：增加构建时间、文件大小、运行时内存使用和加载时间。手动预加载（“预热”）着色器时，着色器变体还会引入额外的代码复杂性。</li>
+<li>动态分支会导致 GPU
+性能损失，根据着色器代码和硬件的不同，这种损失可能很小也可能很大。但是，它允许您在运行时使用条件而不增加项目中着色器变体的数量。</li>
+<li>可以编写着色器代码以避免分支或变体，而是使用返回 0 或 1
+的数学运算来执行条件代码。这可能导致难以维护的复杂代码。根据具体情况，与动态分支相比，它可能只会带来非常小的性能改进，或者根本没有优势。</li>
+</ul></li>
+</ul>
+<p>一般来说，最好的方法是分析应用程序的性能并仔细考虑您的决定。例如，如果您能承受稍微增加的
+GPU 成本，最好使用动态分支来实现“足够好”的 GPU
+性能并降低引入更多变体的风险。但是，如果 GPU
+性能是此着色器的主要关注点，并且您已经考虑了额外变体的成本，则可以选择使用变体。</p>
+<ol start="2" type="1">
+<li>Shader分支 Shader条件行为，有两种分支：</li>
+</ol>
+<ul>
+<li>静态分支
+<ul>
+<li>使用#if、#elif、#else和#endif预处理器指令，或#ifdef和#ifndef预处理器指令来创建静态分支。</li>
+<li>使用计算编译时常量值的if
+语句。尽管if语句也可用于动态分支，但编译器会检测编译时常量值并改为创建静态分支。
+Unity为一些可用于静态分支的编译时常量提供内置宏。</li>
+</ul></li>
+<li>动态分支
+<ul>
+<li>在手动编码的着色器中，使用评估运行时状态的if
+语句。您可以使用属性来强制 GPU 执行两个分支，或者只执行一个分支。</li>
+<li>在 Shader Graph 中，使用Branch Node。这总是执行两个分支。</li>
+</ul></li>
+</ul>
+<ol start="3" type="1">
+<li>着色器变体
+着色器变体，有时也称为着色器排列，是将条件行为引入着色器代码的一种方式。
+具有大量变体的着色器被称为“大型着色器”或“超级着色器”。Unity
+的标准着色器就是此类着色器的一个示例。</li>
+</ol>
+<p>变体数量：
+例如，考虑一个相当典型的用例，其中一个着色器有一组着色器变体Keyword，每个Keyword包含两个Keyword
+(<code>feature name</code>_ON和<code>feature name</code>_OFF)。如果着色器有两组这样的Keyword，则会产生四个变体。如果着色器有十组这样的Keyword，这将产生
+1024 个变体。</p>
+<ol start="4" type="1">
+<li>重复变体数据</li>
+</ol>
+<p>着色器变体的重复数据删除 编译后，Unity 会自动识别同一个 Pass
+中的相同变体，并确保这些相同的变体指向相同的字节码。这称为重复数据删除。</p>
+<p>重复数据删除可防止同一 Pass
+中的相同变体增加文件大小；但是，相同的变体仍然会导致编译期间的工作浪费，并在运行时增加内存使用和着色器加载时间。考虑到这一点，<strong>最好去掉不需要的变体</strong>。</p>
+<ol start="5" type="1">
+<li><p>着色器keyword</p></li>
+<li><p>Unity 的预定义着色器Keyword Unity
+使用预定义的着色器Keyword集来生成启用通用功能的着色器变体。</p></li>
+</ol>
+<p>Unity 在编译时添加了以下着色器变体Keyword集：</p>
+<ul>
+<li>默认情况下，Unity
+将这组Keyword添加到所有图形着色器程序中：STEREO_INSTANCING_ON、STEREO_MULTIVIEW_ON、STEREO_CUBEMAP_RENDER_ON、UNITY_SINGLE_PASS_STEREO。您可以使用编辑器脚本去除这些Keyword。有关详细信息，请参阅着色器变体剥离。</li>
+<li>默认情况下，Unity
+将这组Keyword添加到标准着色器中：LIGHTMAP_ON、DIRLIGHTMAP_COMBINED、DYNAMICLIGHTMAP_ON、LIGHTMAP_SHADOW_MIXING、SHADOWS_SHADOWMASK。您可以使用图形设置窗口去除这些Keyword。</li>
+<li>在 Built-in Render Pipeline
+中，如果您的项目使用彼此不同的层设置，Unity
+会将这组Keyword添加到所有图形着色器中：UNITY_HARDWARE_TIER1、UNITY_HARDWARE_TIER2、UNITY_HARDWARE_TIER3。有关详细信息，请参阅图形层：图形层和着色器变体。</li>
+</ul>
+<ol start="2" type="1">
+<li>着色器Keyword限制</li>
+</ol>
+<p>着色器keyword限制 Unity 最多可以使用 4,294,967,294
+个全局着色器keyword。单个着色器和计算着色器最多可以使用 65,534
+个本地着色器keyword。</p>
+<p>着色器源文件中声明的每个keyword及其依赖项都计入此限制。依赖项包括着色器使用UsePass和fallbacks包含的Pass。</p>
+<p>如果 Unity 多次遇到同名的着色器keyword，则仅计入限制一次。</p>
+<p>如果着色器总共使用超过 128
+个keyword，则会导致运行时性能下降；因此，最好将keyword的数量保持在较低水平。Unity
+总是为每个着色器保留 4 个keyword。</p>
+<ol start="3" type="1">
+<li>开启关闭、检查状态着色器Keyword</li>
+</ol>
+<p>要检查是否为图形着色器启用了本地keyword，请使用Material.IsKeywordEnabled或Material.EnableKeyword。对于计算着色器，请使用ComputeShader.IsKeywordEnabled或ComputeShader.EnableKeyword。</p>
+<p>要检查是否启用了全局keyword，请使用Shader.IsKeywordEnabled或Shader.EnableKeyword或ComputeShader.enabledKeywords。</p>
+<p>要为图形着色器启用或禁用本地着色器keyword，请使用Material.SetKeyword、Material.EnableKeyword或Material.DisableKeyword。对于计算着色器，请使用ComputeShader.SetKeyword、ComputeShader.EnableKeyword或ComputeShader.DisableKeyword。</p>
+<p>要启用或禁用全局着色器keyword，请使用Shader.SetKeyword、ComputeShader.EnableKeyword或ComputeShader.DisableKeyword。</p>
+<p>要使用命令缓冲区启用或禁用本地或全局keyword，请使用CommandBuffer.EnableKeyword或CommandBuffer.DisableKeyword。</p>
+<ol start="4" type="1">
+<li>运行时管理keyword</li>
+</ol>
+<p>在运行时管理keyword集
+当您创作着色器时，您在集合中声明keyword。一个集合包含互斥keyword。
+在运行时，Unity
+没有这些集合的概念。它允许您独立启用或禁用任何keyword，启用或禁用keyword不会影响任何其他keyword的状态。这意味着可以启用同一组中的多个keyword，或禁用一组中的所有keyword。
+当一组中的多个keyword被启用或一组中没有keyword被启用时，Unity
+会选择一个它认为“足够好”匹配的变体。无法保证到底会发生什么，并且可能导致意想不到的结果。最好通过仔细管理keyword状态来避免这种情况。</p>
+<ol start="5" type="1">
+<li>变体剥离
+<ul>
+<li>在可能的情况下使用shader_feature而不是multi_compile。</li>
+<li>确保您不使用 定义未使用的关键字multi_compile。</li>
+<li>指示着色器关键字何时仅影响给定的着色器阶段</li>
+</ul>
+<ol type="1">
+<li><p>使用编辑器配置剥离</p>
+<ul>
+<li>在Graphics Settings 窗口中，配置Shader stripping部分中的设置：</li>
+<li>确保始终包含的着色器设置中不包含不需要的着色器。</li>
+<li>与 GPU 实例化、光照贴图和雾相关的条带变体。</li>
+<li>在内置渲染管道中，如果您的层设置不同并不重要，请确保它们彼此相同。有关详细信息，请参阅图形层。</li>
+<li>在通用渲染管道 (URP) 中，禁用 URP
+资源中未使用的功能。有关详细信息，请参阅着色器剥离。</li>
+</ul></li>
+<li><p>使用构建回调剥离 ``` c# using System.Collections.Generic; using
+UnityEditor; using UnityEditor.Build; using UnityEditor.Rendering; using
+UnityEngine; using UnityEngine.Rendering;</p>
+<pre><code> // Simple example of stripping of a debug build configuration
+ class ShaderDebugBuildProcessor : IPreprocessShaders
+ {
+     ShaderKeyword m_KeywordDebug;
+
+     public ShaderDebugBuildProcessor()
+     {
+         m_KeywordDebug = new ShaderKeyword("DEBUG");
+     }
+
+     // Multiple callback may be implemented.
+     // The first one executed is the one where callbackOrder is returning the smallest number.
+     public int callbackOrder { get { return 0; } }
+
+     public void OnProcessShader(
+         Shader shader, ShaderSnippetData snippet, IList&lt;ShaderCompilerData&gt; shaderCompilerData)
+     {
+         // In development, don't strip debug variants
+         if (EditorUserBuildSettings.development)
+             return;
+
+         for (int i = 0; i &lt; shaderCompilerData.Count; ++i)
+         {
+             if (shaderCompilerData[i].shaderKeywordSet.IsEnabled(m_KeywordDebug))
+             {
+                 shaderCompilerData.RemoveAt(i);
+                 --i;
+             }
+         }
+     }
+ }</code></pre>
+<p>```</p></li>
+</ol></li>
+</ol>
+<h3 id="着色器加载">6.着色器加载</h3>
+<p>自己管理着色器编译，并预加载</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode c#"><code class="sourceCode cs"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>    ShaderVariantCollection<span class="op">.</span><span class="fu">WarmUp</span><span class="op">()</span></span></code></pre></div>
+<h3 id="在运行时替换着色器">7.在运行时替换着色器</h3>
+<p>应通过脚本使用函数 Camera.RenderWithShader 或
+Camera.SetReplacementShader 来实现着色器替换。这两个函数均采用 shader 和
+replacementTag。</p>
+<p>工作方式如下：摄像机按正常方式渲染场景，<strong>对象仍使用自己的材质，但要更改最终使用的实际着色器</strong>：</p>
+<ul>
+<li>如果 replacementTag
+为空，则使用指定的替换着色器来渲染场景中的所有对象。</li>
+<li>如果 replacementTag 不为空，则对于将要渲染的每个对象：
+<ul>
+<li>查询真实对象的着色器以获取标签值。</li>
+<li>如果没有该标签，则不渲染对象。</li>
+<li>在替换着色器中找到一个子着色器，并且该子着色器的一个给定标签具有找到的值。如果找不到此类子着色器，则不渲染对象。</li>
+<li>现在，使用该子着色器来渲染对象。</li>
+</ul></li>
+</ul>
+<p>内置着色器中的着色器替换标签
+所有内置着色器都设置了一个“RenderType”标签，可以在使用替换着色器进行渲染时使用此标签。标签值如下：
+*
+<strong>Opaque</strong>：大部分着色器（法线、自发光、反射和地形着色器）。
+*
+<strong>Transparent</strong>：大部分半透明着色器（透明、粒子、字体和地形附加通道着色器）。
+*
+<strong>TransparentCutout</strong>：遮罩透明度着色器（透明镂空、两个通道植被着色器）。
+* <strong>Background</strong>：天空盒着色器。 *
+<strong>Overlay</strong>：光环、光晕着色器。 *
+<strong>TreeOpaque</strong>：地形引擎树皮。 *
+<strong>TreeTransparentCutout</strong>：地形引擎树叶。 *
+<strong>TreeBillboard</strong>：地形引擎公告牌树。 *
+<strong>Grass</strong>：地形引擎草。 *
+<strong>GrassBillboard</strong>：地形引擎公告牌草。</p>
+<p>因此，比如说，如果所有着色器都要有一个值为“Opaque”、“Transparent”、“Background”或“Overlay”的“RenderType”标签，则可编写一个替换着色器，该着色器只使用一个具有
+RenderType = Solid
+标签的子着色器来渲染实体对象。在替换着色器中找不到其他标签类型，因此不会渲染对象。或者您也可以为不同“RenderType”标签值编写若干子着色器。顺便提一下，所有内置
+Shader 对象都设置了一个“RenderType”标签。</p>
+<p>eg:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode c#"><code class="sourceCode cs"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">//Start() 函数指定替换着色器：</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="dt">void</span> <span class="fu">Start</span><span class="op">()</span> <span class="op">{</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    camera<span class="op">.</span><span class="fu">SetReplacementShader</span> <span class="op">(</span>EffectShader<span class="op">,</span> <span class="st">"RenderType"</span><span class="op">);</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co">//此函数请求 EffectShader 使用 RenderType 键。对于所需的每个 RenderType，EffectShader 都有一个键/值标签。Shader 应如下所示：</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>Shader <span class="st">"EffectShader"</span> <span class="op">{</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>     SubShader <span class="op">{</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>         Tags <span class="op">{</span> <span class="st">"RenderType"</span><span class="op">=</span><span class="st">"Opaque"</span> <span class="op">}</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>         Pass <span class="op">{</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>             <span class="op">...</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>         <span class="op">}</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>     <span class="op">}</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>     SubShader <span class="op">{</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>         Tags <span class="op">{</span> <span class="st">"RenderType"</span><span class="op">=</span><span class="st">"SomethingElse"</span> <span class="op">}</span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>         Pass <span class="op">{</span></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>             <span class="op">...</span></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>         <span class="op">}</span></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>     <span class="op">}</span></span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a> <span class="op">...</span></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a> <span class="op">}</span></span></code></pre></div>
+<h3 id="计算着色器">8.计算着色器</h3>
+<h3 id="error-and-loading-shaders">9.Error and loading shaders</h3>
+<h2 id="二内置着色器">二、内置着色器</h2>
+<h3 id="standard-shader">1. Standard Shader</h3>
+<p>Unity
+标准着色器是一个包含一整套功能的内置着色器。标准着色器还包含一种称为__基于物理着色
+(Physically Based Shading)__ 的高级光照模型。基于物理着色 (PBS)
+以一种模仿现实的方式模拟材质和光照之间的相互作用。PBS
+最近才在实时图形中成为可能。在光照和材质需要以直观而逼真的状态共存的情况下，这种光照模型的效果最佳。</p>
+<ol start="2" type="1">
+<li>术语 基于物理的着色时：</li>
+</ol>
+<ul>
+<li><p>能量守恒（Energy
+conservation）。这是一种物理学概念，可确保对象反射的光绝不会对于接受的光。材质的镜面反射越强，
+其漫反射就应该越弱；表面越光滑， 高光越强且高光面积越小。</p></li>
+<li><p>高动态范围 （High Dynamic Range, HDR）。这是指超出常规 0-1
+范围的颜色。例如，太阳很容易比蓝天亮十倍。</p></li>
+</ul>
+<ol start="3" type="1">
+<li>Content and Context</li>
+</ol>
+<p>在思考Unity的光照时，将概念划分为所谓的<code>Content</code>（光照和渲染的对象）
+和<code>Context</code>(即场景中会影响光照对象的光照) 会很方便。</p>
+<ol type="1">
+<li>Context</li>
+</ol>
+<p>对象发生光照时，了解哪些光源会影响对象非常重要。场景中通常有直接光源：可能是放置在场景中的游戏对象光源。此外还有间接光源，例如反射和反射光。这些光源都会对对象的材质产生影响，从而产生摄像机在对象表面上看到的最终结果。</p>
+<p>这种划分并非硬性和绝对的，通常可能被认为的“内容”也可能是另一个对象的光照上下文的一部分。</p>
+<p>在这方面，一个很好的例子就是位于沙漠景观中的建筑物。该建筑物将从天空盒获取光照信息，也可能会从周围地面的反射光获取这些信息。</p>
+<p>但是，可能有一个角色站在建筑物的外墙附近。对于该角色，建筑物是光照上下文的一部分：建筑物可能投射阴影，建筑物可能将反射光从墙壁投射到角色身上，或者角色可能有直接反射建筑物本身的反射部分。</p>
+<ol start="4" type="1">
+<li>Metallic 与 Specular 工作流程的比较</li>
+</ol>
+<p>使用标准着色器创建材质时，可选择以下两个着色器之一：<strong>Standard</strong>
+或 Standard (Specular setup)。两者接受的数据不同，如下所述：</p>
+<p>Standard：着色器显示“Metallic”值，表示材质是不为金属性。在使用金属性材质的情况下，反照率颜色
+(Albedo)
+控制镜面反射的颜色，且大多数光线以镜面反射形式反射。非金属性材质具有与入射光颜色相同的镜面反射，并且在正面观察表面时几乎不会反射。</p>
+<p>Standard (Specular
+setup)：选择此着色器意味着使用传统方法。使用镜面反射颜色来控制材质中镜面反射的颜色和强度。此设置可使镜面反射具有与漫射不同的颜色。</p>
+<p>使用上述任一种方法都能很好地表示最常见的材质类型，因此在大多数情况下，具体选择哪种方法是基于美术工作流程的个人喜好问题。</p>
+<h3 id="标准粒子着色器">2.标准粒子着色器</h3>
+<h2 id="三使用-shader-graph">三、使用 Shader Graph</h2>
+<p><a target="_blank" rel="noopener" href="https://docs.unity3d.com/Packages/com.unity.shadergraph@12.1/manual/index.html">https://docs.unity3d.com/Packages/com.unity.shadergraph@12.1/manual/index.html</a></p>
+<h2 id="四编写着色器">四、编写着色器</h2>
+<h3 id="概述">1. 概述</h3>
+<p>为 Unity 编写着色器时，使用以下语言：</p>
+<ul>
+<li>一种称为 HLSL 的编程语言。使用它可编写着色器程序本身。有关 HLSL
+的更多信息，请参阅 Unity 中的 HLSL。</li>
+<li>一种称为 ShaderLab 的 Unity 特定语言。使用它可定义 Shader
+对象，它充当着色器程序的容器。有关 ShaderLab 的更多信息，请参阅
+ShaderLab。 不需要为不同的平台使用不同的语言；Unity 针对不同的图形 API
+将 HLSL 和 ShaderLab
+代码编译为不同语言。有关更多信息，请参阅着色器编译。</li>
+</ul>
+<p>注意：如果需要，还可以直接用 GLSL 和 Metal
+编写着色器程序。在常规工作流程中，不建议或不需要这样做。有关如何使用
+GLSL 的更多信息，请参阅 Unity 中的 GLSL。</p>
+<h3 id="shaderlab">2. ShaderLab</h3>
+<p>定义Shader对象</p>
+<pre><code>    Shader "&lt;name&gt;"
+    {
+        &lt;optional: Material properties&gt;
+        &lt;One or more SubShader definitions&gt;
+        &lt;optional: custom editor&gt;
+        &lt;optional: fallback&gt;
+    }</code></pre>
+<pre><code>    Shader "Examples/ShaderSyntax"
+    {
+        CustomEditor = "ExampleCustomEditor"
+
+        Properties
+        {
+            // 此处是材质属性声明
+        }
+        SubShader
+        {
+            // 此处是定义子着色器的其余代码
+
+            Pass
+            {
+            // 此处是定义通道的代码
+            }
+        }
+
+        Fallback "ExampleFallbackShader"
+    }</code></pre>
+<h4 id="定义材质属性">1. 定义材质属性</h4>
+<pre><code>    Properties
+    {
+        &lt;Material property declaration&gt;
+        &lt;Material property declaration&gt;
+    }</code></pre>
+<p>材质属性声明格式</p>
+<pre><code>[optional: attribute] name("display text in Inspector", type name) = default value </code></pre>
+<ol type="1">
+<li>Integer(旧版 Int)。
+<code>_ExampleName ("Integer display name", Integer) = 1</code></li>
+<li>Float。<code>_ExampleName ("Float display name", Float) = 0.5</code></li>
+<li>Texture2D。<code>_ExampleName ("Texture2D display name", 2D) = "" {}</code>
+or <code>_ExampleName ("Texture2D display name", 2D) = "red" {}</code>,
+默认值字符串中可使用 Unity 的内置纹理之一:
+<ol type="1">
+<li>“white”（RGBA：1,1,1,1）、</li>
+<li>“black”（RGBA：0,0,0,1）、</li>
+<li>“gray”（RGBA：0.5,0.5,0.5,1）、</li>
+<li>“bump”（RGBA：0.5,0.5,1,0.5）</li>
+<li>“red”（RGBA：1,0,0,1）</li>
+</ol></li>
+<li>Texture2DArray。<code>_ExampleName ("Texture2DArray display name", 2DArray) = "" {}</code></li>
+<li>Texture3D。<code>_ExampleName ("Texture3D", 3D) = "" {}</code>。默认值为
+“gray”（RGBA：0.5,0.5,0.5,1）纹理。</li>
+<li>Cubemap。<code>_ExampleName ("Cubemap", Cube) = "" {}</code>。默认值为
+“gray”（RGBA：0.5,0.5,0.5,1）纹理。</li>
+<li>CubemapArray。<code>_ExampleName ("CubemapArray", CubeArray) = "" {}</code>。</li>
+<li>Color。<code>_ExampleName("Example color", Color) = (.25, .5, .5, 1)</code>。这会在着色器代码中映射到
+float4。颜色拾取器。</li>
+<li>Vector。<code>_ExampleName ("Example vector", Vector) = (.25, .5, .5, 1)</code>。这会在着色器代码中映射到
+float4。</li>
+</ol>
+<p>材质属性特性 1. [Gamma] 指示浮点数或者矢量属性使用
+sRGB值。这意味着如果项目中的颜色空间需要，则它必须与其他sRGB值一起转换。
+2. [HDR] 指示颜色使用的高动态范围值。 3. [HideInInspector]，
+编辑器隐藏属性。 4. [MainTexture] 设置为主纹理，
+可以使用Material.mainTexture进行访问。默认情况下，Unity 将具有属性名称
+_MainTex 的纹理视为主纹理。如果纹理具有不同的属性名称，但希望 Unity
+将它视为主纹理，请使用此特性。 5. [MainColor]
+设置为材质设置主色，可以使用 Material.color 进行访问。 6.
+[NoScaleOffset] 告知 Unity 编辑器隐藏此纹理属性的平铺和偏移字段。 7.
+[Normal]指示纹理属性需要法线贴图。 8. [PerRendererData]
+指示纹理属性将来自每渲染器数据，形式为 MaterialPropertyBlock。 材质
+Inspector 会将这些属性显示为只读。</p>
+<pre><code>Shader "Examples/ExampleShader"
+{
+    SubShader
+    {
+
+        HLSLINCLUDE
+            // 在此编写要共享的 HLSL 代码
+        ENDHLSL
+
+        Pass
+        {                
+              Name "ExampleFirstPassName"
+              Tags { "LightMode" = "ExampleLightModeTagValue" }
+
+              // 在此编写设置渲染状态的 ShaderLab 命令
+
+              HLSLPROGRAM
+                // 此 HLSL 着色器程序自动包含上面的 HLSLINCLUDE 块的内容
+                // 在此编写 HLSL 着色器代码
+              ENDHLSL
+        }
+
+        Pass
+        {                
+              Name "ExampleSecondPassName"
+              Tags { "LightMode" = "ExampleLightModeTagValue" }
+
+              // 在此编写设置渲染状态的 ShaderLab 命令
+
+              HLSLPROGRAM
+                // 此 HLSL 着色器程序自动包含上面的 HLSLINCLUDE 块的内容
+                // 在此编写 HLSL 着色器代码
+              ENDHLSL
+        }
+
+    }
+}   </code></pre>
+<h3 id="hlsl">3. HLSL</h3>
+<h4 id="预处理语法">1. 预处理语法</h4>
+<ol type="1">
+<li>pragma</li>
+</ol>
+<pre><code>    #pragma target 3.0
+    #pragma exclude_renderers vulkan
+    #pragma vertex vert
+    #pragma fragment frag</code></pre>
+<h4 id="着色器语义">2. 着色器语义</h4>
+<ol type="1">
+<li>#pragma vertex vert 主顶点着色器函数。</li>
+<li>#pragma fragment frag，</li>
+</ol>
+<p>输入数据语义：</p>
+<table>
+<thead>
+<tr class="header">
+<th>输入</th>
+<th style="text-align: left;">说明</th>
+<th>类型</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>BINORMAL[n]</td>
+<td style="text-align: left;">二进制</td>
+<td>float4</td>
+</tr>
+<tr class="even">
+<td>BLENDINDICES[n]</td>
+<td style="text-align: left;">混合索引</td>
+<td>uint</td>
+</tr>
+<tr class="odd">
+<td>BLENDWEIGHT[n]</td>
+<td style="text-align: left;">混合权重</td>
+<td>FLOAT</td>
+</tr>
+<tr class="even">
+<td>COLOR[n]</td>
+<td style="text-align: left;">漫射和反射颜色</td>
+<td>float4</td>
+</tr>
+<tr class="odd">
+<td>NORMAL[n]</td>
+<td style="text-align: left;">普通向量</td>
+<td>float4</td>
+</tr>
+<tr class="even">
+<td>POSITION[n]</td>
+<td style="text-align: left;">对象空间中的顶点位置。</td>
+<td>float4</td>
+</tr>
+<tr class="odd">
+<td>POSITIONT</td>
+<td style="text-align: left;">转换的顶点位置。</td>
+<td>float4</td>
+</tr>
+<tr class="even">
+<td>PSIZE[n]</td>
+<td style="text-align: left;">点大小</td>
+<td>FLOAT</td>
+</tr>
+<tr class="odd">
+<td>TANGENT[n]</td>
+<td style="text-align: left;">正切</td>
+<td>float4</td>
+</tr>
+<tr class="even">
+<td>TEXCOORD[n]</td>
+<td style="text-align: left;">纹理坐标</td>
+<td>float4</td>
+</tr>
+</tbody>
+</table>
+<p>顶点输出数据语义：</p>
+<table>
+<colgroup>
+<col style="width: 36%">
+<col style="width: 27%">
+<col style="width: 36%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>输出</th>
+<th style="text-align: left;">说明</th>
+<th>类型</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>COLOR[n]</td>
+<td style="text-align: left;">漫射或反射颜色</td>
+<td>float4</td>
+</tr>
+<tr class="even">
+<td>FOG</td>
+<td style="text-align: left;">顶点雾</td>
+<td>FLOAT</td>
+</tr>
+<tr class="odd">
+<td>POSITION[n]</td>
+<td style="text-align: left;">顶点在齐次空间中的位置。 通过将 (x，y，z)
+除以 w，在屏幕空间中计算位置。
+每个顶点着色器都必须写出具有此语义的参数。</td>
+<td>float4</td>
+</tr>
+<tr class="even">
+<td>PSIZE</td>
+<td style="text-align: left;">点大小</td>
+<td>FLOAT</td>
+</tr>
+<tr class="odd">
+<td>TESSFACTOR[n]</td>
+<td style="text-align: left;">分割因子</td>
+<td>FLOAT</td>
+</tr>
+</tbody>
+</table>
+<p>像素着色器输入语义 |输入 |说明 |类型 | |---- | :-- |----| |COLOR[n]
+|漫射或反射颜色 |float4| |TEXCOORD[n] |纹理坐标 |float4| |VFACE
+|点指示面向背的基元的浮点标量。
+负值向后面，而正值则面对相机。！注意Direct3D 9 着色器模型 3.0
+中提供了此语义。 对于 Direct3D 10 及更高版本，请改用 SV_IsFrontFace 。
+|FLOAT| |VPOS |屏幕空间中的像素位置 (x，y) 。 若要将此语义 () 的
+Direct3D 9 着色器转换为 Direct3D 10 及更高版本的着色器，请参阅 Direct3D
+9 VPOS 和 Direct3D 10 SV_Position) |float2|</p>
+<p>像素着色器输出语义 |输入 |说明 |类型 | |---- | :-- |----| |COLOR[n]
+|输出颜色 |float4| |DEPTH[n] |输出深度 |FLOAT|</p>
+<h2 id="五着色器性能和性能分析">五、着色器性能和性能分析</h2>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">lyg</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://one2world.github.io/2022/08/13/xuan-ran/ta-ru-men/3.shader/">https://one2world.github.io/2022/08/13/xuan-ran/ta-ru-men/3.shader/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">lyg</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/Unity/">
+                                    <span class="chip bg-color">Unity</span>
+                                </a>
+                            
+                                <a href="/tags/%E6%B8%B2%E6%9F%93/">
+                                    <span class="chip bg-color">渲染</span>
+                                </a>
+                            
+                                <a href="/tags/%E5%9B%BE%E5%BD%A2/">
+                                    <span class="chip bg-color">图形</span>
+                                </a>
+                            
+                                <a href="/tags/TA/">
+                                    <span class="chip bg-color">TA</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/null" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/null" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+        <div class="disqus-card card" data-aos="fade-up">
+    <div id="disqus_thread" class="card-content">
+        <noscript>Please enable JavaScript to view the
+            <a target="_blank" rel="noopener" href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+    </div>
+</div>
+
+<script type="text/javascript">
+    disqus_config = function () {
+        this.page.url = 'https://one2world.github.io/2022/08/13/xuan-ran/ta-ru-men/3.shader/';
+        this.page.identifier = '/2022/08/13/xuan-ran/ta-ru-men/3.shader/';
+        this.page.title = '3.Shader';
+    };
+    let disqus_shortname = '';
+
+    (function () { // DON'T EDIT BELOW THIS LINE
+        let d = document, s = d.createElement('script');
+        // 如：s.src = 'https://blinkfox.disqus.com/embed.js';
+        s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2022/08/13/xuan-ran/ta-ru-men/3.shader/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="3.Shader">
+                        
+                        <span class="card-title">3.Shader</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-08-13
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%9B%BE%E5%BD%A2/" class="post-category">
+                                    图形
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Unity/">
+                        <span class="chip bg-color">Unity</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%B8%B2%E6%9F%93/">
+                        <span class="chip bg-color">渲染</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%9B%BE%E5%BD%A2/">
+                        <span class="chip bg-color">图形</span>
+                    </a>
+                    
+                    <a href="/tags/TA/">
+                        <span class="chip bg-color">TA</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2022/08/12/xuan-ran/ta-ru-men/2.xian-xing-dai-shu/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="1.线性代数">
+                        
+                        <span class="card-title">1.线性代数</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-08-12
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%9B%BE%E5%BD%A2/" class="post-category">
+                                    图形
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E6%B8%B2%E6%9F%93/">
+                        <span class="chip bg-color">渲染</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%9B%BE%E5%BD%A2/">
+                        <span class="chip bg-color">图形</span>
+                    </a>
+                    
+                    <a href="/tags/TA/">
+                        <span class="chip bg-color">TA</span>
+                    </a>
+                    
+                    <a href="/tags/3D%E6%95%B0%E5%AD%A6/">
+                        <span class="chip bg-color">3D数学</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
+    });
+</script>
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="503838841"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2019-2022</span>
+            
+            <span id="year">2019</span>
+            <a href="/about" target="_blank">Yonggang Long</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/one2world" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:longyonggang2@gmail.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=873415756" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 873415756" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+    <a href="https://www.zhihu.com/people/cheng-xu-jie-kang-ba-zi" class="tooltipped" target="_blank" data-tooltip="关注我的知乎: https://www.zhihu.com/people/cheng-xu-jie-kang-ba-zi" data-position="top" data-delay="50">
+        <i class="fab fa-zhihu1">知</i>
+    </a>
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+    
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <script src='https://unpkg.com/mermaid@8.13.5/dist/mermaid.min.js'></script>
+    <script>
+      if (window.mermaid) {
+        mermaid.initialize({theme: 'forest'});
+      }
+    </script>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+	
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>
